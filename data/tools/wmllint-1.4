@@ -1332,7 +1332,7 @@ def hack_syntax(filename, lines):
                 ws = leader(lines[i])
                 insertion = ws + baseindent + "[specials]\n"
                 for special in specials:
-                    if special.startswith("plague("):
+                    if special.startswith("plague"):
                         insertion += ws + baseindent*2 + "{WEAPON_SPECIAL_PLAGUE_TYPE " + special[7:-1] + "}\n"
                     elif special in ("backstab", "berserk", "charge", "drain",
                                      "firststrike", "magical", "marksman", "plague",
