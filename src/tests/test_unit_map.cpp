@@ -42,9 +42,12 @@ BOOST_AUTO_TEST_CASE( test_1 ) {
 	config orc_config;
 	orc_config["id"]="Orcish Grunt";
 	orc_config["random_traits"]=false;
+	orc_config["animate"]=false;
 	unit_type orc_type(orc_config);
 
-	unit orc1_side0_real(orc_type, 0, true);
+	unit_types.build_unit_type(orc_type, unit_type::FULL);
+
+	unit orc1_side0_real(orc_type, 0, false);
 	unit orc2_side0_fake(orc_type, 0, false);
 
 	unit_map unit_map;
@@ -83,7 +86,6 @@ BOOST_AUTO_TEST_CASE( test_1 ) {
 	BOOST_CHECK_MESSAGE(uresult1.first->underlying_id() != orc1_side0_real.underlying_id(), "Found Orc1");
 
 
-
 	//To check that the collisions will cut off change the cutoff in unit_map.cpp from 1e6 to less than the guard value below
 	// unit_map.add(map_location(1,3), orc2_side0_fake);
 	// unit_map.add(map_location(1,3), orc2_side0_fake);
@@ -113,7 +115,10 @@ BOOST_AUTO_TEST_CASE( track_real_unit_by_underlying_id ) {
 	config orc_config;
 	orc_config["id"]="Orcish Grunt";
 	orc_config["random_traits"] = false;
+	orc_config["animate"]=false;
 	unit_type orc_type(orc_config);
+
+	unit_types.build_unit_type(orc_type, unit_type::FULL);
 
 	unit orc1_side0_real(orc_type, 0, true);
 
@@ -157,7 +162,10 @@ BOOST_AUTO_TEST_CASE( track_fake_unit_by_underlying_id ) {
 	config orc_config;
 	orc_config["id"]="Orcish Grunt";
 	orc_config["random_traits"] = false;
+	orc_config["animate"]=false;
 	unit_type orc_type(orc_config);
+
+	unit_types.build_unit_type(orc_type, unit_type::FULL);
 
 	unit orc1_side0_fake(orc_type, 0, false);
 
@@ -201,7 +209,10 @@ BOOST_AUTO_TEST_CASE( track_real_unit_by_iterator ) {
 	config orc_config;
 	orc_config["id"]="Orcish Grunt";
 	orc_config["random_traits"] = false;
+	orc_config["animate"]=false;
 	unit_type orc_type(orc_config);
+
+	unit_types.build_unit_type(orc_type, unit_type::FULL);
 
 	unit orc1_side0_real(orc_type, 0, true);
 
@@ -234,7 +245,10 @@ BOOST_AUTO_TEST_CASE( track_fake_unit_by_iterator ) {
 	config orc_config;
 	orc_config["id"]="Orcish Grunt";
 	orc_config["random_traits"] = false;
+	orc_config["animate"]=false;
 	unit_type orc_type(orc_config);
+
+	unit_types.build_unit_type(orc_type, unit_type::FULL);
 
 	unit orc1_side0_fake(orc_type, 0, false);
 

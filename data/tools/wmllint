@@ -183,6 +183,25 @@ mapchanges = (
     ("Qv,",  "Mv"),
     )
 
+# Base terrain aliasing changes.
+aliaschanges = (
+    # 1.11.8:
+    ("Ch",   "Ct"),
+    ("Ds",   "Dt"),
+    ("Hh",   "Ht"),
+    ("Mm",   "Mt"),
+    ("Ss",   "St"),
+    ("Uu",   "Ut"),
+    ("Ww",   "Wst"),
+    ("Wo",   "Wdt"),
+    ("Wwr",  "Wrt"),
+    ("^Uf",  "Uft"),
+    # Vi -> Vit in 1.11.8, Vit -> Vt in 1.11.9.
+    ("Vit",  "Vt"),
+    # 1.11.9:
+    ("Vi",   "Vt"),
+    )
+
 # Global changes meant to be done on all lines.  Suppressed by noconvert.
 linechanges = (
         ("canrecruit=1", "canrecruit=yes"),
@@ -574,7 +593,7 @@ linechanges = (
         ("misc/schedule-afternoon.png","misc/time-schedules/default/schedule-afternoon.png"),
         ("misc/schedule-dusk.png","misc/time-schedules/default/schedule-dusk.png"),
         ("misc/schedule-firstwatch.png","misc/time-schedules/default/schedule-firstwatch.png"),
-        ("misc/schedule-secondwatch.png","misc/time-schedules/default/schedule-dawn.png"),
+        ("misc/schedule-secondwatch.png","misc/time-schedules/default/schedule-secondwatch.png"),
 
         ("misc/schedule-indoors.png","misc/time-schedules/schedule-indoors.png"),
         ("misc/schedule-underground.png","misc/time-schedules/schedule-underground.png"),
@@ -609,6 +628,17 @@ def validate_on_pop(tagstack, closer, filename, lineno):
     if closer == "unit" and attributes.get("id") is not None and attributes.get("type") is not None and attributes.get("side") is None and not "side" in ancestors:
         print '"%s", line %d: unit declaration without side attribute' % \
               (filename, lineno)
+    if closer == "theme" and "id" not in attributes:
+        if "name" in attributes:
+            print '"%s", line %d: using [theme]name= instead of [theme]id= is deprecated' % (filename, lineno)
+        else:
+            print '"%s", line %d: [theme] needs an id attribute' % (filename, lineno)
+    # Check for user-visible themes that lack a UI name or description.
+    if closer == "theme" and ("hidden" not in attributes or attributes["hidden"] not in ("yes", "true")):
+        for attr in ("name", "description"):
+            if attr not in attributes:
+                print '"%s", line %d: [theme] needs a %s attribute unless hidden=yes' % \
+                      (filename, lineno, attr)
     if closer == "filter_side":
         ancestor = False
         if "gold" in ancestors:
@@ -800,7 +830,9 @@ spellcheck_these = (\
     "caption=",
     "description=",
     "description_inactive=",
+    "editor_name=",
     "end_text=",
+    "help_topic_text=",
     "message=",
     "note=",
     "story=",
@@ -2524,7 +2556,7 @@ def spellcheck(fn, d):
         except AttributeError:
             print "Caught AttributeError when trying to remove %s from dict" % word
 
-vctypes = (".svn", ".git")
+vctypes = (".svn", ".git", ".hg")
 
 def interesting(fn):
     "Is a file interesting for conversion purposes?"
@@ -2656,6 +2688,15 @@ if __name__ == '__main__':
         if "wmllint: noconvert" not in original:
             for (old, new) in linechanges + mapchanges:
                 line = line.replace(old, new)
+            # Perform any base terrain string conversions needed in
+            # [terrain_type] aliasof=, mvt_alias=, and def_alias= attributes.
+            if under("terrain_type"):
+                match = re.search(r"\b(?:aliasof|mvt_alias|def_alias)\s*=(.*)$", line)
+                if match:
+                    aliases = match.group()
+                    for (old, new) in aliaschanges:
+                        aliases = aliases.replace(old, new)
+                    line = line.replace(match.group(), aliases)
         # Perform tag renaming for 1.5.  Note: this has to happen before
         # the sanity check, which assumes [unit] has already been
         # mapped to [unit_type].  Also, beware that this test will fail to

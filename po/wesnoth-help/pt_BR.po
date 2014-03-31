@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Battle for Wesnoth 0.8.2-CVS\n"
 "Report-Msgid-Bugs-To: http://bugs.wesnoth.org/\n"
-"POT-Creation-Date: 2014-02-05 19:37+0100\n"
+"POT-Creation-Date: 2014-03-02 10:23+0100\n"
 "PO-Revision-Date: 2012-04-18 23:26-0300\n"
 "Last-Translator: Davi Duarte Pinheiro <daviduartep@gmail.com>\n"
 "Language-Team: Portuguese - Brasil\n"
@@ -26,7 +26,7 @@ msgstr ""
 # File: data/campaigns/Heir_To_The_Throne/utils/httt_utils.cfg, line: 529
 # File: data/core/macros/schedules.cfg, line: 78
 #. [time]: id=underground
-#: data/campaigns/Heir_To_The_Throne/utils/httt_utils.cfg:533
+#: data/campaigns/Heir_To_The_Throne/utils/httt_utils.cfg:531
 #: data/core/macros/schedules.cfg:99
 msgid "Underground"
 msgstr "Subsolo"
@@ -1432,7 +1432,7 @@ msgstr "Efeitos das Armas"
 # File: src/help.cpp, line: 1309
 #. #-#-#-#-#  wesnoth-help.wml.pot (PACKAGE VERSION)  #-#-#-#-#
 #. [section]: id=factions_section
-#: data/core/help.cfg:56 src/help.cpp:1289 src/help.cpp:1291
+#: data/core/help.cfg:56 src/help.cpp:1291 src/help.cpp:1293
 msgid "Factions"
 msgstr "Facções"
 
@@ -1932,8 +1932,12 @@ msgstr ""
 # File: data/core/help.cfg, line: 191
 #. [topic]: id=orbs
 #: data/core/help.cfg:192
+#, fuzzy
+#| msgid ""
+#| " red if it can no longer move or attack, or the user ended the unit’s "
+#| "turn."
 msgid ""
-" red if it can no longer move or attack, or the user ended the unit’s turn."
+" black if it can no longer move or attack, or the user ended the unit’s turn."
 msgstr ""
 " vermelho se você não pode se mover e atacar, ou se o usuário terminou a vez "
 "de sua unidade"
@@ -1953,7 +1957,9 @@ msgstr "azul se a unidade é um aliado que você não controla."
 # File: data/core/help.cfg, line: 193
 #. [topic]: id=orbs
 #: data/core/help.cfg:194
-msgid " Enemy units have no orb on top of their energy bar."
+#, fuzzy
+#| msgid " Enemy units have no orb on top of their energy bar."
+msgid " Enemy units have a red orb on top of their energy bar."
 msgstr "Unidades inimigas não têm orbes no topo de suas barras de energia."
 
 #
@@ -3962,7 +3968,7 @@ msgstr "Comandos Gerais"
 #. [topic]: id=debug_commands
 #. [topic]: id=general_commands
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:573 data/core/help.cfg:613 data/core/help.cfg:645
+#: data/core/help.cfg:573 data/core/help.cfg:616 data/core/help.cfg:654
 msgid ""
 "These commands can either be issued via the command line by prefixing them "
 "with ':' (as shown here) or via the chat by prefixing them with '/' (press "
@@ -4025,12 +4031,20 @@ msgstr ""
 "é o time ativo atualmente.\n"
 "\n"
 
+#. [topic]: id=general_commands
+#: data/core/help.cfg:585
+msgid ""
+"\n"
+"Display the controller status of a side.\n"
+"\n"
+msgstr ""
+
 #
 # File: data/core/help.cfg, line: 874
 # File: data/core/help.cfg, line: 874
 # File: data/core/help.cfg, line: 874
 #. [topic]: id=general_commands
-#: data/core/help.cfg:585
+#: data/core/help.cfg:588
 msgid ""
 "\n"
 "Toggle the display of the current frames per second.\n"
@@ -4045,7 +4059,7 @@ msgstr ""
 # File: data/core/help.cfg, line: 877
 # File: data/core/help.cfg, line: 877
 #. [topic]: id=general_commands
-#: data/core/help.cfg:588
+#: data/core/help.cfg:591
 msgid ""
 "\n"
 "Switch a log domain to a different log level.\n"
@@ -4060,7 +4074,7 @@ msgstr ""
 # File: data/core/help.cfg, line: 880
 # File: data/core/help.cfg, line: 880
 #. [topic]: id=general_commands
-#: data/core/help.cfg:591
+#: data/core/help.cfg:594
 msgid ""
 "\n"
 "Redraws the screen and reloads any image files that have been changed.\n"
@@ -4076,7 +4090,7 @@ msgstr ""
 # File: data/core/help.cfg, line: 883
 # File: data/core/help.cfg, line: 883
 #. [topic]: id=general_commands
-#: data/core/help.cfg:594
+#: data/core/help.cfg:597
 msgid ""
 "\n"
 "Bring up theme selection menu.\n"
@@ -4091,7 +4105,7 @@ msgstr ""
 # File: data/core/help.cfg, line: 886
 # File: data/core/help.cfg, line: 886
 #. [topic]: id=general_commands
-#: data/core/help.cfg:597
+#: data/core/help.cfg:600
 msgid ""
 "\n"
 "Quit the scenario (without prompting).\n"
@@ -4106,7 +4120,7 @@ msgstr ""
 # File: data/core/help.cfg, line: 889
 # File: data/core/help.cfg, line: 889
 #. [topic]: id=general_commands
-#: data/core/help.cfg:600
+#: data/core/help.cfg:603
 msgid ""
 "\n"
 "Save the game (without prompting).\n"
@@ -4121,7 +4135,7 @@ msgstr ""
 # File: data/core/help.cfg, line: 892
 # File: data/core/help.cfg, line: 892
 #. [topic]: id=general_commands
-#: data/core/help.cfg:603
+#: data/core/help.cfg:606
 msgid ""
 "\n"
 "Save the game and quit the scenario (without prompting)."
@@ -4134,7 +4148,7 @@ msgstr ""
 # File: data/core/help.cfg, line: 901
 # File: data/core/help.cfg, line: 901
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:612
+#: data/core/help.cfg:615
 msgid "Multiplayer commands"
 msgstr "Comandos para Multijogador"
 
@@ -4143,7 +4157,7 @@ msgstr "Comandos para Multijogador"
 # File: data/core/help.cfg, line: 904
 # File: data/core/help.cfg, line: 904
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:615
+#: data/core/help.cfg:618
 msgid ""
 "\n"
 "Ban a user in a multiplayer game by the IP address used by that username and "
@@ -4160,7 +4174,7 @@ msgstr ""
 # File: data/core/help.cfg, line: 907
 # File: data/core/help.cfg, line: 907
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:618
+#: data/core/help.cfg:621
 #, fuzzy
 msgid ""
 "\n"
@@ -4181,12 +4195,30 @@ msgstr ""
 "controle de cada lado.\n"
 "\n"
 
+#. [topic]: id=mp_commands
+#: data/core/help.cfg:624
+msgid ""
+"\n"
+"Launch a dialog to assist the host in changing the human controllers of "
+"sides.\n"
+"\n"
+msgstr ""
+
+#. [topic]: id=mp_commands
+#: data/core/help.cfg:627
+msgid ""
+"\n"
+"Toggle the idle state for a side. The host may make a side idle after a "
+"network disconnection.\n"
+"\n"
+msgstr ""
+
 #
 # File: data/core/help.cfg, line: 910
 # File: data/core/help.cfg, line: 910
 # File: data/core/help.cfg, line: 910
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:621
+#: data/core/help.cfg:630
 msgid ""
 "\n"
 "Kick a user in multiplayer. They will be able to rejoin the game. If you "
@@ -4205,7 +4237,7 @@ msgstr ""
 # File: data/core/help.cfg, line: 913
 # File: data/core/help.cfg, line: 913
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:624
+#: data/core/help.cfg:633
 msgid ""
 "\n"
 "Send a private message to a user. When in a game, it is not possible to send "
@@ -4223,7 +4255,7 @@ msgstr ""
 # File: data/core/help.cfg, line: 916
 # File: data/core/help.cfg, line: 916
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:627
+#: data/core/help.cfg:636
 msgid ""
 "\n"
 "Mute a specific observer. If no username is supplied the muted usernames are "
@@ -4240,7 +4272,7 @@ msgstr ""
 # File: data/core/help.cfg, line: 919
 # File: data/core/help.cfg, line: 919
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:630
+#: data/core/help.cfg:639
 msgid ""
 "\n"
 "Toggle muting/silencing of all observers on/off.\n"
@@ -4255,7 +4287,7 @@ msgstr ""
 # File: data/core/help.cfg, line: 922
 # File: data/core/help.cfg, line: 922
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:633
+#: data/core/help.cfg:642
 msgid ""
 "\n"
 "Unban a user in a multiplayer game by the IP address used by that username. "
@@ -4272,7 +4304,7 @@ msgstr ""
 # File: data/core/help.cfg, line: 925
 # File: data/core/help.cfg, line: 925
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:636
+#: data/core/help.cfg:645
 msgid ""
 "\n"
 "Unmute a specific observer. If no username is supplied the list of muted "
@@ -4287,7 +4319,7 @@ msgstr ""
 # File: data/core/help.cfg, line: 933
 # File: data/core/help.cfg, line: 933
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:644
+#: data/core/help.cfg:653
 msgid "Debug mode commands"
 msgstr "Comandos do modo de Debug"
 
@@ -4296,7 +4328,7 @@ msgstr "Comandos do modo de Debug"
 # File: data/core/help.cfg, line: 936
 # File: data/core/help.cfg, line: 936
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:647
+#: data/core/help.cfg:656
 msgid ""
 "\n"
 "Brings up a menu for choosing a scenario to immediately advance to in a "
@@ -4313,7 +4345,7 @@ msgstr ""
 # File: data/core/help.cfg, line: 939
 # File: data/core/help.cfg, line: 939
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:650
+#: data/core/help.cfg:659
 msgid ""
 "\n"
 "Create a unit of the specified type on the selected hex.\n"
@@ -4328,7 +4360,7 @@ msgstr ""
 # File: data/core/help.cfg, line: 942
 # File: data/core/help.cfg, line: 942
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:653
+#: data/core/help.cfg:662
 msgid ""
 "\n"
 "Toggle fog/shroud for the current side.\n"
@@ -4343,7 +4375,7 @@ msgstr ""
 # File: data/core/help.cfg, line: 945
 # File: data/core/help.cfg, line: 945
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:656
+#: data/core/help.cfg:665
 msgid ""
 "\n"
 "Adds the specified amount to the current side’s gold.\n"
@@ -4358,7 +4390,7 @@ msgstr ""
 # File: data/core/help.cfg, line: 948
 # File: data/core/help.cfg, line: 948
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:659
+#: data/core/help.cfg:668
 msgid ""
 "\n"
 "Immediately advances to the next scenario in a campaign.\n"
@@ -4373,7 +4405,7 @@ msgstr ""
 # File: data/core/help.cfg, line: 951
 # File: data/core/help.cfg, line: 951
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:662
+#: data/core/help.cfg:671
 msgid ""
 "\n"
 "Manually set a gamestate variable to value.\n"
@@ -4388,7 +4420,7 @@ msgstr ""
 # File: data/core/help.cfg, line: 954
 # File: data/core/help.cfg, line: 954
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:665
+#: data/core/help.cfg:674
 msgid ""
 "\n"
 "Show a gamestate variable.\n"
@@ -4403,7 +4435,7 @@ msgstr ""
 # File: data/core/help.cfg, line: 957
 # File: data/core/help.cfg, line: 957
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:668
+#: data/core/help.cfg:677
 msgid ""
 "\n"
 "Manually fire the specified event.\n"
@@ -4418,7 +4450,7 @@ msgstr ""
 # File: data/core/help.cfg, line: 960
 # File: data/core/help.cfg, line: 960
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:671
+#: data/core/help.cfg:680
 msgid ""
 "\n"
 "Modifies the specified property of the selected unit. Example: :unit "
@@ -4435,7 +4467,7 @@ msgstr ""
 # File: data/core/help.cfg, line: 963
 # File: data/core/help.cfg, line: 963
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:674
+#: data/core/help.cfg:683
 msgid ""
 "\n"
 "Makes the selected unit level up N times. Example: :unit advances=2"
@@ -7570,7 +7602,7 @@ msgstr "Ajuda"
 # File: src/help.cpp, line: 1142
 # File: src/help.cpp, line: 1142
 # File: src/help.cpp, line: 1142
-#: src/help.cpp:1152
+#: src/help.cpp:1154
 msgid "<header>text='Units having this special attack'</header>"
 msgstr "<header>text='Unidades que possuem este ataque especial'</header>"
 
@@ -7578,7 +7610,7 @@ msgstr "<header>text='Unidades que possuem este ataque especial'</header>"
 # File: src/help.cpp, line: 1236
 # File: src/help.cpp, line: 1236
 # File: src/help.cpp, line: 1236
-#: src/help.cpp:1218
+#: src/help.cpp:1220
 msgid "<header>text='Units having this ability'</header>"
 msgstr "<header>text='Unidades que possuem esta habilidade'</header>"
 
@@ -7586,7 +7618,7 @@ msgstr "<header>text='Unidades que possuem esta habilidade'</header>"
 # File: src/help.cpp, line: 1269
 # File: src/help.cpp, line: 1269
 # File: src/help.cpp, line: 1269
-#: src/help.cpp:1251
+#: src/help.cpp:1253
 msgid "Leaders:"
 msgstr "Lideres: "
 
@@ -7594,7 +7626,7 @@ msgstr "Lideres: "
 # File: src/help.cpp, line: 1278
 # File: src/help.cpp, line: 1278
 # File: src/help.cpp, line: 1278
-#: src/help.cpp:1260
+#: src/help.cpp:1262
 msgid "Recruits:"
 msgstr "Recrutas: "
 
@@ -7602,7 +7634,7 @@ msgstr "Recrutas: "
 # File: src/help.cpp, line: 1292
 # File: src/help.cpp, line: 1292
 # File: src/help.cpp, line: 1292
-#: src/help.cpp:1274
+#: src/help.cpp:1276
 msgid "Era:"
 msgstr "Era:"
 
@@ -7610,7 +7642,7 @@ msgstr "Era:"
 # File: src/help.cpp, line: 1300
 # File: src/help.cpp, line: 1300
 # File: src/help.cpp, line: 1300
-#: src/help.cpp:1282
+#: src/help.cpp:1284
 msgid "Factions:"
 msgstr "Facções:"
 
@@ -7618,7 +7650,7 @@ msgstr "Facções:"
 # File: src/help.cpp, line: 1310
 # File: src/help.cpp, line: 1310
 # File: src/help.cpp, line: 1310
-#: src/help.cpp:1292
+#: src/help.cpp:1294
 msgid "Factions are only used in multiplayer"
 msgstr "Facções são somente usadas em multiplayer"
 
@@ -7626,7 +7658,7 @@ msgstr "Facções são somente usadas em multiplayer"
 # File: src/help.cpp, line: 1606
 # File: src/help.cpp, line: 1606
 # File: src/help.cpp, line: 1606
-#: src/help.cpp:1325
+#: src/help.cpp:1327
 #, fuzzy
 #| msgid "Terrain"
 msgid "Base Terrain: "
@@ -7636,7 +7668,7 @@ msgstr "Terreno"
 # File: src/help.cpp, line: 1354
 # File: src/help.cpp, line: 1354
 # File: src/help.cpp, line: 1354
-#: src/help.cpp:1403
+#: src/help.cpp:1405
 msgid "level"
 msgstr "nível"
 
@@ -7644,7 +7676,7 @@ msgstr "nível"
 # File: src/help.cpp, line: 1387
 # File: src/help.cpp, line: 1387
 # File: src/help.cpp, line: 1387
-#: src/help.cpp:1436
+#: src/help.cpp:1438
 msgid "Advances from: "
 msgstr "Avança de: "
 
@@ -7652,7 +7684,7 @@ msgstr "Avança de: "
 # File: src/help.cpp, line: 1389
 # File: src/help.cpp, line: 1389
 # File: src/help.cpp, line: 1389
-#: src/help.cpp:1438
+#: src/help.cpp:1440
 msgid "Advances to: "
 msgstr "Avança para: "
 
@@ -7660,11 +7692,11 @@ msgstr "Avança para: "
 # File: src/help.cpp, line: 1412
 # File: src/help.cpp, line: 1412
 # File: src/help.cpp, line: 1412
-#: src/help.cpp:1463
+#: src/help.cpp:1465
 msgid "Base unit: "
 msgstr ""
 
-#: src/help.cpp:1468
+#: src/help.cpp:1470
 msgid "Base units: "
 msgstr ""
 
@@ -7672,7 +7704,7 @@ msgstr ""
 # File: src/help.cpp, line: 1422
 # File: src/help.cpp, line: 1422
 # File: src/help.cpp, line: 1422
-#: src/help.cpp:1486
+#: src/help.cpp:1488
 #, fuzzy
 msgid "Variations: "
 msgstr "Facções:"
@@ -7687,7 +7719,7 @@ msgstr "Facções:"
 # File: src/help.cpp, line: 1446
 # File: src/help.cpp, line: 1818
 # File: src/help.cpp, line: 1891
-#: src/help.cpp:1510 src/help.cpp:1887 src/help.cpp:2031
+#: src/help.cpp:1512 src/help.cpp:1889 src/help.cpp:2033
 msgid "race^Miscellaneous"
 msgstr "Miscelânea"
 
@@ -7695,7 +7727,7 @@ msgstr "Miscelânea"
 # File: src/help.cpp, line: 1448
 # File: src/help.cpp, line: 1448
 # File: src/help.cpp, line: 1448
-#: src/help.cpp:1512
+#: src/help.cpp:1514
 msgid "Race: "
 msgstr "Raça: "
 
@@ -7703,7 +7735,7 @@ msgstr "Raça: "
 # File: src/help.cpp, line: 1455
 # File: src/help.cpp, line: 1455
 # File: src/help.cpp, line: 1455
-#: src/help.cpp:1519
+#: src/help.cpp:1521
 msgid "Abilities: "
 msgstr "Habilidades: "
 
@@ -7711,7 +7743,7 @@ msgstr "Habilidades: "
 # File: src/help.cpp, line: 1472
 # File: src/help.cpp, line: 1472
 # File: src/help.cpp, line: 1472
-#: src/help.cpp:1535
+#: src/help.cpp:1537
 msgid "Ability Upgrades: "
 msgstr "Habilidades Melhoradas: "
 
@@ -7719,7 +7751,7 @@ msgstr "Habilidades Melhoradas: "
 # File: src/help.cpp, line: 1488
 # File: src/help.cpp, line: 1488
 # File: src/help.cpp, line: 1488
-#: src/help.cpp:1550
+#: src/help.cpp:1552
 msgid "HP: "
 msgstr "HP: "
 
@@ -7727,7 +7759,7 @@ msgstr "HP: "
 # File: src/help.cpp, line: 1489
 # File: src/help.cpp, line: 1489
 # File: src/help.cpp, line: 1489
-#: src/help.cpp:1551
+#: src/help.cpp:1553
 msgid "Moves: "
 msgstr "Movimento: "
 
@@ -7735,7 +7767,7 @@ msgstr "Movimento: "
 # File: src/help.cpp, line: 1491
 # File: src/help.cpp, line: 1491
 # File: src/help.cpp, line: 1491
-#: src/help.cpp:1553
+#: src/help.cpp:1555
 msgid "Vision: "
 msgstr ""
 
@@ -7743,7 +7775,7 @@ msgstr ""
 # File: src/help.cpp, line: 1493
 # File: src/help.cpp, line: 1493
 # File: src/help.cpp, line: 1493
-#: src/help.cpp:1555
+#: src/help.cpp:1557
 msgid "Jamming: "
 msgstr ""
 
@@ -7751,7 +7783,7 @@ msgstr ""
 # File: src/help.cpp, line: 1494
 # File: src/help.cpp, line: 1494
 # File: src/help.cpp, line: 1494
-#: src/help.cpp:1556
+#: src/help.cpp:1558
 msgid "Cost: "
 msgstr "Custo: "
 
@@ -7759,7 +7791,7 @@ msgstr "Custo: "
 # File: src/help.cpp, line: 1495
 # File: src/help.cpp, line: 1495
 # File: src/help.cpp, line: 1495
-#: src/help.cpp:1557
+#: src/help.cpp:1559
 msgid "Alignment: "
 msgstr "Alinhamento: "
 
@@ -7767,7 +7799,7 @@ msgstr "Alinhamento: "
 # File: src/help.cpp, line: 1501
 # File: src/help.cpp, line: 1501
 # File: src/help.cpp, line: 1501
-#: src/help.cpp:1561
+#: src/help.cpp:1563
 msgid "Required XP: "
 msgstr "XP necessário: "
 
@@ -7775,7 +7807,7 @@ msgstr "XP necessário: "
 # File: src/help.cpp, line: 1510
 # File: src/help.cpp, line: 1510
 # File: src/help.cpp, line: 1510
-#: src/help.cpp:1570
+#: src/help.cpp:1572
 msgid "unit help^Attacks"
 msgstr "Ataques"
 
@@ -7783,7 +7815,7 @@ msgstr "Ataques"
 # File: src/help.cpp, line: 1517
 # File: src/help.cpp, line: 1517
 # File: src/help.cpp, line: 1517
-#: src/help.cpp:1577
+#: src/help.cpp:1579
 msgid "unit help^Name"
 msgstr "Nome"
 
@@ -7791,7 +7823,7 @@ msgstr "Nome"
 # File: src/help.cpp, line: 1518
 # File: src/help.cpp, line: 1518
 # File: src/help.cpp, line: 1518
-#: src/help.cpp:1578
+#: src/help.cpp:1580
 msgid "Type"
 msgstr "Tipo"
 
@@ -7799,7 +7831,7 @@ msgstr "Tipo"
 # File: src/help.cpp, line: 1519
 # File: src/help.cpp, line: 1519
 # File: src/help.cpp, line: 1519
-#: src/help.cpp:1579
+#: src/help.cpp:1581
 msgid "Strikes"
 msgstr "Golpes"
 
@@ -7807,7 +7839,7 @@ msgstr "Golpes"
 # File: src/help.cpp, line: 1520
 # File: src/help.cpp, line: 1520
 # File: src/help.cpp, line: 1520
-#: src/help.cpp:1580
+#: src/help.cpp:1582
 msgid "Range"
 msgstr "Distância"
 
@@ -7815,7 +7847,7 @@ msgstr "Distância"
 # File: src/help.cpp, line: 1521
 # File: src/help.cpp, line: 1521
 # File: src/help.cpp, line: 1521
-#: src/help.cpp:1581
+#: src/help.cpp:1583
 msgid "Special"
 msgstr "Especial"
 
@@ -7823,7 +7855,7 @@ msgstr "Especial"
 # File: src/help.cpp, line: 1567
 # File: src/help.cpp, line: 1567
 # File: src/help.cpp, line: 1567
-#: src/help.cpp:1630
+#: src/help.cpp:1632
 msgid "Resistances"
 msgstr "Resistências"
 
@@ -7831,7 +7863,7 @@ msgstr "Resistências"
 # File: src/help.cpp, line: 1571
 # File: src/help.cpp, line: 1571
 # File: src/help.cpp, line: 1571
-#: src/help.cpp:1634
+#: src/help.cpp:1636
 msgid "Attack Type"
 msgstr "Tipo de ataque"
 
@@ -7839,7 +7871,7 @@ msgstr "Tipo de ataque"
 # File: src/help.cpp, line: 1572
 # File: src/help.cpp, line: 1572
 # File: src/help.cpp, line: 1572
-#: src/help.cpp:1635
+#: src/help.cpp:1637
 msgid "Resistance"
 msgstr "Resistência"
 
@@ -7847,7 +7879,7 @@ msgstr "Resistência"
 # File: src/help.cpp, line: 1602
 # File: src/help.cpp, line: 1602
 # File: src/help.cpp, line: 1602
-#: src/help.cpp:1665
+#: src/help.cpp:1667
 msgid "Terrain Modifiers"
 msgstr "Modificadores de Terreno"
 
@@ -7855,7 +7887,7 @@ msgstr "Modificadores de Terreno"
 # File: src/help.cpp, line: 1606
 # File: src/help.cpp, line: 1606
 # File: src/help.cpp, line: 1606
-#: src/help.cpp:1669
+#: src/help.cpp:1671
 msgid "Terrain"
 msgstr "Terreno"
 
@@ -7863,7 +7895,7 @@ msgstr "Terreno"
 # File: src/help.cpp, line: 1607
 # File: src/help.cpp, line: 1607
 # File: src/help.cpp, line: 1607
-#: src/help.cpp:1670
+#: src/help.cpp:1672
 msgid "Defense"
 msgstr "Defesa"
 
@@ -7871,7 +7903,7 @@ msgstr "Defesa"
 # File: src/help.cpp, line: 1608
 # File: src/help.cpp, line: 1608
 # File: src/help.cpp, line: 1608
-#: src/help.cpp:1671
+#: src/help.cpp:1673
 msgid "Movement Cost"
 msgstr "Custo de Movimento"
 
@@ -7879,7 +7911,7 @@ msgstr "Custo de Movimento"
 # File: src/help.cpp, line: 1612
 # File: src/help.cpp, line: 1612
 # File: src/help.cpp, line: 1612
-#: src/help.cpp:1675
+#: src/help.cpp:1677
 msgid "Vision Cost"
 msgstr ""
 
@@ -7887,7 +7919,7 @@ msgstr ""
 # File: src/help.cpp, line: 1615
 # File: src/help.cpp, line: 1615
 # File: src/help.cpp, line: 1615
-#: src/help.cpp:1678
+#: src/help.cpp:1680
 msgid "Jamming Cost"
 msgstr ""
 
@@ -7895,7 +7927,7 @@ msgstr ""
 # File: src/help.cpp, line: 1897
 # File: src/help.cpp, line: 1897
 # File: src/help.cpp, line: 1897
-#: src/help.cpp:2037
+#: src/help.cpp:2039
 msgid "<header>text='Units of this race'</header>"
 msgstr "<header>text='Unidades desta raça'</header>"
 
@@ -7903,7 +7935,7 @@ msgstr "<header>text='Unidades desta raça'</header>"
 # File: src/help.cpp, line: 2809
 # File: src/help.cpp, line: 2809
 # File: src/help.cpp, line: 2809
-#: src/help.cpp:2948
+#: src/help.cpp:2951
 msgid " < Back"
 msgstr "< Voltar"
 
@@ -7911,7 +7943,7 @@ msgstr "< Voltar"
 # File: src/help.cpp, line: 2810
 # File: src/help.cpp, line: 2810
 # File: src/help.cpp, line: 2810
-#: src/help.cpp:2949
+#: src/help.cpp:2952
 msgid "Forward >"
 msgstr "Prosseguir >"
 
@@ -7919,7 +7951,7 @@ msgstr "Prosseguir >"
 # File: src/help.cpp, line: 2918
 # File: src/help.cpp, line: 2918
 # File: src/help.cpp, line: 2918
-#: src/help.cpp:3057
+#: src/help.cpp:3060
 msgid "Reference to unknown topic: "
 msgstr "Referência a um tópico desconhecido: "
 
@@ -7927,7 +7959,7 @@ msgstr "Referência a um tópico desconhecido: "
 # File: src/help.cpp, line: 3174
 # File: src/help.cpp, line: 3174
 # File: src/help.cpp, line: 3174
-#: src/help.cpp:3313
+#: src/help.cpp:3316
 msgid "corrupted original file"
 msgstr "arquivo original corrompido"
 
@@ -7935,7 +7967,7 @@ msgstr "arquivo original corrompido"
 # File: src/help.cpp, line: 3273
 # File: src/help.cpp, line: 3273
 # File: src/help.cpp, line: 3273
-#: src/help.cpp:3424
+#: src/help.cpp:3427
 msgid "Close"
 msgstr "Fechar"
 
@@ -7943,7 +7975,7 @@ msgstr "Fechar"
 # File: src/help.cpp, line: 3276
 # File: src/help.cpp, line: 3276
 # File: src/help.cpp, line: 3276
-#: src/help.cpp:3427
+#: src/help.cpp:3430
 msgid "The Battle for Wesnoth Help"
 msgstr "Ajuda para Battle for Wesnoth"
 
@@ -7951,7 +7983,7 @@ msgstr "Ajuda para Battle for Wesnoth"
 # File: src/help.cpp, line: 3332
 # File: src/help.cpp, line: 3332
 # File: src/help.cpp, line: 3332
-#: src/help.cpp:3483
+#: src/help.cpp:3486
 msgid "Parse error when parsing help text: "
 msgstr "Erro de formato ao ler o texto de ajuda: "
 

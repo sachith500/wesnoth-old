@@ -999,11 +999,10 @@ void parse_config_internal(const config *help_cfg, const config *section_cfg,
 			  ,std::back_inserter(sec.topics),title_less());
 		}
 		else {
-			std::copy(topics.begin(), topics.end(),
-			  std::back_inserter(sec.topics));
-			std::copy(generated_topics.begin(),
-			  generated_topics.end(),
-			  std::back_inserter(sec.topics));
+			sec.topics.insert(sec.topics.end(),
+				topics.begin(), topics.end());
+			sec.topics.insert(sec.topics.end(),
+				generated_topics.begin(), generated_topics.end());
 		}
 	}
 }
@@ -1133,7 +1132,9 @@ std::vector<topic> generate_weapon_special_topics(const bool sort_generated)
 				if (!type.hide_help()) {
 					//add a link in the list of units having this special
 					std::string type_name = type.type_name();
-					std::string ref_id = unit_prefix + type.id();
+					//check for variations (walking corpse/soulless etc)
+					const std::string section_prefix = type.variations().empty() ? "" : "..";
+					std::string ref_id = section_prefix + unit_prefix + type.id();
 					//we put the translated name at the beginning of the hyperlink,
 					//so the automatic alphabetic sorting of std::set can use it
 					std::string link = make_link(type_name, ref_id);
@@ -2049,7 +2050,8 @@ std::vector<topic> generate_unit_topics(const bool sort_generated, const std::st
 
 UNIT_DESCRIPTION_TYPE description_type(const unit_type &type)
 {
-	if (game_config::debug || preferences::show_all_units_in_help()) {
+	if (game_config::debug || preferences::show_all_units_in_help()	||
+			hotkey::is_scope_active(hotkey::SCOPE_EDITOR) ) {
 		return FULL_DESCRIPTION;
 	}
 
@@ -2162,7 +2164,7 @@ section& section::operator=(const section &sec)
 	title = sec.title;
 	id = sec.id;
 	level = sec.level;
-	std::copy(sec.topics.begin(), sec.topics.end(), std::back_inserter(topics));
+	topics.insert(topics.end(), sec.topics.begin(), sec.topics.end());
 	std::transform(sec.sections.begin(), sec.sections.end(),
 				   std::back_inserter(sections), create_section());
 	return *this;
@@ -3308,7 +3310,7 @@ std::vector<std::string> split_in_width(const std::string &s, const int font_siz
 		res.push_back(s.substr(first_line.size()));
 	}
 	}
-	catch (utils::invalid_utf8_exception&)
+	catch (utf8::invalid_utf8_exception&)
 	{
 		throw parse_error (_("corrupted original file"));
 	}
@@ -3339,13 +3341,13 @@ std::string get_first_word(const std::string &s)
 	//if no gap(' ' or '\n') found, test if it is CJK character
 	std::string re = s.substr(0, first_word_end);
 
-	utils::utf8_iterator ch(re);
-	if (ch == utils::utf8_iterator::end(re))
+	utf8::iterator ch(re);
+	if (ch == utf8::iterator::end(re))
 		return re;
 
-	wchar_t firstchar = *ch;
+	ucs4::char_t firstchar = *ch;
 	if (font::is_cjk_char(firstchar)) {
-		re = utils::wchar_to_string(firstchar);
+		re = utils::ucs4char_to_string(firstchar);
 	}
 	return re;
 }

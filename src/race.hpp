@@ -16,14 +16,14 @@
 #define RACE_HPP_INCLUDED
 
 #include "config.hpp"
-#include "serialization/string_utils.hpp"
+#include "serialization/unicode.hpp"
 
 namespace rand_rng {
 	class simple_rng;
 } // namespace rand_rng
 
 
-typedef std::map<wide_string, std::vector<wchar_t> > markov_prefix_map;
+typedef std::map<ucs4::string, ucs4::string > markov_prefix_map;
 
 class unit_race
 {

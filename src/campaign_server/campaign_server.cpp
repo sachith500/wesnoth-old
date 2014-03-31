@@ -25,6 +25,7 @@
 #include "serialization/binary_or_text.hpp"
 #include "serialization/parser.hpp"
 #include "serialization/string_utils.hpp"
+#include "serialization/unicode.hpp"
 #include "game_config.hpp"
 #include "addon/validation.hpp"
 #include "version.hpp"
@@ -489,14 +490,11 @@ namespace {
 						std::transform(name.begin(), name.end(), lc_name.begin(), tolower);
 						config *campaign = NULL;
 						BOOST_FOREACH(config &c, campaigns().child_range("campaign")) {
-							if (utils::lowercase(c["name"]) == lc_name) {
+							if (utf8::lowercase(c["name"]) == lc_name) {
 								campaign = &c;
 								break;
 							}
 						}
-
-						// TODO: remove for next add-ons server instance.
-						bool illegal_name_upload = false;
 
 						if (read_only_) {
 							LOG_CS << "Upload aborted - uploads not permitted in read-only mode.\n";
@@ -504,9 +502,7 @@ namespace {
 						} else if (!data) {
 							LOG_CS << "Upload aborted - no add-on data.\n";
 							network::send_data(construct_error("Add-on rejected: No add-on data was supplied."), sock);
-						} else if ((illegal_name_upload = !addon_name_legal(upload["name"])) && campaign == NULL) {
-							// Only deny upload if we don't have an add-on with that id/name
-							// already. TODO: remove for next add-ons server instance.
+						} else if (!addon_name_legal(upload["name"])) {
 							LOG_CS << "Upload aborted - invalid add-on name.\n";
 							network::send_data(construct_error("Add-on rejected: The name of the add-on is invalid."), sock);
 						} else if (is_text_markup_char(upload["name"].str()[0])) {
@@ -536,19 +532,12 @@ namespace {
 						} else if (!check_names_legal(data)) {
 							LOG_CS << "Upload aborted - invalid file names in add-on data.\n";
 							network::send_data(construct_error("Add-on rejected: The add-on contains an illegal file or directory name."
-									" File or directory names may not contain any of the following characters: '/ \\ : ~'"), sock);
+									" File or directory names may not contain whitespace or any of the following characters: '/ \\ : ~'"), sock);
 						} else if (campaign && (*campaign)["passphrase"].str() != upload["passphrase"]) {
 							LOG_CS << "Upload aborted - incorrect passphrase.\n";
 							network::send_data(construct_error("Add-on rejected: The add-on already exists, and your passphrase was incorrect."), sock);
 						} else {
 							const time_t upload_ts = time(NULL);
-
-							// Warn admins in the log about reuploading add-ons whose names don't
-							// pass the addon_name_legal() whitelist check above.
-
-							if(illegal_name_upload) {
-								LOG_CS << "Ignoring invalid add-on name '" << upload["name"] << "' because it already exists on the server.\n";
-							}
 
 							LOG_CS << "Upload is owner upload.\n";
 							std::string message = "Add-on accepted.";

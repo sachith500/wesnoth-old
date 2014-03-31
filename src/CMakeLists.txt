@@ -70,12 +70,14 @@ if(MSVC)
 	set(common-external-libs
 		${SDL_LIBRARY}
 		${SDLMAIN_LIBRARY}
+		wesnoth-sdl
 		${LIBINTL_LIBRARY}
 		ws2_32.lib
 	)
 else(MSVC)
 	set(common-external-libs
 		${SDL_LIBRARY}
+		wesnoth-sdl
 		${Boost_IOSTREAMS_LIBRARY}
 		${Boost_REGEX_LIBRARY}
 		${Boost_PROGRAM_OPTIONS_LIBRARY}
@@ -214,6 +216,7 @@ set(libwesnoth-core_STAT_SRC
 	serialization/preprocessor.cpp
 	serialization/string_utils.cpp
 	serialization/tokenizer.cpp
+	serialization/unicode.cpp
 	serialization/validator.cpp
 )
 
@@ -316,27 +319,60 @@ add_library(wesnoth-lua ${LIBRARY_TYPE} EXCLUDE_FROM_ALL ${libwesnoth-lua_STAT_S
 
 # Disable the setting of -Wold-style-cast on some targets.
 # old style casts are not wanted by our coding style but some C based code
-# uses it. Force the flag off for these files. (We don't enable it in our
-# generic compiler flags, but allows people to do it.)
-if(CMAKE_COMPILER_IS_GNUCXX)
-	set_target_properties(wesnoth-lua
-		PROPERTIES COMPILE_FLAGS
-		"-Wno-old-style-cast -Wno-useless-cast"
+# uses it. Force the flag off for these files.
+if(HAS_COMPILER_FLAG_WOLD_STYLE_CAST)
+	set(CXX_FLAG_NO_OLD_STYLE_CAST "-Wno-old-style-cast")
+endif()
+
+if(HAS_COMPILER_FLAG_WUSELESS_CAST)
+	set(CXX_FLAG_NO_USELESS_CAST "-Wno-useless-cast")
+endif()
+
+set_target_properties(wesnoth-lua
+	PROPERTIES
+		COMPILE_FLAGS
+			"${CXX_FLAG_NO_OLD_STYLE_CAST} ${CXX_FLAG_NO_USELESS_CAST}"
+)
+set_source_files_properties(
+	clipboard.cpp
+	network.cpp
+	network_worker.cpp
+	PROPERTIES
+		COMPILE_FLAGS "${CXX_FLAG_NO_OLD_STYLE_CAST}"
+)
+set_source_files_properties(
+	desktop_util.cpp
+	text.cpp
+	PROPERTIES
+		COMPILE_FLAGS
+			"${CXX_FLAG_NO_OLD_STYLE_CAST} ${CXX_FLAG_NO_USELESS_CAST}"
+)
+if(LIBDBUS_FOUND)
+	set_source_files_properties(
+		game_display.cpp
+		PROPERTIES
+			COMPILE_FLAGS "${CXX_FLAG_NO_OLD_STYLE_CAST}"
 	)
-	set_source_files_properties(
-		clipboard.cpp
-		network.cpp
-		network_worker.cpp
-		PROPERTIES
-			COMPILE_FLAGS "-Wno-old-style-cast")
-	set_source_files_properties(
-		desktop_util.cpp
-		text.cpp
-		PROPERTIES
-			COMPILE_FLAGS "-Wno-old-style-cast -Wno-useless-cast")
-endif(CMAKE_COMPILER_IS_GNUCXX)
+endif()
 
 ########### Helper libraries ###############
+
+set(wesnoth-sdl_SRC
+	sdl/alpha.cpp
+	sdl/exception.cpp
+	sdl/texture.cpp
+	sdl/window.cpp
+)
+
+add_library(wesnoth-sdl
+	${LIBRARY_TYPE}
+	EXCLUDE_FROM_ALL
+	${wesnoth-sdl_SRC}
+)
+
+target_link_libraries(wesnoth-sdl
+	${SDL_LIBRARY}
+)
 
 # The main library is rather huge especially in debug mode, causing quite a bit
 # of overhead packing objects that haven't been changed for quite a while.
@@ -709,7 +745,6 @@ set(wesnoth-main_SRC
 	game_events/menu_item.cpp
 	game_events/pump.cpp
 	game_events/wmi_container.cpp
-	game_instance.cpp
 	game_preferences.cpp
 	game_preferences_display.cpp
 	gamestatus.cpp
@@ -764,11 +799,14 @@ set(wesnoth-main_SRC
 	gui/dialogs/network_transmission.cpp
 	gui/dialogs/popup.cpp
 	gui/dialogs/edit_text.cpp
+	gui/dialogs/screenshot_notification.cpp
 	gui/dialogs/simple_item_selector.cpp
+	gui/dialogs/theme_list.cpp
 	gui/dialogs/title_screen.cpp
 	gui/dialogs/transient_message.cpp
 	gui/dialogs/unit_attack.cpp
 	gui/dialogs/unit_create.cpp
+	gui/dialogs/wml_error.cpp
 	gui/dialogs/wml_message.cpp
 	halo.cpp
 	help.cpp

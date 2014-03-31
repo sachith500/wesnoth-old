@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.wesnoth.org/\n"
-"POT-Creation-Date: 2014-02-08 13:24+0100\n"
+"POT-Creation-Date: 2014-03-02 10:23+0100\n"
 "PO-Revision-Date: 2013-08-22 14:43+0800\n"
 "Last-Translator: Pham Thanh Nam <phamthanhnam.ptn@gmail.com>\n"
 "Language-Team: Vietnamese <>\n"
@@ -164,70 +164,75 @@ msgstr "Thời gian biểu 24 giờ"
 msgid "After the Fall"
 msgstr "Sau mùa thu"
 
+#. [theme]: id=editor
+#: data/themes/editor.cfg:11
+msgid "theme^Editor"
+msgstr ""
+
 #. [menu]: id=menu-editor-file, type=turbo
 #: data/themes/editor.cfg:63
 msgid "File"
 msgstr "Tập tin"
 
 #. [menu]: id=menu-editor-map
-#: data/themes/editor.cfg:89
+#: data/themes/editor.cfg:84
 msgid "Map"
 msgstr "Bản đồ"
 
 #. [menu]: id=menu-editor-transitions
-#: data/themes/editor.cfg:97
+#: data/themes/editor.cfg:92
 msgid "Transition Update"
 msgstr "Cập nhật chuyển tiếp"
 
 #. [menu]: id=menu-editor-window
-#: data/themes/editor.cfg:104
+#: data/themes/editor.cfg:99
 msgid "Window"
 msgstr "Cửa sổ"
 
 #. [menu]: id=menu-editor-areas
-#: data/themes/editor.cfg:113
+#: data/themes/editor.cfg:108
 msgid "Areas"
 msgstr "Khu vực"
 
 #. [menu]: id=menu-editor-local-time
-#: data/themes/editor.cfg:121
+#: data/themes/editor.cfg:116
 msgid "Assign Local Time"
 msgstr ""
 
 #. [menu]: id=menu-editor-local-schedule
-#: data/themes/editor.cfg:127
+#: data/themes/editor.cfg:122
 #, fuzzy
 #| msgid "Assign Time Schedule"
 msgid "Assign Local Time Schedule"
 msgstr "Gán thời gian biểu"
 
 #. [menu]: id=menu-editor-side
-#: data/themes/editor.cfg:135
+#: data/themes/editor.cfg:130
 msgid "Side"
 msgstr "Phe"
 
 #. [label]: id=villages-icon
-#: data/themes/editor.cfg:154
+#: data/themes/editor.cfg:148
 msgid "villages"
 msgstr "làng"
 
 #. [label]: id=units-icon
-#: data/themes/editor.cfg:171
+#: data/themes/editor.cfg:165
 msgid "units"
 msgstr "đơn vị"
 
 #. [menu]: id=switch_time
-#: data/themes/editor.cfg:509
+#: data/themes/editor.cfg:444
 msgid "Time Schedule Menu"
 msgstr "Trình đơn thời gian biểu"
 
 #. [menu]: id=menu-playlist
-#: data/themes/editor.cfg:520
+#: data/themes/editor.cfg:455
 msgid "Playlist"
 msgstr "Danh sách phát"
 
 #. [menu]: id=menu-editor-schedule
-#: data/themes/editor.cfg:526
+#: data/themes/editor.cfg:461
 msgid "Assign Time Schedule"
 msgstr "Gán thời gian biểu"
 
@@ -255,15 +260,15 @@ msgstr "Chi phí: "
 msgid "Recruit: "
 msgstr ""
 
-#: src/editor/editor_controller.cpp:173
+#: src/editor/editor_controller.cpp:177
 msgid "Fatal error"
 msgstr "Lỗi nghiêm trọng"
 
-#: src/editor/editor_controller.cpp:201
+#: src/editor/editor_controller.cpp:205
 msgid "Do you really want to quit?"
 msgstr "Bạn có thực sự muốn thoát không?"
 
-#: src/editor/editor_controller.cpp:203
+#: src/editor/editor_controller.cpp:207
 msgid ""
 "Do you really want to quit? Changes in the map since the last save will be "
 "lost."
@@ -271,7 +276,7 @@ msgstr ""
 "Bạn có thực sự muốn thoát không? Các thay đổi trong bản đồ kể từ lần lưu "
 "cuối cùng sẽ bị mất."
 
-#: src/editor/editor_controller.cpp:205
+#: src/editor/editor_controller.cpp:209
 msgid ""
 "Do you really want to quit? The following maps were modified and all changes "
 "since the last save will be lost:"
@@ -279,27 +284,27 @@ msgstr ""
 "Bạn có thực sự muốn thoát không? Các bản đồ sau đã bị sửa đổi và mọi thay "
 "đổi kể từ lần lưu cuối cùng sẽ bị mất:"
 
-#: src/editor/editor_controller.cpp:208
+#: src/editor/editor_controller.cpp:212
 msgid "Quit"
 msgstr "Thoát"
 
-#: src/editor/editor_controller.cpp:219
+#: src/editor/editor_controller.cpp:223
 msgid "No editor time-of-day found."
 msgstr "Không tìm thấy thời điểm trong ngày của trình hiệu chỉnh."
 
-#: src/editor/editor_controller.cpp:1066
+#: src/editor/editor_controller.cpp:1070
 msgid "Change Unit ID"
 msgstr "Thay đổi định danh đơn vị"
 
-#: src/editor/editor_controller.cpp:1067
+#: src/editor/editor_controller.cpp:1071
 msgid "ID:"
 msgstr "Định danh:"
 
-#: src/editor/editor_controller.cpp:1083
+#: src/editor/editor_controller.cpp:1087
 msgid "Rename Unit"
 msgstr "Đổi tên đơn vị"
 
-#: src/editor/editor_controller.cpp:1084
+#: src/editor/editor_controller.cpp:1088
 msgid "Name:"
 msgstr "Tên:"
 
@@ -330,40 +335,38 @@ msgstr "(Khu vực mới)"
 msgid "(New Side)"
 msgstr "(Phe mới)"
 
-#: src/editor/map/context_manager.cpp:409
+#: src/editor/map/context_manager.cpp:411
 msgid "Choose a Mask to Apply"
 msgstr "Chọn mặt nạ cần áp dụng"
 
-#: src/editor/map/context_manager.cpp:416
+#: src/editor/map/context_manager.cpp:418
 msgid "Error loading mask"
 msgstr "Lỗi khi tải mặt nạ"
 
-#: src/editor/map/context_manager.cpp:435
-#, fuzzy
-#| msgid "ID:"
-msgid "ID"
-msgstr "Định danh:"
+#: src/editor/map/context_manager.cpp:437
+msgid "Identifier:"
+msgstr ""
 
-#: src/editor/map/context_manager.cpp:435
+#: src/editor/map/context_manager.cpp:437
 #, fuzzy
 #| msgid "Rename Unit"
 msgid "Rename Area"
 msgstr "Đổi tên đơn vị"
 
-#: src/editor/map/context_manager.cpp:446
+#: src/editor/map/context_manager.cpp:448
 msgid "Choose Target Map"
 msgstr "Chọn bản đồ đích"
 
-#: src/editor/map/context_manager.cpp:453
+#: src/editor/map/context_manager.cpp:455
 #: src/editor/map/context_manager.cpp:887
 msgid "Error loading map"
 msgstr "Lỗi khi tải bản đồ"
 
-#: src/editor/map/context_manager.cpp:571
+#: src/editor/map/context_manager.cpp:572
 msgid "Save the Map As"
 msgstr "Lưu bản đồ thành"
 
-#: src/editor/map/context_manager.cpp:575
+#: src/editor/map/context_manager.cpp:576
 #: src/editor/map/context_manager.cpp:604
 msgid "The file already exists. Do you want to overwrite it?"
 msgstr "Tập tin đã tồn tại. Bạn có muốn ghi đè lên không?"
@@ -458,17 +461,17 @@ msgstr ""
 "Tập tin bản đồ trông giống như một màn chơi, nhưng giá trị map_data không "
 "chỉ đến một tập tin tồn tại"
 
-#: src/editor/map/map_context.cpp:507
+#: src/editor/map/map_context.cpp:508
 #, fuzzy
 #| msgid "Could not save the map: $msg"
 msgid "Could not save the scenario: $msg"
 msgstr "Không thể lưu bản đồ: $msg"
 
-#: src/editor/map/map_context.cpp:534
+#: src/editor/map/map_context.cpp:535
 msgid "Could not save into scenario"
 msgstr "Không thể lưu vào màn chơi"
 
-#: src/editor/map/map_context.cpp:541
+#: src/editor/map/map_context.cpp:542
 msgid "Could not save the map: $msg"
 msgstr "Không thể lưu bản đồ: $msg"
 
@@ -493,17 +496,22 @@ msgstr "TC: "
 msgid "BG: "
 msgstr "HC: "
 
-#: src/gui/dialogs/editor/custom_tod.cpp:123
-msgid "Choose file"
+#: src/gui/dialogs/editor/custom_tod.cpp:129
+msgid "Choose File"
 msgstr "Chọn tập tin"
 
-#: src/gui/dialogs/editor_set_starting_position.cpp:86
+#: src/gui/dialogs/editor_set_starting_position.cpp:87
 msgid "player^None"
 msgstr "Không có"
 
-#: src/gui/dialogs/editor_set_starting_position.cpp:98
+#: src/gui/dialogs/editor_set_starting_position.cpp:100
 msgid "Player $player_number"
 msgstr "Người chơi $player_number"
+
+#, fuzzy
+#~| msgid "ID:"
+#~ msgid "ID"
+#~ msgstr "Định danh:"
 
 #~ msgid ""
 #~ "Use left/right mouse button to draw fore-/background terrain. Hold Shift "

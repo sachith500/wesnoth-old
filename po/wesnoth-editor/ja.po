@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Battle for Wesnoth 1.7.x-dev\n"
 "Report-Msgid-Bugs-To: http://bugs.wesnoth.org/\n"
-"POT-Creation-Date: 2014-02-08 13:24+0100\n"
+"POT-Creation-Date: 2014-03-02 10:23+0100\n"
 "PO-Revision-Date: 2010-01-31 12:03+0900\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
@@ -173,70 +173,77 @@ msgstr ""
 msgid "After the Fall"
 msgstr ""
 
+#. [theme]: id=editor
+#: data/themes/editor.cfg:11
+#, fuzzy
+#| msgid "Quit Editor"
+msgid "theme^Editor"
+msgstr "エディタを終了"
+
 #. [menu]: id=menu-editor-file, type=turbo
 #: data/themes/editor.cfg:63
 msgid "File"
 msgstr "ファイル"
 
 #. [menu]: id=menu-editor-map
-#: data/themes/editor.cfg:89
+#: data/themes/editor.cfg:84
 msgid "Map"
 msgstr "マップ"
 
 #. [menu]: id=menu-editor-transitions
-#: data/themes/editor.cfg:97
+#: data/themes/editor.cfg:92
 #, fuzzy
 #| msgid "Delay transition updates"
 msgid "Transition Update"
 msgstr "変化の更新を遅らせる"
 
 #. [menu]: id=menu-editor-window
-#: data/themes/editor.cfg:104
+#: data/themes/editor.cfg:99
 msgid "Window"
 msgstr "ウィンドウ"
 
 #. [menu]: id=menu-editor-areas
-#: data/themes/editor.cfg:113
+#: data/themes/editor.cfg:108
 msgid "Areas"
 msgstr ""
 
 #. [menu]: id=menu-editor-local-time
-#: data/themes/editor.cfg:121
+#: data/themes/editor.cfg:116
 msgid "Assign Local Time"
 msgstr ""
 
 #. [menu]: id=menu-editor-local-schedule
-#: data/themes/editor.cfg:127
+#: data/themes/editor.cfg:122
 msgid "Assign Local Time Schedule"
 msgstr ""
 
 #. [menu]: id=menu-editor-side
-#: data/themes/editor.cfg:135
+#: data/themes/editor.cfg:130
 msgid "Side"
 msgstr ""
 
 #. [label]: id=villages-icon
-#: data/themes/editor.cfg:154
+#: data/themes/editor.cfg:148
 msgid "villages"
 msgstr "村"
 
 #. [label]: id=units-icon
-#: data/themes/editor.cfg:171
+#: data/themes/editor.cfg:165
 msgid "units"
 msgstr ""
 
 #. [menu]: id=switch_time
-#: data/themes/editor.cfg:509
+#: data/themes/editor.cfg:444
 msgid "Time Schedule Menu"
 msgstr ""
 
 #. [menu]: id=menu-playlist
-#: data/themes/editor.cfg:520
+#: data/themes/editor.cfg:455
 msgid "Playlist"
 msgstr ""
 
 #. [menu]: id=menu-editor-schedule
-#: data/themes/editor.cfg:526
+#: data/themes/editor.cfg:461
 msgid "Assign Time Schedule"
 msgstr ""
 
@@ -264,15 +271,15 @@ msgstr ""
 msgid "Recruit: "
 msgstr ""
 
-#: src/editor/editor_controller.cpp:173
+#: src/editor/editor_controller.cpp:177
 msgid "Fatal error"
 msgstr "致命的なエラー"
 
-#: src/editor/editor_controller.cpp:201
+#: src/editor/editor_controller.cpp:205
 msgid "Do you really want to quit?"
 msgstr "本当に終了してもよろしいですか？"
 
-#: src/editor/editor_controller.cpp:203
+#: src/editor/editor_controller.cpp:207
 msgid ""
 "Do you really want to quit? Changes in the map since the last save will be "
 "lost."
@@ -280,7 +287,7 @@ msgstr ""
 "本当に終了してもよろしいですか？ 最後に保存したところからのマップの変更は失わ"
 "れます。"
 
-#: src/editor/editor_controller.cpp:205
+#: src/editor/editor_controller.cpp:209
 msgid ""
 "Do you really want to quit? The following maps were modified and all changes "
 "since the last save will be lost:"
@@ -288,27 +295,27 @@ msgstr ""
 "本当に終了してもよろしいですか？ マップは変更されていますが、最後に保存したと"
 "ころからの変更は全て失われます。"
 
-#: src/editor/editor_controller.cpp:208
+#: src/editor/editor_controller.cpp:212
 msgid "Quit"
 msgstr "終了"
 
-#: src/editor/editor_controller.cpp:219
+#: src/editor/editor_controller.cpp:223
 msgid "No editor time-of-day found."
 msgstr "エディタの時刻設定が見つかりません。"
 
-#: src/editor/editor_controller.cpp:1066
+#: src/editor/editor_controller.cpp:1070
 msgid "Change Unit ID"
 msgstr ""
 
-#: src/editor/editor_controller.cpp:1067
+#: src/editor/editor_controller.cpp:1071
 msgid "ID:"
 msgstr ""
 
-#: src/editor/editor_controller.cpp:1083
+#: src/editor/editor_controller.cpp:1087
 msgid "Rename Unit"
 msgstr ""
 
-#: src/editor/editor_controller.cpp:1084
+#: src/editor/editor_controller.cpp:1088
 msgid "Name:"
 msgstr ""
 
@@ -341,36 +348,36 @@ msgstr "（新規マップ）"
 msgid "(New Side)"
 msgstr "（新規マップ）"
 
-#: src/editor/map/context_manager.cpp:409
+#: src/editor/map/context_manager.cpp:411
 msgid "Choose a Mask to Apply"
 msgstr "適用するマスクを選択"
 
-#: src/editor/map/context_manager.cpp:416
+#: src/editor/map/context_manager.cpp:418
 msgid "Error loading mask"
 msgstr "マスクの読み込みに失敗"
 
-#: src/editor/map/context_manager.cpp:435
-msgid "ID"
+#: src/editor/map/context_manager.cpp:437
+msgid "Identifier:"
 msgstr ""
 
-#: src/editor/map/context_manager.cpp:435
+#: src/editor/map/context_manager.cpp:437
 msgid "Rename Area"
 msgstr ""
 
-#: src/editor/map/context_manager.cpp:446
+#: src/editor/map/context_manager.cpp:448
 msgid "Choose Target Map"
 msgstr "ターゲットマップを選択"
 
-#: src/editor/map/context_manager.cpp:453
+#: src/editor/map/context_manager.cpp:455
 #: src/editor/map/context_manager.cpp:887
 msgid "Error loading map"
 msgstr "マップの読み込みに失敗"
 
-#: src/editor/map/context_manager.cpp:571
+#: src/editor/map/context_manager.cpp:572
 msgid "Save the Map As"
 msgstr "マップに名前を付けて保存"
 
-#: src/editor/map/context_manager.cpp:575
+#: src/editor/map/context_manager.cpp:576
 #: src/editor/map/context_manager.cpp:604
 msgid "The file already exists. Do you want to overwrite it?"
 msgstr "マップはすでに存在します。上書きしますか？"
@@ -463,17 +470,17 @@ msgstr ""
 "マップファイルはシナリオのようですが、map_data 値が存在するファイルを指し示し"
 "ていません"
 
-#: src/editor/map/map_context.cpp:507
+#: src/editor/map/map_context.cpp:508
 #, fuzzy
 #| msgid "Could not save the map: $msg"
 msgid "Could not save the scenario: $msg"
 msgstr "マップを保存できませんでした: $msg"
 
-#: src/editor/map/map_context.cpp:534
+#: src/editor/map/map_context.cpp:535
 msgid "Could not save into scenario"
 msgstr "シナリオに保存できませんでした。"
 
-#: src/editor/map/map_context.cpp:541
+#: src/editor/map/map_context.cpp:542
 msgid "Could not save the map: $msg"
 msgstr "マップを保存できませんでした: $msg"
 
@@ -498,19 +505,19 @@ msgstr ""
 msgid "BG: "
 msgstr ""
 
-#: src/gui/dialogs/editor/custom_tod.cpp:123
+#: src/gui/dialogs/editor/custom_tod.cpp:129
 #, fuzzy
 #| msgid "Choose player"
-msgid "Choose file"
+msgid "Choose File"
 msgstr "プレイヤーを選んでください"
 
-#: src/gui/dialogs/editor_set_starting_position.cpp:86
+#: src/gui/dialogs/editor_set_starting_position.cpp:87
 #, fuzzy
 #| msgid "(Player)^None"
 msgid "player^None"
 msgstr "プレイヤーなし"
 
-#: src/gui/dialogs/editor_set_starting_position.cpp:98
+#: src/gui/dialogs/editor_set_starting_position.cpp:100
 msgid "Player $player_number"
 msgstr ""
 
@@ -559,9 +566,6 @@ msgstr ""
 
 #~ msgid "Edit"
 #~ msgstr "編集"
-
-#~ msgid "Quit Editor"
-#~ msgstr "エディタを終了"
 
 #~ msgid "Undo"
 #~ msgstr "元に戻す"

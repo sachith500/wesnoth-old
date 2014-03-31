@@ -100,11 +100,11 @@ create::create(game_display& disp, const config& cfg, game_state& state,
 
 	typedef std::pair<level::TYPE, std::string> level_type_info;
 	std::vector<level_type_info> all_level_types;
-	all_level_types.push_back(std::make_pair(level::SCENARIO, "Scenarios"));
-	all_level_types.push_back(std::make_pair(level::CAMPAIGN, "Campaigns"));
-	all_level_types.push_back(std::make_pair(level::USER_MAP, "User Maps"));
-	all_level_types.push_back(std::make_pair(level::USER_SCENARIO, "User Scenarios"));
-	all_level_types.push_back(std::make_pair(level::RANDOM_MAP, "Random Maps"));
+	all_level_types.push_back(std::make_pair(level::SCENARIO, _("Scenarios")));
+	all_level_types.push_back(std::make_pair(level::CAMPAIGN, _("Campaigns")));
+	all_level_types.push_back(std::make_pair(level::USER_MAP, _("User Maps")));
+	all_level_types.push_back(std::make_pair(level::USER_SCENARIO, _("User Scenarios")));
+	all_level_types.push_back(std::make_pair(level::RANDOM_MAP, _("Random Maps")));
 
 	if (game_config::debug) {
 		all_level_types.push_back(std::make_pair(level::SP_CAMPAIGN,
@@ -446,7 +446,7 @@ void create::synchronize_selections()
 			level_type_at_index = engine_.find_level_type_by_id(
 				engine_.dependency_manager().get_scenario());
 			engine_.set_current_level_type(level_type_at_index);
-			
+
 			init_level_changed(index);
 			levels_menu_.set_items(engine_.levels_menu_item_names());
 			levels_menu_.move_selection(index);
@@ -513,12 +513,10 @@ std::string create::select_campaign_difficulty()
 	const std::vector<std::string> difficulties =
 		utils::split(engine_.current_level().data()["difficulties"]);
 
-	if(difficulties.empty() == false) {
+	if(!difficulties.empty()) {
 		int difficulty = 0;
 		if(difficulty_options.size() != difficulties.size()) {
-			difficulty_options.resize(difficulties.size());
-			std::copy(difficulties.begin(), difficulties.end(),
-				difficulty_options.begin());
+			difficulty_options = difficulties;
 		}
 
 		gui2::tcampaign_difficulty dlg(difficulty_options);

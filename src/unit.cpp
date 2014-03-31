@@ -88,6 +88,7 @@ static const unit_type &get_unit_type(const std::string &type_id)
 static unit_race::GENDER generate_gender(const unit_type & type, bool random_gender, rand_rng::simple_rng* rng)
 {
 	const std::vector<unit_race::GENDER>& genders = type.genders();
+	assert( genders.size() > 0 );
 
 	if ( random_gender == false  ||  genders.size() == 1 ) {
 		return genders.front();
@@ -96,6 +97,9 @@ static unit_race::GENDER generate_gender(const unit_type & type, bool random_gen
 		return genders[random % genders.size()];
 		// Note: genders is guaranteed to be non-empty, so this is not a
 		// potential division by zero.
+		// Note: Whoever wrote this code, you should have used an assertion, to save others hours of work...
+		// If the assertion size>0 is failing for you, one possible cause is that you are constructing a unit
+		// from a unit type which has not been ``built'' using the unit_type_data methods.
 	}
 }
 
@@ -132,6 +136,7 @@ unit::unit(const unit& o):
            experience_(o.experience_),
            max_experience_(o.max_experience_),
            level_(o.level_),
+           recall_cost_(o.recall_cost_),
            canrecruit_(o.canrecruit_),
            recruit_list_(o.recruit_list_),
            alignment_(o.alignment_),
@@ -220,6 +225,7 @@ unit::unit(const config &cfg, bool use_traits, const vconfig* vcfg) :
 	experience_(0),
 	max_experience_(0),
 	level_(0),
+	recall_cost_(-1),
 	canrecruit_(cfg["canrecruit"].to_bool()),
 	recruit_list_(),
 	alignment_(),
@@ -458,6 +464,12 @@ unit::unit(const config &cfg, bool use_traits, const vconfig* vcfg) :
 	resting_ = cfg["resting"].to_bool();
 	unrenamable_ = cfg["unrenamable"].to_bool();
 
+	/* We need to check to make sure that the cfg is not blank and if it
+	isn't pull that value otherwise it goes with the default of -1.  */
+	if(!cfg["recall_cost"].blank()) {
+		recall_cost_ = cfg["recall_cost"].to_int(recall_cost_);
+	}
+
 	const std::string& align = cfg["alignment"];
 	if(align == "lawful") {
 		alignment_ = unit_type::LAWFUL;
@@ -467,7 +479,7 @@ unit::unit(const config &cfg, bool use_traits, const vconfig* vcfg) :
 		alignment_ = unit_type::CHAOTIC;
 	} else if(align == "liminal") {
 		alignment_ = unit_type::LIMINAL;
-	} else if(align.empty()==false){
+	} else if(align.empty()==false) {
 		alignment_ = unit_type::NEUTRAL;
 	}
 
@@ -488,7 +500,7 @@ unit::unit(const config &cfg, bool use_traits, const vconfig* vcfg) :
 	static char const *internalized_attrs[] = { "type", "id", "name",
 		"gender", "random_gender", "variation", "role", "ai_special",
 		"side", "underlying_id", "overlays", "facing", "race",
-		"level", "undead_variation", "max_attacks",
+		"level", "recall_cost", "undead_variation", "max_attacks",
 		"attacks_left", "alpha", "zoc", "flying", "cost",
 		"max_hitpoints", "max_moves", "vision", "jamming", "max_experience",
 		"advances_to", "hitpoints", "goto_x", "goto_y", "moves",
@@ -548,6 +560,7 @@ unit::unit(const unit_type &u_type, int side, bool real_unit,
 	experience_(0),
 	max_experience_(0),
 	level_(0),
+	recall_cost_(-1),
 	canrecruit_(false),
 	recruit_list_(),
 	alignment_(),
@@ -560,7 +573,7 @@ unit::unit(const unit_type &u_type, int side, bool real_unit,
 	alpha_(),
 	unit_formula_(),
 	unit_loop_formula_(),
-    unit_priority_formula_(),
+	unit_priority_formula_(),
 	formula_vars_(),
 	movement_(0),
 	max_movement_(0),
@@ -573,7 +586,7 @@ unit::unit(const unit_type &u_type, int side, bool real_unit,
 	attacks_left_(0),
 	max_attacks_(0),
 	states_(),
-	known_boolean_states_(known_boolean_state_names_.size(),false),
+	known_boolean_states_( get_known_boolean_state_names().size(),false),
 	variables_(),
 	events_(),
 	filter_recall_(),
@@ -813,6 +826,13 @@ void unit::advance_to(const config &old_cfg, const unit_type &u_type,
 	undead_variation_ = new_type.undead_variation();
 	max_experience_ = new_type.experience_needed(false);
 	level_ = new_type.level();
+	recall_cost_ = new_type.recall_cost();
+	/* Need to add a check to see if the unit's old cost is equal 
+	to the unit's old unit_type cost first.  If it is change the cost
+	otherwise keep the old cost. */
+	if(old_type.recall_cost() == recall_cost_) {
+		recall_cost_ = new_type.recall_cost();
+	}
 	alignment_ = new_type.alignment();
 	alpha_ = new_type.alpha();
 	max_hit_points_ = new_type.hitpoints();
@@ -1507,7 +1527,12 @@ bool unit::internal_matches_filter(const vconfig& cfg, const map_location& loc, 
 	if (!cfg_canrecruit.blank() && cfg_canrecruit.to_bool() != can_recruit()) {
 		return false;
 	}
-
+	
+	config::attribute_value cfg_recall_cost = cfg["recall_cost"];
+	if (!cfg_recall_cost.blank() && cfg_recall_cost.to_int(-1) != recall_cost_) {
+		return false;
+	}
+	
 	config::attribute_value cfg_level = cfg["level"];
 	if (!cfg_level.blank() && cfg_level.to_int(-1) != level_) {
 		return false;
@@ -1659,7 +1684,8 @@ void unit::write(config& cfg) const
 
 	cfg["experience"] = experience_;
 	cfg["max_experience"] = max_experience_;
-
+	cfg["recall_cost"] = recall_cost_;
+	
 	cfg["side"] = side_;
 
 	cfg["type"] = type_id();
@@ -2015,19 +2041,21 @@ void unit::redraw_unit()
 			ellipse="misc/ellipse";
 		}
 
-		// check if the unit has a ZoC or can recruit
-		const char* const nozoc = emit_zoc_ ? "" : "nozoc-";
-		const char* const leader = can_recruit() ? "leader-" : "";
-		const char* const selected = disp.selected_hex() == loc_ ? "selected-" : "";
+		if(ellipse != "none") {
+			// check if the unit has a ZoC or can recruit
+			const char* const nozoc = emit_zoc_ ? "" : "nozoc-";
+			const char* const leader = can_recruit() ? "leader-" : "";
+			const char* const selected = disp.selected_hex() == loc_ ? "selected-" : "";
 
-		// Load the ellipse parts recolored to match team color
-		char buf[100];
-		std::string tc=team::get_side_color_index(side_);
+			// Load the ellipse parts recolored to match team color
+			char buf[100];
+			std::string tc=team::get_side_color_index(side_);
 
-		snprintf(buf,sizeof(buf),"%s-%s%s%stop.png~RC(ellipse_red>%s)",ellipse.c_str(),leader,nozoc,selected,tc.c_str());
-		ellipse_back.assign(image::get_image(image::locator(buf), image::SCALED_TO_ZOOM));
-		snprintf(buf,sizeof(buf),"%s-%s%s%sbottom.png~RC(ellipse_red>%s)",ellipse.c_str(),leader,nozoc,selected,tc.c_str());
-		ellipse_front.assign(image::get_image(image::locator(buf), image::SCALED_TO_ZOOM));
+			snprintf(buf,sizeof(buf),"%s-%s%s%stop.png~RC(ellipse_red>%s)",ellipse.c_str(),leader,nozoc,selected,tc.c_str());
+			ellipse_back.assign(image::get_image(image::locator(buf), image::SCALED_TO_ZOOM));
+			snprintf(buf,sizeof(buf),"%s-%s%s%sbottom.png~RC(ellipse_red>%s)",ellipse.c_str(),leader,nozoc,selected,tc.c_str());
+			ellipse_front.assign(image::get_image(image::locator(buf), image::SCALED_TO_ZOOM));
+		}
 	}
 
 	if (ellipse_back != NULL) {
@@ -2043,40 +2071,51 @@ void unit::redraw_unit()
 	}
 	if(draw_bars) {
 		const image::locator* orb_img = NULL;
-		static const image::locator partmoved_orb(game_config::images::orb + "~RC(magenta>" +
-						game_config::images::partmoved_orb_color + ")"  );
-		static const image::locator moved_orb(game_config::images::orb + "~RC(magenta>" +
-						game_config::images::moved_orb_color + ")"  );
-		static const image::locator ally_orb(game_config::images::orb + "~RC(magenta>" +
-				game_config::images::ally_orb_color + ")"  );
-		static const image::locator enemy_orb(game_config::images::orb + "~RC(magenta>" +
-				game_config::images::enemy_orb_color + ")"  );
-		static const image::locator unmoved_orb(game_config::images::orb + "~RC(magenta>" +
-					game_config::images::unmoved_orb_color + ")"  );
+		/*static*/ const image::locator partmoved_orb(game_config::images::orb + "~RC(magenta>" +
+						preferences::partial_color() + ")"  );
+		/*static*/ const image::locator moved_orb(game_config::images::orb + "~RC(magenta>" +
+						preferences::moved_color() + ")"  );
+		/*static*/ const image::locator ally_orb(game_config::images::orb + "~RC(magenta>" +
+						preferences::allied_color() + ")"  );
+		/*static*/ const image::locator enemy_orb(game_config::images::orb + "~RC(magenta>" +
+						preferences::enemy_color() + ")"  );
+		/*static*/ const image::locator unmoved_orb(game_config::images::orb + "~RC(magenta>" +
+						preferences::unmoved_color() + ")"  );
 
 		const std::string* energy_file = &game_config::images::energy;
 
 		if(size_t(side()) != disp.viewing_team()+1) {
 			if(disp.team_valid() &&
 			   disp.get_teams()[disp.viewing_team()].is_enemy(side())) {
-				orb_img = &enemy_orb;
+				if (preferences::show_enemy_orb())
+					orb_img = &enemy_orb;
+				else
+					orb_img = NULL;
 			} else {
-				orb_img = &ally_orb;
+				if (preferences::show_allied_orb())
+					orb_img = &ally_orb;
+				else orb_img = NULL;
 			}
 		} else {
-			orb_img = &moved_orb;
+			if (preferences::show_moved_orb())
+				orb_img = &moved_orb;
+			else orb_img = NULL;
+
 			if(disp.playing_team() == disp.viewing_team() && !user_end_turn()) {
 				if (movement_left() == total_movement()) {
-					orb_img = &unmoved_orb;
+					if (preferences::show_unmoved_orb())
+						orb_img = &unmoved_orb;
+					else orb_img = NULL;
 				} else if ( actions::unit_can_move(*this) ) {
-					orb_img = &partmoved_orb;
+					if (preferences::show_partial_orb())
+						orb_img = &partmoved_orb;
+					else orb_img = NULL;
 				}
 			}
 		}
 
-		assert(orb_img != NULL);
-		surface orb(image::get_image(*orb_img,image::SCALED_TO_ZOOM));
-		if (orb != NULL) {
+		if (orb_img != NULL) {
+			surface orb(image::get_image(*orb_img,image::SCALED_TO_ZOOM));
 			disp.drawing_buffer_add(display::LAYER_UNIT_BAR,
 				loc_, xsrc, ysrc +adjusted_params.y, orb);
 		}
@@ -2869,6 +2908,8 @@ bool unit::is_visible_to_team(team const& team, bool const see_all, gamemap cons
 		return false;
 	if (see_all)
 		return true;
+	if (resources::screen->is_blindfolded())
+		return false;
 	if (team.is_enemy(side()) && invisible(loc))
 		return false;
 	if (team.is_enemy(side()) && team.fogged(loc))
@@ -3209,6 +3250,7 @@ std::string get_checksum(const unit& u) {
 		"ignore_race_traits",
 		"ignore_global_traits",
 		"level",
+		"recall_cost",
 		"max_attacks",
 		"max_experience",
 		"max_hitpoints",

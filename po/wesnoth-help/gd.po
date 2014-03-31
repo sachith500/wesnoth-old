@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wesnoth 1.10\n"
 "Report-Msgid-Bugs-To: http://bugs.wesnoth.org/\n"
-"POT-Creation-Date: 2014-02-05 19:37+0100\n"
-"PO-Revision-Date: 2014-01-31 13:05-0000\n"
+"POT-Creation-Date: 2014-03-02 18:56+0100\n"
+"PO-Revision-Date: 2014-03-16 07:28-0000\n"
 "Last-Translator: GunChleoc <fiosAIGforamnagaidhligDOTnet>\n"
 "Language-Team: Fòram na Gàidhlig http://www.foramnagaidhlig.net\n"
 "Language: gd\n"
@@ -18,10 +18,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 || n==11) ? 0 : (n==2 || n==12) ? 1 : "
 "(n > 2 && n < 20) ? 2 : 3;\n"
-"X-Generator: Poedit 1.6.3\n"
+"X-Generator: Poedit 1.6.4\n"
 
 #. [time]: id=underground
-#: data/campaigns/Heir_To_The_Throne/utils/httt_utils.cfg:533
+#: data/campaigns/Heir_To_The_Throne/utils/httt_utils.cfg:531
 #: data/core/macros/schedules.cfg:99
 msgid "Underground"
 msgstr "Fon talamh"
@@ -298,7 +298,7 @@ msgid ""
 "privileges on others."
 msgstr ""
 "Seo an <ref>dst='aspirant' text='Suirthiche'</ref> a chaidh ’na cheannard "
-"nan dràc. Seo an t-aon dràc sa cinneadh a dh’fhaodas sìolachadh leis na "
+"nan dràc. Seo an aon dràc sa cinneadh a dh’fhaodas sìolachadh leis na "
 "<ref>dst='breeder' text='tàrmachairean'</ref>. ’S gann gun leig e dràic eile "
 "sìolachadh."
 
@@ -332,7 +332,7 @@ msgid ""
 "recruit their members from all of the other castes."
 msgstr ""
 "Tha tràchdairean eòlach air <ref>dst='drakish_script' text='sgriobt'</ref> "
-"nan dràc is cumaidh iad na sgrolaichean aca. ’S iadsan an t-aon "
+"nan dràc is cumaidh iad na sgrolaichean aca. ’S iadsan an aon "
 "<ref>dst='caste' text='treubh'</ref> de dhràic nach eil da shònrachadh a-"
 "rèir bith-eòlais: trusaidh iad am buill bho na treubhan eile uile."
 
@@ -1011,7 +1011,7 @@ msgstr ""
 "Cridhe is an Abhainn Mòr. ’S e àite cunnartach eagalach a th’ ann.\n"
 "\n"
 "<bold>text='Loch Bhrug:'</bold> Loch mòr sa mhonadh is ’s e an abhainn aige "
-"an t-aon shlighe tro na beanntan taobh tuath\n"
+"an aon shlighe tro na beanntan taobh tuath\n"
 "\n"
 "<bold>text='Argantara:'</bold> An abhainn a thig à Loch Bhrug. Seo an t-ainm "
 "a tha aig na sìthichean oirre; canaidh an cinne-daonne An Abhainn Fhada "
@@ -1195,11 +1195,11 @@ msgstr "Comasan"
 #. [topic]: id=..weapon_specials
 #: data/core/help.cfg:48 data/core/help.cfg:109
 msgid "Weapon Specials"
-msgstr "Airm shònraichte"
+msgstr "Ionnsaighean sònraichte"
 
 #. #-#-#-#-#  wesnoth-help.wml.pot (PACKAGE VERSION)  #-#-#-#-#
 #. [section]: id=factions_section
-#: data/core/help.cfg:56 src/help.cpp:1289 src/help.cpp:1291
+#: data/core/help.cfg:56 src/help.cpp:1291 src/help.cpp:1293
 msgid "Factions"
 msgstr "Buidhnean"
 
@@ -1231,6 +1231,14 @@ msgid ""
 "its statistics, attacks, resistances, and movement and defense values.\n"
 "\n"
 msgstr ""
+"San roinn seo, gheibh thu liosta dhe na h-uile aonad ris an do thachair thu "
+"san t-saoghal Bheasnaid gu ruige seo. Gach turas a chì thu aonad ùr rè "
+"iomairte no cnàmh-sgeòil ioma-chluicheadair, thèid a chur ri earran a’ "
+"chinnidh; ’ s urrainn dhut sùil a thoirt air a dhuilleag uair sam bith a "
+"thogras tu an uairsin. Bheir duilleag aonaid dhut tuairisgeul, "
+"stadastaireachd, ionnsaighean, comasan-seasaimh agus luachan gluasaid ’s "
+"dìona.\n"
+"\n"
 
 #. [topic]: id=..abilities_section
 #: data/core/help.cfg:101
@@ -1259,6 +1267,14 @@ msgid ""
 "weapon special does and which (currently discovered) units have it.\n"
 "\n"
 msgstr ""
+"Tha feartan sònraichte aig cuid a dh’airm a chuireas ris an èifeachdachd "
+"nuair a bheir thu ionnsaigh leotha. Nuair a thachras tu ri ionnsaigh "
+"shònraichte rè iomairte no cnàmh-sgeòil ioma-chluicheadair, thèid a chur ris "
+"an liosta seo; ’ s urrainn dhut sùil a thoirt air a dhuilleag uair sam bith "
+"a thogras tu an uairsin. Bheir gach duilleag dhut mìneachadh air na nì an "
+"ionnaigh shònraichte agus dè na h-aonadan (air a bheil thu eòlach) aig a "
+"bheil e.\n"
+"\n"
 
 #. [topic]: id=.unknown_unit
 #: data/core/help.cfg:119
@@ -1430,7 +1446,7 @@ msgstr ""
 "deis'</bold>. ’S urrainn dhut rudan a dhèanamh a-nis a leithid na "
 "roghainnean sàbhalaidh agad atharrachadh no (ma tha thu ann an geama ioma-"
 "chluicheadair) cabadaich le cluicheadairean eile mus dèan thu brùthadh air "
-"a’ phutan gus leantainn ort."
+"a’ phutan gus leantainn air adhart."
 
 #. [topic]: id=victory_and_defeat
 #: data/core/help.cfg:163
@@ -1572,10 +1588,10 @@ msgstr ""
 #. [topic]: id=orbs
 #: data/core/help.cfg:192
 msgid ""
-" red if it can no longer move or attack, or the user ended the unit’s turn."
+" black if it can no longer move or attack, or the user ended the unit’s turn."
 msgstr ""
-" dearg mura h-eil gluasad no ionnsaigh air fhàgail, no ma chuireadh crìoch "
-"air a chuairt."
+" dubh mura 's urrainn dha gluasad no ionnsaigh a thoirt tuilleadh, no ma "
+"chuir an cleachdaiche crìoch air cuairt an aonaid."
 
 #. [topic]: id=orbs
 #: data/core/help.cfg:193
@@ -1584,8 +1600,8 @@ msgstr " gorm mas e caidreabhach a th’ ann air nach eil smachd agad."
 
 #. [topic]: id=orbs
 #: data/core/help.cfg:194
-msgid " Enemy units have no orb on top of their energy bar."
-msgstr " Chan eil cruinne os cionn a’ bhàir-lùiths aig aonadan nàmhad."
+msgid " Enemy units have a red orb on top of their energy bar."
+msgstr " Tha cruinne dearg os cionn a’ bhàir-lùiths aig aonadan nàmhad."
 
 #. [topic]: id=hitpoints
 #: data/core/help.cfg:201
@@ -1828,7 +1844,7 @@ msgstr ""
 "fear aig an ionnsaighear is dìonadair gus am bi an dà aonad air na buillean "
 "a th’ aca a chaitheamh. Taghaidh an t-ionnsaighear aon de na h-airm aige gus "
 "ionnsaigh a thoirt is nì an dìonadair frith-ionnsaigh le aon de na h-"
-"ionnsaighean aige fhèin aig a bheil an t-aon sheòrsa. Tha dà sheòrsa de "
+"ionnsaighean aige fhèin aig a bheil an aon sheòrsa. Tha dà sheòrsa de "
 "dh’ionnsaigh ann: <italic>text='dlùth'</italic> a chleachdas airm a leithid "
 "chlaidheamhan, thuaghan no thosgan mas as trice; is <italic>text='astair'</"
 "italic> a chleachdas airm a leithid bhoghachan, shleaghan no bhàlaichean-"
@@ -2706,7 +2722,7 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"’S e <italic>text='closach'</italic> an t-aon fheart a tha aig aonadan "
+"’S e <italic>text='closach'</italic> an aon fheart a tha aig aonadan "
 "closaich. Bhon a tha aonadan closaich ’nam bodhaigean nam mairbh air an "
 "èirigh ach an dèan iad sabaid a-rithist, chan eil buaidh aig puinsean orra. "
 "Faodaidh iad a bhith fìor-luachmhor an aghaidh nàimhdean a chleachdas "
@@ -2736,7 +2752,7 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"’S e <italic>text='innealach'</italic> an t-aon fheart a tha aig aonadan "
+"’S e <italic>text='innealach'</italic> an aon fheart a tha aig aonadan "
 "innealach. Bhon nach eil beatha aig innealan, chan eil buaidh aig sùgh, "
 "puinsean no plàigh orra."
 
@@ -2765,7 +2781,7 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"’S e <italic>text='dùileach'</italic> an t-aon fheart a tha aig aonadan "
+"’S e <italic>text='dùileach'</italic> an aon fheart a tha aig aonadan "
 "dùileach. Bhon a tha iad beò air bonn cumhachd, chan eil buaidh aig sùgh, "
 "puinsean no plàigh orra."
 
@@ -2941,6 +2957,11 @@ msgid ""
 "more beyond what is offered in the official content bundled with the game.\n"
 "\n"
 msgstr ""
+"Gabhaidh inneal Bheasnaid gnàthachadh dhan ìre as urrainn do "
+"chluicheadairean an t-susbaint aca fhèin a chruthachadh, a’ gabhail a-steach "
+"cnàmh-sgeulan agus iomairtean ùra agus mòran a bharrachd na na thèid a "
+"thoirt dhut mar shusbaint oifigeil le stàladh bunasach a’ gheama.\n"
+"\n"
 
 #. [topic]: id=using_addons
 #: data/core/help.cfg:511
@@ -2956,7 +2977,7 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"<header>text='Iomairtean is cnàmh-sgeulan'</header>"
+"<header>text='Iomairtean agus cnàmh-sgeulan'</header>"
 
 #. [topic]: id=using_addons
 #: data/core/help.cfg:512
@@ -2964,6 +2985,8 @@ msgid ""
 "The game supports different types of add-on content, which are not all "
 "available in every gameplay mode."
 msgstr ""
+"Cuiridh an geama taic ri iomadh seòrsa de thuilleadan ’s chan eil gach fear "
+"dhiubh ri fhaighinn anns gach uile modh cluiche."
 
 #. [topic]: id=using_addons
 #: data/core/help.cfg:514
@@ -2975,6 +2998,13 @@ msgid ""
 "and regular campaigns are available from the <italic>text='Campaigns'</"
 "italic> menu at the title screen."
 msgstr ""
+"\n"
+"\n"
+"’S e cruinneachaidhean de chnàmh-sgeulan a th’ anns na h-iomairtean aon-"
+"chluicheadair a chaidh a chur ri chèile gus sgeulachd innse. Tha an dà chuid "
+"cnàmh-sgeulan fa leth – ma thathar an dùil gun cluich thu mar seo iad – agus "
+"iomairtean àbhaisteach ri am faighinn on chlàr-taice "
+"<italic>text='Iomairtean'</italic> air an sgrìn tiotail."
 
 #. [topic]: id=using_addons
 #: data/core/help.cfg:516
@@ -2985,7 +3015,7 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"<header>text='Iomairtean, cnàmh-sgeulan is pacaidean mapa ioma-"
+"<header>text='Iomairtean, cnàmh-sgeulan agus pacaidean mapa ioma-"
 "chluicheadair'</header>"
 
 #. [topic]: id=using_addons
@@ -2997,6 +3027,12 @@ msgid ""
 "scripted scenarios or even specially designed campaigns. There are also "
 "packs providing sets of individual multiplayer scenarios."
 msgstr ""
+"\n"
+"\n"
+"’S urrainn dhut geamannan <italic>text='Ioma-chluicheadair'</italic> a "
+"chluich ann an cnàmh-sgeulan gnàthaichte ’s làn-sgriobtaichte no fiù ’s ann "
+"an iomairtean a chaidh a dhealbhachadh air an son. Tha pacaidean ann "
+"cuideachd a bheir seata de chnàmh-sgeulan ioma-chluicheadair fa leth dhut."
 
 #. [topic]: id=using_addons
 #: data/core/help.cfg:520
@@ -3007,7 +3043,7 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"<header>text='Linntean is buidhnean ioma-chluicheadair'</header>"
+"<header>text='Linntean agus buidhnean ioma-chluicheadair'</header>"
 
 #. [topic]: id=using_addons
 #: data/core/help.cfg:522
@@ -3023,6 +3059,17 @@ msgid ""
 "creating a new game, and players can pick from the available factions for "
 "that era when setting up their sides and teams."
 msgstr ""
+"\n"
+"\n"
+"Ri linn cluiche a’ gheama, co-obraichidh caochladh de chinnidhean an t-"
+"saoghail ann am buidhnean. Chaidh buidhnean a chur ri chèile le cuspair "
+"coitcheann ’s le meidh eatorra; mar eisimpleir, gheibh thu na prìomh "
+"bhuidhnean aig Beasnad san linn tùsail.\n"
+"\n"
+"Sa mhodh <italic>text='Ioma-chluicheadair'</italic>, ’s urrainn dhut linn a "
+"thaghadh nuair a chruthaicheas tu geama ùr agus ’s urrainn dha na "
+"cluicheadairean taghadh bho na buidhnean a tha ri làimh san linn sin nuair a "
+"shuidhicheas iad na taobhan agus sgiobaidhean aca."
 
 #. [topic]: id=using_addons
 #: data/core/help.cfg:526
@@ -3045,6 +3092,13 @@ msgid ""
 "in various ways. You can choose and configure modifications when creating a "
 "new game."
 msgstr ""
+"\n"
+"\n"
+"’S e sgriobtaichean roghainneil airson geamannan <italic>text='Ioma-"
+"chluicheadair'</italic> a th’ anns na h-atharraichean a bhios neo-"
+"eisimeileach bho chnàmh-sgeul no iomairt agus as urrainn dha na riaghailtean "
+"tùsail atharrachadh ann an iomadh dòigh. ’S urrainn dhut atharraichean a "
+"thaghadh ’s a rèiteachadh nuair a chruthaicheas tu geama ùr."
 
 #. [topic]: id=using_addons
 #: data/core/help.cfg:530
@@ -3068,6 +3122,14 @@ msgid ""
 "other playable add-ons may depend on them and suggest or require their "
 "installation during download."
 msgstr ""
+"\n"
+"\n"
+"’S urrainn do dh’ùghdaran susbainte pacaidean ghoireasan bho fhrithealaiche "
+"nan tuilleadan a chleachdadh gus cur ris an t-susbaint aca fhèin le nithean "
+"a leithid dhealbhan, ciùil no còd. Chan eilear an dùil gun cleachd thu ann "
+"an geama iad mar a tha iad. Co-dhiù, bidh tuilleadain eile an eisimeil "
+"dhaibh ’s dòcha agus molaidh no iarraidh iadsan gun stàlaich thu goireasan "
+"nuair a luchdaicheas tu a-nuas iad ma bhios feum orra."
 
 #. [topic]: id=installing_addons
 #: data/core/help.cfg:541
@@ -3099,6 +3161,32 @@ msgid ""
 "about the add-on, such as its full description, installation status, and "
 "available languages."
 msgstr ""
+"Gheibh agus ùraichidh tu tuilleadain a chaidh a dhèanamh le cleachdaichean "
+"leis an roghainn <italic>text='Tuilleadain'</italic> air a' phrìomh chlàr-"
+"taice. Nuair a bhios tu air ceangal ri frithealaiche nan tuilleadan (seo "
+"<italic>text='add-ons.wesnoth.org'</italic> a ghnàth), thèid liosta a "
+"shealltainn dhut dhe na tuilleadain as urrainn dhut luchdadh a-nuas on "
+"fhrithealaiche ud.\n"
+"\n"
+"Chì thu staid an stàlaidh aig bonn gach tuilleadain. Mas e "
+"<italic>text='gabhaidh ùrachadh'</italic> no <italic>text='ro shean air an "
+"fhrithealaiche'</italic> a th’ ann an staid an tuilleadain, chì thu àireamh "
+"an tionndaidh stàlaichte ’s an tionndaidh fhoillsichte sa cholbh "
+"<italic>text='Tionndadh'</italic>.\n"
+"\n"
+"Ma tha thu airson faclan-luirg a chleachdadh gus tuilleadan a lorg, sgrìobh "
+"na faclan iomchaidh ann an òrdugh sam bith sa bhogsa <bold>text='Criathrag'</"
+"bold> le beàrnan eatorra. ’S urrainn dhut liosta nan tuilleadan a "
+"sheòrsachadh cuideachd le briogadh air ceann-sgrìobhadh cuilbh. Cuideachd, "
+"’s urrainn dhut am putan <bold>text='Roghainnean'</bold> aig a’ bharr gu "
+"deas a chleachdadh gus nach seall thu ach tuilleadain de sheòrsa "
+"sònraichte.\n"
+"\n"
+"Gus tuilleadan a stàladh, tagh air an liosta e agus briog air "
+"<bold>text='Ceart ma-thà'</bold> no dèan briogadh dùbailte air tiotal an "
+"tuilleadain. Bheir am putan <bold>text='Tuairisgeul'</bold> barrachd "
+"fiosrachaidh mun tuilleadan dhut a leithid tuairisgeul slàin, staid an "
+"stàlaidh agus cànanan rim faighinn."
 
 #. [topic]: id=removing_addons
 #: data/core/help.cfg:555
@@ -3118,6 +3206,16 @@ msgid ""
 "information files or the add-ons themselves using a file manager provided by "
 "your platform."
 msgstr ""
+"Gus tuilleadain a thoirt air falbh, tagh <bold>text='Thoir tuilleadain air "
+"falbh'</bold> sa chòmhradh airson ceangal dha fhrithealaiche. Thèid "
+"roghainnean a shealltainn dhut gus an uiread a thogras tu dhe na tuilleadain "
+"air an stàladh a thoirt air falbh.\n"
+"\n"
+"Cha ghabh tuilleadan a thoirt air falbh ris a bheil fiosrachadh "
+"foillseachaidh (faidhle <italic>text='.pbl'</italic>) ceangailte ach nach "
+"caill thu am fiosrachadh le mearachd. Ma bhios feum air seo, feumaidh tu na "
+"faidhlichean fiosrachaidh no na tuilleadain fhèin a sguabadh às a làimh le "
+"manaidsear fhaidhlichean an t-siostam-obrachaidh agad."
 
 #. [topic]: id=general_commands
 #: data/core/help.cfg:571
@@ -3127,7 +3225,7 @@ msgstr "Àitheantan choitcheann"
 #. [topic]: id=debug_commands
 #. [topic]: id=general_commands
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:573 data/core/help.cfg:613 data/core/help.cfg:645
+#: data/core/help.cfg:573 data/core/help.cfg:616 data/core/help.cfg:654
 msgid ""
 "These commands can either be issued via the command line by prefixing them "
 "with ':' (as shown here) or via the chat by prefixing them with '/' (press "
@@ -3193,6 +3291,17 @@ msgstr ""
 #: data/core/help.cfg:585
 msgid ""
 "\n"
+"Display the controller status of a side.\n"
+"\n"
+msgstr ""
+"\n"
+"Seall an staid aig an smachd air taobh.\n"
+"\n"
+
+#. [topic]: id=general_commands
+#: data/core/help.cfg:588
+msgid ""
+"\n"
 "Toggle the display of the current frames per second.\n"
 "\n"
 msgstr ""
@@ -3201,7 +3310,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=general_commands
-#: data/core/help.cfg:588
+#: data/core/help.cfg:591
 msgid ""
 "\n"
 "Switch a log domain to a different log level.\n"
@@ -3213,7 +3322,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=general_commands
-#: data/core/help.cfg:591
+#: data/core/help.cfg:594
 msgid ""
 "\n"
 "Redraws the screen and reloads any image files that have been changed.\n"
@@ -3225,7 +3334,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=general_commands
-#: data/core/help.cfg:594
+#: data/core/help.cfg:597
 msgid ""
 "\n"
 "Bring up theme selection menu.\n"
@@ -3236,7 +3345,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=general_commands
-#: data/core/help.cfg:597
+#: data/core/help.cfg:600
 msgid ""
 "\n"
 "Quit the scenario (without prompting).\n"
@@ -3247,7 +3356,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=general_commands
-#: data/core/help.cfg:600
+#: data/core/help.cfg:603
 msgid ""
 "\n"
 "Save the game (without prompting).\n"
@@ -3258,7 +3367,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=general_commands
-#: data/core/help.cfg:603
+#: data/core/help.cfg:606
 msgid ""
 "\n"
 "Save the game and quit the scenario (without prompting)."
@@ -3267,12 +3376,12 @@ msgstr ""
 "Sàbhail an geama is fàg an cnàmh-sgeul (gun mo bhrodadh)."
 
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:612
+#: data/core/help.cfg:615
 msgid "Multiplayer commands"
 msgstr "Àitheantan ioma-chluicheadair"
 
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:615
+#: data/core/help.cfg:618
 msgid ""
 "\n"
 "Ban a user in a multiplayer game by the IP address used by that username and "
@@ -3289,7 +3398,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:618
+#: data/core/help.cfg:621
 msgid ""
 "\n"
 "Change the controller for side (write here the number of the side) to "
@@ -3312,7 +3421,33 @@ msgstr ""
 "\n"
 
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:621
+#: data/core/help.cfg:624
+msgid ""
+"\n"
+"Launch a dialog to assist the host in changing the human controllers of "
+"sides.\n"
+"\n"
+msgstr ""
+"\n"
+"Tòisich air còmhradh a bheir taic dhan òstair gus na daoine air a bheil "
+"smachd air taobh atharrachadh.\n"
+"\n"
+
+#. [topic]: id=mp_commands
+#: data/core/help.cfg:627
+msgid ""
+"\n"
+"Toggle the idle state for a side. The host may make a side idle after a "
+"network disconnection.\n"
+"\n"
+msgstr ""
+"\n"
+"Toglaich co-dhiubh a bheil taobh ’na thàmh. ’S urrainn dhan òstair taobh a "
+"chur ’na thàmh nuair a chaidh an ceangal dhan lìonra a bhriseadh.\n"
+"\n"
+
+#. [topic]: id=mp_commands
+#: data/core/help.cfg:630
 msgid ""
 "\n"
 "Kick a user in multiplayer. They will be able to rejoin the game. If you "
@@ -3328,7 +3463,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:624
+#: data/core/help.cfg:633
 msgid ""
 "\n"
 "Send a private message to a user. When in a game, it is not possible to send "
@@ -3343,7 +3478,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:627
+#: data/core/help.cfg:636
 msgid ""
 "\n"
 "Mute a specific observer. If no username is supplied the muted usernames are "
@@ -3357,7 +3492,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:630
+#: data/core/help.cfg:639
 msgid ""
 "\n"
 "Toggle muting/silencing of all observers on/off.\n"
@@ -3368,7 +3503,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:633
+#: data/core/help.cfg:642
 msgid ""
 "\n"
 "Unban a user in a multiplayer game by the IP address used by that username. "
@@ -3383,7 +3518,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:636
+#: data/core/help.cfg:645
 msgid ""
 "\n"
 "Unmute a specific observer. If no username is supplied the list of muted "
@@ -3395,12 +3530,12 @@ msgstr ""
 "cleachdaiche air am mùchadh fhalamhachadh."
 
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:644
+#: data/core/help.cfg:653
 msgid "Debug mode commands"
 msgstr "Àitheantan a’ mhodh dhì-bhugachaidh"
 
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:647
+#: data/core/help.cfg:656
 msgid ""
 "\n"
 "Brings up a menu for choosing a scenario to immediately advance to in a "
@@ -3413,7 +3548,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:650
+#: data/core/help.cfg:659
 msgid ""
 "\n"
 "Create a unit of the specified type on the selected hex.\n"
@@ -3425,7 +3560,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:653
+#: data/core/help.cfg:662
 msgid ""
 "\n"
 "Toggle fog/shroud for the current side.\n"
@@ -3436,7 +3571,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:656
+#: data/core/help.cfg:665
 msgid ""
 "\n"
 "Adds the specified amount to the current side’s gold.\n"
@@ -3448,7 +3583,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:659
+#: data/core/help.cfg:668
 msgid ""
 "\n"
 "Immediately advances to the next scenario in a campaign.\n"
@@ -3459,7 +3594,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:662
+#: data/core/help.cfg:671
 msgid ""
 "\n"
 "Manually set a gamestate variable to value.\n"
@@ -3470,7 +3605,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:665
+#: data/core/help.cfg:674
 msgid ""
 "\n"
 "Show a gamestate variable.\n"
@@ -3481,7 +3616,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:668
+#: data/core/help.cfg:677
 msgid ""
 "\n"
 "Manually fire the specified event.\n"
@@ -3492,7 +3627,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:671
+#: data/core/help.cfg:680
 msgid ""
 "\n"
 "Modifies the specified property of the selected unit. Example: :unit "
@@ -3505,7 +3640,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:674
+#: data/core/help.cfg:683
 msgid ""
 "\n"
 "Makes the selected unit level up N times. Example: :unit advances=2"
@@ -4836,18 +4971,17 @@ msgstr ""
 "Dh’fhaoidte gur e gu bheil iad a’ fuireach fad air falbh bho na slòigh eile "
 "as coireach gu bheil na troichean amharasach no nàimhdeil an aghaidh na mòr-"
 "cuid de na slòigh eile is an aghaidh nan sìthichean gu h-àraidh. Is a’ "
-"chinne-daonna an t-aon eisgeachd air seo. Thathar den bheachd gun do "
-"thòisich an dàimh eatorra ri linn Taldraig I nuair a thàinig a’ chinne-"
-"daonna is na deamhain don mhòr-thìr. ’S ann aig an àm ud gun tug na "
-"troichean cead do chuid a dhaoine tuineachadh ann an sgìrean sònraichte san "
-"Taobh Tuath, ’s bu easaontaichean is fògraich bho Rìoghachd Bheasnaid a bh’ "
-"anns a’ mhòrchuid dhiubh. Chan eil iongnadh air na h-adhbharan aca. Thug "
-"cruaidh-chàs nan daoine ud an eachdraidh tràth fhèin de thòrachd an cuimhne "
-"nan troichean is dh’adhbharaich seo co-fhaireachdainn annta. Fhuair na "
-"troichean buannachd às an dàimh ris na fògraich seo cuideachd. Bhiodh iadsan "
-"a’ tuineachadh ann an sgìrean nach bu toil leis na troichean fhèin a leithid "
-"mhaghan, choilltean no bhoglach is cha do leig iad fhèin leas na sgìrean seo "
-"a dhìon.\n"
+"chinne-daonna an aon eisgeachd air seo. Thathar den bheachd gun do thòisich "
+"an dàimh eatorra ri linn Taldraig I nuair a thàinig a’ chinne-daonna is na "
+"deamhain don mhòr-thìr. ’S ann aig an àm ud gun tug na troichean cead do "
+"chuid a dhaoine tuineachadh ann an sgìrean sònraichte san Taobh Tuath, ’s bu "
+"easaontaichean is fògraich bho Rìoghachd Bheasnaid a bh’ anns a’ mhòrchuid "
+"dhiubh. Chan eil iongnadh air na h-adhbharan aca. Thug cruaidh-chàs nan "
+"daoine ud an eachdraidh tràth fhèin de thòrachd an cuimhne nan troichean is "
+"dh’adhbharaich seo co-fhaireachdainn annta. Fhuair na troichean buannachd às "
+"an dàimh ris na fògraich seo cuideachd. Bhiodh iadsan a’ tuineachadh ann an "
+"sgìrean nach bu toil leis na troichean fhèin a leithid mhaghan, choilltean "
+"no bhoglach is cha do leig iad fhèin leas na sgìrean seo a dhìon.\n"
 "\n"
 "Tha troichean beag an coimeas daoine ach chan eil iad lag ann an dòigh sam "
 "bith. Tha na gaisgich aca cruaidh is cumhachdach is tha na comasan aca air "
@@ -5116,7 +5250,7 @@ msgstr ""
 "Nì an fheadhainn cruaidh fastadh air saighdearan-duaise deamhain cuideachd. "
 "Chan eil nàimhdean aca bho thùs ged a tha fuath nàdarra aig a’ mhòrchuid "
 "dhaibh air na closaich mar a tha aig grunn chinnidhean eile. Tha daoine nas "
-"lugha na sìthichean ach nas àirde na troichean. Chan eil an t-aon dath aig "
+"lugha na sìthichean ach nas àirde na troichean. Chan eil an aon dath aig "
 "craiceann nan daoine uile ’s faodaidh caochladh dheth a bhith ann eadar geal "
 "is donn dorcha.\n"
 "\n"
@@ -5317,7 +5451,7 @@ msgstr ""
 "shiubhlas air an dà chois, air sgiath no air crubh. Ged a bhios bodhaigean "
 "caran lag orra, tha iad nas luaithe clise na an nàimhdean mar as trice. Bidh "
 "còmhraig eatorra is an sluagh-mara aig amannan nuair a bhios iad a’ tagairt "
-"an t-aon ranntair, ach mar as trice bidh na nagaidhean a cheart cho dèidheil "
+"an aon ranntair, ach mar as trice bidh na nagaidhean a cheart cho dèidheil "
 "air boglaich no aibhnichean ris an uisge fhosgailte."
 
 #. [race]: id=ogre
@@ -5732,202 +5866,241 @@ msgid ""
 "only to march to the defense of the natural world and the forests it calls "
 "home."
 msgstr ""
+"Fuirichidh na gillean-dubha mòra domhainn an an coilltean ar saoghail. Mur "
+"eil thu eòlach orra, cha mhothaich thu ach craobh uasail air a bheil cruth "
+"neònach. Tha dàimh ris a’ choille aig na gillean-dubha a tha fiù ’s nas "
+"doimhne na an dàimh a tha aig na sìthichean ris air sgàth ’s gur e luchd-"
+"glèidhidh na coille a th’ annta. Ged a tha na gillean-dubha sìtheil bho "
+"thùs, ’s mòr am fearg ma nì duine cron air na coilltean àrsaidh. ’S e "
+"creutairean slaodach a th’ anns na gillean-dubha a chaitheadh bliadhnaichean "
+"mòra ’nan seasamh air an aon àite gun ruith na h-ama a chur dragh orra.\n"
+"\n"
+"Tha dàimh dhlùth eadar na sìthichean ’s na gillean-dubha ged nach eil iad "
+"fhèin ri draoidheachd. Thàinig an eòlas beag a th’ againn air a’ chinnidh "
+"àrsaidh seo bho sgoilearan nan sìthichean a bheil den bheachd gu bheil "
+"cumhachd rùnach na draoidheachd am broinn nan gillean-dubha gu nàdarra. Ged "
+"a tha iad coltach riutha, cha tàinig na gillean-dubha bhon aon sìol ’s a "
+"thàinig na craobhan. Thathar den bheachd gur e aon de na creutairean as sine "
+"fon ghrèin a th’ anns na gillean-dubha, nas sine na na coilltean sna bheil "
+"iad a’ còmhnaidh ’s dòcha agus gun do ghabh iad uallach air na coilltean air "
+"sgàth na cumhachd draoidhich annta.\n"
+"\n"
+"Chan eil na gillean-dubha measail no sgileil air a’ chogadh idir. Freagraidh "
+"iad le spàirn mhòr co-dhiù nuair a bhios na coilltean aca fo chunnart. "
+"Gluaisidh na gillean-dubha gu slaodach ’s bidh iad so-leònta nuair a "
+"dh’fhàgas iad na coilltean. Tha gillean-dubha mothachail air draoidheachd "
+"dhìomhair ri linn an dàimh rithe. Seasaidh iad an aghaidh ionnsaighean "
+"fiosaigeach air sàilleibh fiodh cruaidh nam bodhaigean ach bidh iad so-"
+"leònta an aghaidh teine air an aon adhbhar. Ath-ghinidh an slàinte gu luath "
+"leis an rùsg tiugh ’s a’ chumhachd dhraoidheach a tha ’nam broinn agus ged "
+"nach saoileadh tu e bhon nàdar shlaodach shìtheil a tha annta, seasaidh iad "
+"an aghaidh nàmhaid le brùthadh mòr fiù ’s nuair a bhios iad air an leònadh. "
+"Tha na gillean-dubha comasach air dol ’nam falach am measg nan craobhan "
+"eadhon bho na rabhadairean as eòlaiche aig na sìthichean ach an dèan iad "
+"fàth orra.\n"
+"\n"
+"Chan eil fios againn air dè cho fada ’s a mhaireas beatha gille-dhuibh ach "
+"tha an fheadhainn as sine dhiubh linntean a dh’aois agus air fàs cianail "
+"fhèin mòr. Thathar den bheachd nach caochail gille-dubh idir mus faigh e bàs "
+"le còmhstri. Bidh gille-dubh sona ’na sheasamh mar fhreiceadan fad linntean "
+"gun diù air tachartasan ann an saoghail càich agus cha ghluais e mus tig an "
+"àm an saoghal nàdarra agus na coilltean-dachaigh aige a dhìon."
 
 #: src/help.cpp:52
 msgid "Help"
 msgstr "Cobhair"
 
-#: src/help.cpp:1152
+#: src/help.cpp:1154
 msgid "<header>text='Units having this special attack'</header>"
 msgstr ""
 "<header>text='Aonadan aig a bheil an ionnsaigh shònraichte seo'</header>"
 
-#: src/help.cpp:1218
+#: src/help.cpp:1220
 msgid "<header>text='Units having this ability'</header>"
 msgstr "<header>text='Aonadan aig a bheil an comas seo'</header>"
 
-#: src/help.cpp:1251
+#: src/help.cpp:1253
 msgid "Leaders:"
 msgstr "Ceannardan:"
 
-#: src/help.cpp:1260
+#: src/help.cpp:1262
 msgid "Recruits:"
 msgstr "Luchd air trusadh:"
 
-#: src/help.cpp:1274
+#: src/help.cpp:1276
 msgid "Era:"
 msgstr "Linn:"
 
-#: src/help.cpp:1282
+#: src/help.cpp:1284
 msgid "Factions:"
 msgstr "Buidhnean:"
 
-#: src/help.cpp:1292
+#: src/help.cpp:1294
 msgid "Factions are only used in multiplayer"
 msgstr ""
 "Cha tèid buidhnean a chleachdadh ach ann an geamannan ioma-chluicheadair"
 
-#: src/help.cpp:1325
+#: src/help.cpp:1327
 msgid "Base Terrain: "
 msgstr "Cruth-tìre bunasach: "
 
-#: src/help.cpp:1403
+#: src/help.cpp:1405
 msgid "level"
 msgstr "rang"
 
-#: src/help.cpp:1436
+#: src/help.cpp:1438
 msgid "Advances from: "
 msgstr "Àrdaichidh e bho: "
 
-#: src/help.cpp:1438
+#: src/help.cpp:1440
 msgid "Advances to: "
 msgstr "Àrdaichidh e gu: "
 
-#: src/help.cpp:1463
+#: src/help.cpp:1465
 msgid "Base unit: "
 msgstr "Aonad bunasach: "
 
-#: src/help.cpp:1468
+#: src/help.cpp:1470
 msgid "Base units: "
 msgstr "Aonadan bunasach: "
 
-#: src/help.cpp:1486
+#: src/help.cpp:1488
 msgid "Variations: "
 msgstr "Caochlaidhean: "
 
-#: src/help.cpp:1510 src/help.cpp:1887 src/help.cpp:2031
+#: src/help.cpp:1512 src/help.cpp:1889 src/help.cpp:2033
 msgid "race^Miscellaneous"
 msgstr "Measgaichte"
 
-#: src/help.cpp:1512
+#: src/help.cpp:1514
 msgid "Race: "
 msgstr "Cinneadh: "
 
-#: src/help.cpp:1519
+#: src/help.cpp:1521
 msgid "Abilities: "
 msgstr "Comasan: "
 
-#: src/help.cpp:1535
+#: src/help.cpp:1537
 msgid "Ability Upgrades: "
 msgstr "Àrdachadh chomasan: "
 
-#: src/help.cpp:1550
+#: src/help.cpp:1552
 msgid "HP: "
 msgstr "PB: "
 
-#: src/help.cpp:1551
+#: src/help.cpp:1553
 msgid "Moves: "
 msgstr "Gluasadan: "
 
-#: src/help.cpp:1553
+#: src/help.cpp:1555
 msgid "Vision: "
 msgstr "Lèirsinn: "
 
-#: src/help.cpp:1555
+#: src/help.cpp:1557
 msgid "Jamming: "
 msgstr "Casg: "
 
-#: src/help.cpp:1556
+#: src/help.cpp:1558
 msgid "Cost: "
 msgstr "Cosgais: "
 
-#: src/help.cpp:1557
+#: src/help.cpp:1559
 msgid "Alignment: "
 msgstr "Co-thaobhadh: "
 
-#: src/help.cpp:1561
+#: src/help.cpp:1563
 msgid "Required XP: "
 msgstr "PE a dhìth: "
 
-#: src/help.cpp:1570
+#: src/help.cpp:1572
 msgid "unit help^Attacks"
 msgstr "Ionnsaighean"
 
-#: src/help.cpp:1577
+#: src/help.cpp:1579
 msgid "unit help^Name"
 msgstr "Ainm"
 
-#: src/help.cpp:1578
+#: src/help.cpp:1580
 msgid "Type"
 msgstr "Seòrsa"
 
-#: src/help.cpp:1579
+#: src/help.cpp:1581
 msgid "Strikes"
 msgstr "Buillean"
 
-#: src/help.cpp:1580
+#: src/help.cpp:1582
 msgid "Range"
 msgstr "Astar"
 
-#: src/help.cpp:1581
+#: src/help.cpp:1583
 msgid "Special"
 msgstr "Sònraichte"
 
-#: src/help.cpp:1630
+#: src/help.cpp:1632
 msgid "Resistances"
 msgstr "Comasan-seasaimh"
 
-#: src/help.cpp:1634
+#: src/help.cpp:1636
 msgid "Attack Type"
 msgstr "Seòrsa na h-ionnsaighe"
 
-#: src/help.cpp:1635
+#: src/help.cpp:1637
 msgid "Resistance"
 msgstr "Comas-seasaimh"
 
-#: src/help.cpp:1665
+#: src/help.cpp:1667
 msgid "Terrain Modifiers"
 msgstr "Atharraichearan crutha-thìre"
 
-#: src/help.cpp:1669
+#: src/help.cpp:1671
 msgid "Terrain"
 msgstr "Cruth-tìre"
 
-#: src/help.cpp:1670
+#: src/help.cpp:1672
 msgid "Defense"
 msgstr "Dìon"
 
-#: src/help.cpp:1671
+#: src/help.cpp:1673
 msgid "Movement Cost"
 msgstr "Cosgais ghluasaid"
 
-#: src/help.cpp:1675
+#: src/help.cpp:1677
 msgid "Vision Cost"
 msgstr "Cosgais lèirsinne"
 
-#: src/help.cpp:1678
+#: src/help.cpp:1680
 msgid "Jamming Cost"
 msgstr "Cosgais caisg"
 
-#: src/help.cpp:2037
+#: src/help.cpp:2039
 msgid "<header>text='Units of this race'</header>"
 msgstr "<header>text='Aonadan aig a’ chinneadh seo'</header>"
 
-#: src/help.cpp:2948
+#: src/help.cpp:2951
 msgid " < Back"
 msgstr "< Air ais"
 
-#: src/help.cpp:2949
+#: src/help.cpp:2952
 msgid "Forward >"
 msgstr "Air adhart >"
 
-#: src/help.cpp:3057
+#: src/help.cpp:3060
 msgid "Reference to unknown topic: "
 msgstr "Iomradh dha chuspair neo-aithnichte: "
 
-#: src/help.cpp:3313
+#: src/help.cpp:3316
 msgid "corrupted original file"
 msgstr "faile tùsach coirbte"
 
-#: src/help.cpp:3424
+#: src/help.cpp:3427
 msgid "Close"
 msgstr "Dùin"
 
-#: src/help.cpp:3427
+#: src/help.cpp:3430
 msgid "The Battle for Wesnoth Help"
 msgstr "Cobhair aig Strì Bheasnaid"
 
-#: src/help.cpp:3483
+#: src/help.cpp:3486
 msgid "Parse error when parsing help text: "
 msgstr "Mearachd parsaidh le parsadh an teacsa taice: "
 

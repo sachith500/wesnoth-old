@@ -27,6 +27,8 @@
 #include "wml_exception.hpp"
 #include "formula_string_utils.hpp"
 
+#include "game_display.hpp"
+
 #include "boost/foreach.hpp"
 
 #include "preferences.hpp"
@@ -43,6 +45,9 @@ surface getMinimap(int w, int h, const gamemap &map, const team *vw, const std::
 	const int scale = 8;
 
 	DBG_DP << "creating minimap " << int(map.w()*scale*0.75) << "," << map.h()*scale << "\n";
+
+	bool preferences_minimap_draw_terrain = preferences::minimap_draw_terrain();
+	bool preferences_minimap_terrain_coding = preferences::minimap_terrain_coding();
 
 	const size_t map_width = map.w()*scale*3/4;
 	const size_t map_height = map.h()*scale;
@@ -68,7 +73,7 @@ surface getMinimap(int w, int h, const gamemap &map, const team *vw, const std::
 
 			const bool highlighted = reach_map && reach_map->count(loc) != 0;
 
-			const bool shrouded = (vw != NULL && vw->shrouded(loc));
+			const bool shrouded = (resources::screen != NULL && resources::screen->is_blindfolded()) || (vw != NULL && vw->shrouded(loc));
 			// shrouded hex are not considered fogged (no need to fog a black image)
 			const bool fogged = (vw != NULL && !shrouded && vw->fogged(loc));
 
@@ -88,9 +93,9 @@ surface getMinimap(int w, int h, const gamemap &map, const team *vw, const std::
 					, 0
 					, 0);
 
-			if (preferences::minimap_draw_terrain()) {
+			if (preferences_minimap_draw_terrain) {
 
-				if (!preferences::minimap_terrain_coding()) {
+				if (!preferences_minimap_terrain_coding) {
 
 					surface surf(NULL);
 
@@ -165,15 +170,23 @@ surface getMinimap(int w, int h, const gamemap &map, const team *vw, const std::
 
 				} else {
 
-					SDL_Color normal_col = int_to_color(game_config::team_rgb_range.find(terrain_info.id())->second.rep());
+					SDL_Color col;
+					std::map<std::string, color_range>::const_iterator it = game_config::team_rgb_range.find(terrain_info.id());
+					if (it == game_config::team_rgb_range.end()) {
+						col = create_color(0,0,0,0);
+					} else
+						col = int_to_color(it->second.rep());
 
-					SDL_Color col = normal_col;
 					bool first = true;
 					const t_translation::t_list& underlying_terrains = map.underlying_union_terrain(terrain);
 					BOOST_FOREACH(const t_translation::t_terrain& underlying_terrain, underlying_terrains) {
 
 						const std::string& terrain_id = map.get_terrain_info(underlying_terrain).id();
-						SDL_Color tmp = int_to_color(game_config::team_rgb_range.find(terrain_id)->second.rep());
+						std::map<std::string, color_range>::const_iterator it = game_config::team_rgb_range.find(terrain_id);
+						if (it == game_config::team_rgb_range.end())
+							continue;
+
+						SDL_Color tmp = int_to_color(it->second.rep());
 
 						if (fogged) {
 							if (tmp.b < 50) tmp.b = 0;
@@ -222,11 +235,11 @@ surface getMinimap(int w, int h, const gamemap &map, const team *vw, const std::
 						} else {
 
 							if (vw->owns_village(loc))
-								col = int_to_color(game_config::color_info(game_config::images::unmoved_orb_color).rep());
+								col = int_to_color(game_config::color_info(preferences::unmoved_color()).rep());
 							else if (vw->is_enemy(side + 1))
-								col = int_to_color(game_config::color_info(game_config::images::enemy_orb_color).rep());
+								col = int_to_color(game_config::color_info(preferences::enemy_color()).rep());
 							else
-								col = int_to_color(game_config::color_info(game_config::images::ally_orb_color).rep());
+								col = int_to_color(game_config::color_info(preferences::allied_color()).rep());
 						}
 					}
 				}

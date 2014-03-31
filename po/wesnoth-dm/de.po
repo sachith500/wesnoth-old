@@ -3,17 +3,18 @@
 # slafochmed <>, 200?
 msgid ""
 msgstr ""
-"Project-Id-Version: Battle for Wesnoth 1.10\n"
+"Project-Id-Version: Battle for Wesnoth 1.12\n"
 "Report-Msgid-Bugs-To: http://bugs.wesnoth.org/\n"
-"POT-Creation-Date: 2014-02-05 19:37+0100\n"
-"PO-Revision-Date: 2012-01-02 \n"
-"Last-Translator: Christoph Berg <Christoph.Berg@kpm-sport.de>\n"
-"Language-Team: irc://irc.freenode.net/#wesnoth-de <>\n"
-"Language: \n"
+"POT-Creation-Date: 2014-03-02 10:23+0100\n"
+"PO-Revision-Date: 2014-03-23 11:24+0100\n"
+"Last-Translator: Christoph Berg <christoph.berg@kpm-sport.de>\n"
+"Language-Team: irc://irc.freenode.net/#wesnoth-de\n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.6.4\n"
 
 #. [campaign]: id=Delfadors_Memoirs
 #. [editor_group]: id=dm
@@ -2199,10 +2200,9 @@ msgstr "Bringt in Erfahrung, was an der Furt vor sich geht"
 
 #. [objective]: condition=win
 #: data/campaigns/Delfadors_Memoirs/scenarios/12_Terror_at_the_Ford_of_Parthyn.cfg:58
-#: data/campaigns/Delfadors_Memoirs/scenarios/12_Terror_at_the_Ford_of_Parthyn.cfg:666
-#: data/campaigns/Delfadors_Memoirs/scenarios/13_The_Return_of_Trouble.cfg:187
-#: data/campaigns/Delfadors_Memoirs/scenarios/19_Showdown_in_the_Northern_Swamp.cfg:150
-msgid "Defeat all enemies"
+#: data/campaigns/Delfadors_Memoirs/scenarios/14_Shadows.cfg:122
+#: data/campaigns/Delfadors_Memoirs/scenarios/15_Save_the_King.cfg:184
+msgid "Defeat all enemy leaders"
 msgstr "Besiegt alle gegnerischen Anführer"
 
 #. [side]: type=Orcish Warlord, id=Upgar
@@ -2364,10 +2364,6 @@ msgstr ""
 
 #. [message]: speaker=Niktor
 #: data/campaigns/Delfadors_Memoirs/scenarios/12_Terror_at_the_Ford_of_Parthyn.cfg:424
-#, fuzzy
-#| msgid ""
-#| "Yes, close by the southeast wall of our fort across the the Ford. But "
-#| "they are jealous of their privileges and hold aloof from us."
 msgid ""
 "Yes, close by the southeast wall of our fort across the Ford. But they are "
 "jealous of their privileges and hold aloof from us."
@@ -2488,6 +2484,13 @@ msgstr ""
 "Ich weiß es nicht. Keiner, der ihre Gesichter sah, lebt, um davon erzählen "
 "zu können. Was ich hören konnte, waren die Schreie meiner Kameraden, als sie "
 "niedergemetzelt wurden."
+
+#. [objective]: condition=win
+#: data/campaigns/Delfadors_Memoirs/scenarios/12_Terror_at_the_Ford_of_Parthyn.cfg:666
+#: data/campaigns/Delfadors_Memoirs/scenarios/13_The_Return_of_Trouble.cfg:187
+#: data/campaigns/Delfadors_Memoirs/scenarios/19_Showdown_in_the_Northern_Swamp.cfg:150
+msgid "Defeat all enemies"
+msgstr "Besiegt alle gegnerischen Anführer"
 
 #. [unit]: type=Heavy Infantryman, id=Donc
 #: data/campaigns/Delfadors_Memoirs/scenarios/12_Terror_at_the_Ford_of_Parthyn.cfg:702
@@ -3068,12 +3071,6 @@ msgstr "Roth-Malal"
 msgid "Barth-Malal"
 msgstr "Barth-Malal"
 
-#. [objective]: condition=win
-#: data/campaigns/Delfadors_Memoirs/scenarios/14_Shadows.cfg:122
-#: data/campaigns/Delfadors_Memoirs/scenarios/15_Save_the_King.cfg:184
-msgid "Defeat all enemy leaders"
-msgstr "Besiegt alle gegnerischen Anführer"
-
 #. [message]: id=Kalenz
 #: data/campaigns/Delfadors_Memoirs/scenarios/14_Shadows.cfg:152
 msgid ""
@@ -3180,11 +3177,6 @@ msgstr "Dieser ist Delfador. Siehst du auch, was ich in ihm sehe?"
 
 #. [message]: id=Kalenz
 #: data/campaigns/Delfadors_Memoirs/scenarios/14_Shadows.cfg:307
-#, fuzzy
-#| msgid ""
-#| "I do. He is a like a blazing fire to my inner eye. I think you have "
-#| "chosen well, granddaughter; he is indeed the one to whom the Book of "
-#| "Crelanu should pass."
 msgid ""
 "I do. He is like a blazing fire to my inner eye. I think you have chosen "
 "well, granddaughter; he is indeed the one to whom the Book of Crelanu should "
@@ -3732,10 +3724,6 @@ msgstr ""
 
 #. [part]
 #: data/campaigns/Delfadors_Memoirs/scenarios/16_Dark_Sky_Over_Weldyn.cfg:77
-#, fuzzy
-#| msgid ""
-#| "No, Lionel. This should be too simple a task for my best general. I will "
-#| "send Dudpon, instead with most of my army."
 msgid ""
 "No, Lionel. This should be too simple a task for my best general. I will "
 "send Dudpon instead with most of my army."
@@ -4319,11 +4307,13 @@ msgid ""
 "The killing blow against Iliah-Malal can only be struck by one of your "
 "Undead veterans"
 msgstr ""
+"Der tödliche Schlag gegen Iliah-Mala muss durch einen Eurer untoten "
+"Veteranen erfolgen."
 
 #. [note]
 #: data/campaigns/Delfadors_Memoirs/scenarios/19_Showdown_in_the_Northern_Swamp.cfg:184
 msgid "The killing blow against Iliah-Malal can only be struck by Delfador"
-msgstr ""
+msgstr "Der tödliche Schlag gegen Iliah-Mala muss durch Delfador erfolgen."
 
 #. [message]: speaker=Iliah-Malal
 #: data/campaigns/Delfadors_Memoirs/scenarios/19_Showdown_in_the_Northern_Swamp.cfg:227
@@ -5354,12 +5344,3 @@ msgstr "Droni"
 #: data/campaigns/Delfadors_Memoirs/utils/sides.cfg:294
 msgid "Artor"
 msgstr "Artor"
-
-#~ msgid "Defeat Zorlan"
-#~ msgstr "Besiegt Zorlan"
-
-#~ msgid "Invincible Zorlan is dead? Quick, run for your lives!"
-#~ msgstr "Der unbesiegbare Zorlan ist tot? Rennt um euer Leben!"
-
-#~ msgid "You will terrorize Wesnoth no more!"
-#~ msgstr "Nie wieder wirst du Wesnoth in Angst und Schrecken versetzen!"

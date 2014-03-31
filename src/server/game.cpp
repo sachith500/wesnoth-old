@@ -183,6 +183,8 @@ void game::start_game(const player_map::const_iterator starter) {
 	// Set all side controllers to 'human' so that observers will understand
 	// that they can't take control of any sides if they happen to have the
 	// same name as one of the descriptions.
+	// iceiceice 3/17/2014: disabled this behavior as it causes out of sync
+	// the observer issue is now handled by ... client remembers if they are observing.
 	const simple_wml::node::child_list& sides = level_.root().children("side");
 	for(simple_wml::node::child_list::const_iterator s = sides.begin(); s != sides.end(); ++s) {
 		nsides_++;
@@ -194,7 +196,7 @@ void game::start_game(const player_map::const_iterator starter) {
 				LOG_GAME << msg.str() << " (game id: " << id_ << ")\n";
 				send_and_record_server_message(msg.str());
 			}
-			(*s)->set_attr("controller", "human");
+			//(*s)->set_attr("controller", "human");
 		}
 	}
 
@@ -371,7 +373,7 @@ void game::transfer_side_control(const network::connection sock, const simple_wm
 				send_server_message("You can only (un)droid your own sides!", sock);
 			}
 			return;
-		} else if (cfg["controller"] != "human_ai" && cfg["controller"] != "human") {
+		} else if (cfg["controller"] != "ai" && cfg["controller"] != "human") {
 			std::stringstream msg;
 			msg << "Wrong controller type received: '" << cfg["controller"] << "'";
 			DBG_GAME << msg.str() << "\n";
@@ -449,9 +451,9 @@ void game::change_controller(const size_t side_num,
 		send_and_record_server_message(player_name + " takes control of side " + side + ".");
 		side_controllers_[side_num] = "human";
 	} else {
-		send_and_record_server_message(player_name + (controller == "human_ai" ? " " : " un")
+		send_and_record_server_message(player_name + (controller == "ai" ? " " : " un")
 				+ "droids side " + side + ".");
-		side_controllers_[side_num] = (controller == "human_ai" ? "ai" : "human");
+		side_controllers_[side_num] = (controller == "ai" ? "ai" : "human");
 	}
 
 	simple_wml::document response;
@@ -468,7 +470,7 @@ void game::change_controller(const size_t side_num,
 	// Just don't send it when the player left the game. (The host gets the
 	// side_drop already.)
 	if (!player_left) {
-		change.set_attr("controller", (side_controllers_[side_num] == "ai" ? "human_ai" : "human"));
+		change.set_attr("controller", (side_controllers_[side_num] == "ai" ? "ai" : "human"));
 		wesnothd::send_to_one(response, sock);
 	}
 

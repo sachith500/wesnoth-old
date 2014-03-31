@@ -688,17 +688,27 @@ void menu_handler::recall(int side_num, const map_location &last_hex)
 		return;
 	}
 
-	int res = dialogs::recall_dialog(*gui_, recall_list_team, side_num, get_title_suffix(side_num));
-	if (res < 0) return;
+	int res = dialogs::recall_dialog(*gui_, recall_list_team, side_num, get_title_suffix(side_num), current_team.recall_cost());
+	int unit_cost = current_team.recall_cost();
+	if (res < 0) { 
+		return;
+	}
+	// we need to check if unit has a specific recall cost
+	// if it does we use it elsewise we use the team.recall_cost()
+	// the magic number -1 is what it gets set to if the unit doesn't
+	// have a special recall_cost of its own.
+	else if(recall_list_team[res]->recall_cost() > -1) {
+		unit_cost = recall_list_team[res]->recall_cost();
+	}
 
 	int wb_gold = resources::whiteboard->get_spent_gold_for(side_num);
-	if (current_team.gold() - wb_gold < current_team.recall_cost()) {
+	if (current_team.gold() - wb_gold < unit_cost) {
 		utils::string_map i18n_symbols;
-		i18n_symbols["cost"] = lexical_cast<std::string>(current_team.recall_cost());
+		i18n_symbols["cost"] = lexical_cast<std::string>(unit_cost);
 		std::string msg = vngettext(
 			"You must have at least 1 gold piece to recall a unit",
-			"You must have at least $cost gold pieces to recall a unit",
-			current_team.recall_cost(), i18n_symbols);
+			"You must have at least $cost gold pieces to recall this unit",
+			unit_cost, i18n_symbols);
 		gui2::show_transient_message(gui_->video(), "", msg);
 		return;
 	}
@@ -1167,12 +1177,6 @@ void menu_handler::label_terrain(mouse_handler& mousehandler, bool team_only)
 			team_name = gui_->labels().team_name();
 		} else {
 			color = int_to_color(team::get_side_rgb(gui_->viewing_side()));
-		}
-		const std::string& old_team_name = old_label ? old_label->team_name() : "";
-		// remove the old label if we changed the team_name
-		if (team_only == (old_team_name == "")) {
-			const terrain_label* old = gui_->labels().set_label(loc, "", old_team_name, color);
-			if (old) recorder.add_label(old);
 		}
 		const terrain_label* res = gui_->labels().set_label(loc, label, team_name, color);
 		if (res)
@@ -1962,8 +1966,10 @@ class console_handler : public map_command_handler<console_handler>, private cha
 
 		void do_refresh();
 		void do_droid();
+		void do_idle();
 		void do_theme();
 		void do_control();
+		void do_controller();
 		void do_clear();
 		void do_sunset();
 		void do_foreground();
@@ -2041,9 +2047,13 @@ class console_handler : public map_command_handler<console_handler>, private cha
 				_("Refresh gui."));
 			register_command("droid", &console_handler::do_droid,
 				_("Switch a side to/from AI control."), _("do not translate the on/off^[<side> [on/off]]"));
+			register_command("idle", &console_handler::do_idle,
+				_("Switch a side to/from idle state."), _("do not translate the on/off^[<side> [on/off]]"));
 			register_command("theme", &console_handler::do_theme);
 			register_command("control", &console_handler::do_control,
 				_("Assign control of a side to a different player or observer."), _("<side> <nickname>"), "N");
+			register_command("controller", &console_handler::do_controller,
+				_("Query the controller status of a side."), _("<side>"));
 			register_command("clear", &console_handler::do_clear,
 				_("Clear chat history."));
 			register_command("sunset", &console_handler::do_sunset,
@@ -2659,10 +2669,10 @@ void console_handler::do_droid() {
 		symbols["side"] = lexical_cast<std::string>(side);
 		command_failed(vgettext("Can't droid networked side: '$side'.", symbols));
 		return;
-	} else if (menu_handler_.teams_[side - 1].is_human() && action != " off") {
+	} else if ((menu_handler_.teams_[side - 1].is_human() || menu_handler_.teams_[side - 1].is_idle()) && action != " off") {
 		//this is our side, so give it to AI
-		menu_handler_.teams_[side - 1].make_human_ai();
-		menu_handler_.change_controller(lexical_cast<std::string>(side),"human_ai");
+		menu_handler_.teams_[side - 1].make_ai();
+		menu_handler_.change_controller(lexical_cast<std::string>(side),"ai");
 		if(team_num_ == side) {
 			//if it is our turn at the moment, we have to indicate to the
 			//play_controller, that we are no longer in control
@@ -2671,6 +2681,49 @@ void console_handler::do_droid() {
 	} else if (menu_handler_.teams_[side - 1].is_ai() && action != " on") {
 		menu_handler_.teams_[side - 1].make_human();
 		menu_handler_.change_controller(lexical_cast<std::string>(side),"human");
+	}
+	menu_handler_.textbox_info_.close(*menu_handler_.gui_);
+}
+
+void console_handler::do_idle() {
+	// :idle [<side> [on/off]]
+	const std::string side_s = get_arg(1);
+	const std::string action = get_arg(2);
+	// default to the current side if empty
+	const unsigned int side = side_s.empty() ?
+		team_num_ : lexical_cast_default<unsigned int>(side_s);
+
+	if (side < 1 || side > menu_handler_.teams_.size()) {
+		utils::string_map symbols;
+		symbols["side"] = side_s;
+		command_failed(vgettext("Can't idle invalid side: '$side'.", symbols));
+		return;
+	} else if (menu_handler_.teams_[side - 1].is_network()) {
+		utils::string_map symbols;
+		symbols["side"] = lexical_cast<std::string>(side);
+		command_failed(vgettext("Can't droid networked side: '$side'.", symbols));
+		return;
+	} else if (menu_handler_.teams_[side - 1].is_human() && action != " off") {
+		//this is our side, so give it to idle
+		menu_handler_.teams_[side - 1].make_idle();
+		menu_handler_.change_controller(lexical_cast<std::string>(side),"idle");
+		if(team_num_ == side) {
+			//if it is our turn at the moment, we have to indicate to the
+			//play_controller, that we are no longer in control
+			throw end_turn_exception(side);
+		}
+	} else if (menu_handler_.teams_[side - 1].is_ai() && action != " off") {
+		//this is our side, so give it to idle, without end turn exception. tell network it is human
+		menu_handler_.teams_[side - 1].make_idle();
+		menu_handler_.change_controller(lexical_cast<std::string>(side),"human");
+	} else if (menu_handler_.teams_[side - 1].is_idle() && action != " on") {
+		menu_handler_.teams_[side - 1].make_human();
+		menu_handler_.change_controller(lexical_cast<std::string>(side),"human");
+		if(team_num_ == side) {
+			//if it is our turn at the moment, we have to indicate to the
+			//play_controller, that idle should no longer be in control
+			throw end_turn_exception(side);
+		}
 	}
 	menu_handler_.textbox_info_.close(*menu_handler_.gui_);
 }
@@ -2707,6 +2760,27 @@ void console_handler::do_control() {
 	menu_handler_.request_control_change(side_num,player);
 	menu_handler_.textbox_info_.close(*(menu_handler_.gui_));
 }
+void console_handler::do_controller()
+{
+	const std::string side = get_arg(1);
+	unsigned int side_num;
+	try {
+		side_num = lexical_cast<unsigned int>(side);
+	} catch(bad_lexical_cast&) {
+		utils::string_map symbols;
+		symbols["side"] = side;
+		command_failed(vgettext("Can't query control of invalid side: '$side'.", symbols));
+		return;
+	}
+	if (side_num < 1 || side_num > menu_handler_.teams_.size()) {
+		utils::string_map symbols;
+		symbols["side"] = side;
+		command_failed(vgettext("Can't query control of out-of-bounds side: '$side'.",	symbols));
+		return;
+	}
+	print(get_cmd(), menu_handler_.teams_[side_num - 1].controller_string());
+}
+
 void console_handler::do_clear() {
 	menu_handler_.gui_->clear_chat_messages();
 }
@@ -3202,6 +3276,18 @@ void menu_handler::request_control_change ( int side_num, const std::string& pla
 		if (player == preferences::login())
 			return;
 		change_side_controller(side,player);
+	} else if (teams_[side_num - 1].is_idle()) { //if this is our side and it is idle, make human and throw an end turn exception
+		LOG_NG << " *** Got an idle side with requested control change " << std::endl;
+		teams_[side_num - 1].make_human();
+		change_controller(lexical_cast<std::string>(side_num),"human");
+
+		if (player == preferences::login()) {
+			LOG_NG << " *** It's us, throwing end turn exception " << std::endl;
+		} else {
+			LOG_NG << " *** It's not us, changing sides now as usual, then throwing end_turn " << std::endl;
+			change_side_controller(side,player);		 
+		}
+		throw end_turn_exception(side_num);
 	} else {
 		//it is not our side, the server will decide if we can change the
 		//controller (that is if we are host of the game)

@@ -629,6 +629,13 @@ void playsingle_controller::play_turn(bool save)
 	check_time_over();
 }
 
+void playsingle_controller::play_idle_loop()
+{
+	play_slice();
+	gui_->draw();
+	SDL_Delay(10);
+}
+
 void playsingle_controller::play_side(const unsigned int side_number, bool save)
 {
 	//check for team-specific items in the scenario
@@ -681,6 +688,29 @@ void playsingle_controller::play_side(const unsigned int side_number, bool save)
 
 		} else if(current_team().is_network()) {
 			play_network_turn();
+		} else if(current_team().is_idle()) {
+			try{
+				end_turn_enable(false);
+				do_idle_notification();
+				before_human_turn(save);
+				while(1) {
+					play_idle_loop();
+				}
+			} catch(end_turn_exception& end_turn) {
+				LOG_NG << "Escaped from idle state with exception!" << std::endl;
+				if (end_turn.redo == side_number) {
+					player_type_changed_ = true;
+					// If new controller is not human,
+					// reset gui to prev human one
+					if (!teams_[side_number-1].is_human()) {
+						browse_ = true;
+						int s = find_human_team_before(side_number);
+						if (s <= 0)
+							s = gui_->playing_side();
+						update_gui_to_player(s-1);
+					}
+				}
+			}
 		}
 
 		// Else current_team().is_empty(), so do nothing.
@@ -711,6 +741,8 @@ void playsingle_controller::before_human_turn(bool save)
 
 void playsingle_controller::show_turn_dialog(){
 	if(preferences::turn_dialog() && (level_result_ == NONE) ) {
+		blindfold b(*resources::screen, true); //apply a blindfold for the duration of this dialog
+		resources::screen->redraw_everything();
 		std::string message = _("It is now $name|’s turn");
 		utils::string_map symbols;
 		symbols["name"] = teams_[player_number_ - 1].current_player();
@@ -752,9 +784,6 @@ struct set_completion
 void playsingle_controller::linger()
 {
 	LOG_NG << "beginning end-of-scenario linger\n";
-	// TODO this seemed the right way to handle bug #21450
-	// but it is causing to end scenario button to be disabled
-	//const events::command_disabler disable_commands;
 	browse_ = true;
 	linger_ = true;
 
@@ -883,6 +912,16 @@ void playsingle_controller::play_ai_turn(){
 	gui_->delay(100);
 }
 
+
+/**
+ * Will handle sending a networked notification in descendent classes.
+ */
+void playsingle_controller::do_idle_notification()
+{
+	resources::screen->add_chat_message(time(NULL), "Wesnoth", 0, 
+		"This side is in an idle state. To proceed with the game, the host must assign it to another controller.",
+		events::chat_handler::MESSAGE_PUBLIC, false);
+}
 
 /**
  * Will handle networked turns in descendent classes.

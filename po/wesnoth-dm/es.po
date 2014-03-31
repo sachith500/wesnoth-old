@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wescamp-i 18n\n"
 "Report-Msgid-Bugs-To: http://bugs.wesnoth.org/\n"
-"POT-Creation-Date: 2014-02-05 19:37+0100\n"
+"POT-Creation-Date: 2014-03-02 10:23+0100\n"
 "PO-Revision-Date: 2011-12-28 20:13-0500\n"
 "Last-Translator: Javier C.H. <javier_los_herejes@hotmail.com>\n"
 "Language-Team: Spanish <http://wiki.wesnoth.org/SpanishTranslation>\n"
@@ -2188,11 +2188,10 @@ msgstr "Averigua que esta pasando en el vado."
 
 #. [objective]: condition=win
 #: data/campaigns/Delfadors_Memoirs/scenarios/12_Terror_at_the_Ford_of_Parthyn.cfg:58
-#: data/campaigns/Delfadors_Memoirs/scenarios/12_Terror_at_the_Ford_of_Parthyn.cfg:666
-#: data/campaigns/Delfadors_Memoirs/scenarios/13_The_Return_of_Trouble.cfg:187
-#: data/campaigns/Delfadors_Memoirs/scenarios/19_Showdown_in_the_Northern_Swamp.cfg:150
-msgid "Defeat all enemies"
-msgstr "Derrotar a todos los enemigos."
+#: data/campaigns/Delfadors_Memoirs/scenarios/14_Shadows.cfg:122
+#: data/campaigns/Delfadors_Memoirs/scenarios/15_Save_the_King.cfg:184
+msgid "Defeat all enemy leaders"
+msgstr "Derrotar a todos los líderes enemigos"
 
 #. [side]: type=Orcish Warlord, id=Upgar
 #: data/campaigns/Delfadors_Memoirs/scenarios/12_Terror_at_the_Ford_of_Parthyn.cfg:108
@@ -2474,6 +2473,13 @@ msgid ""
 msgstr ""
 "No lo se. Nadie ha visto sus caras y ha vivido para contarlo. Lo único que "
 "pude oír fueron los gritos de mis camaradas mientras eran masacrados."
+
+#. [objective]: condition=win
+#: data/campaigns/Delfadors_Memoirs/scenarios/12_Terror_at_the_Ford_of_Parthyn.cfg:666
+#: data/campaigns/Delfadors_Memoirs/scenarios/13_The_Return_of_Trouble.cfg:187
+#: data/campaigns/Delfadors_Memoirs/scenarios/19_Showdown_in_the_Northern_Swamp.cfg:150
+msgid "Defeat all enemies"
+msgstr "Derrotar a todos los enemigos."
 
 #. [unit]: type=Heavy Infantryman, id=Donc
 #: data/campaigns/Delfadors_Memoirs/scenarios/12_Terror_at_the_Ford_of_Parthyn.cfg:702
@@ -3046,12 +3052,6 @@ msgstr "Roth-Malal"
 #: data/campaigns/Delfadors_Memoirs/scenarios/14_Shadows.cfg:82
 msgid "Barth-Malal"
 msgstr "Barth-Malal"
-
-#. [objective]: condition=win
-#: data/campaigns/Delfadors_Memoirs/scenarios/14_Shadows.cfg:122
-#: data/campaigns/Delfadors_Memoirs/scenarios/15_Save_the_King.cfg:184
-msgid "Defeat all enemy leaders"
-msgstr "Derrotar a todos los líderes enemigos"
 
 #. [message]: id=Kalenz
 #: data/campaigns/Delfadors_Memoirs/scenarios/14_Shadows.cfg:152
@@ -5289,3 +5289,8 @@ msgstr "Droni"
 #: data/campaigns/Delfadors_Memoirs/utils/sides.cfg:294
 msgid "Artor"
 msgstr "Artor"
+
+#, fuzzy
+#~| msgid "Defeat all enemy leaders"
+#~ msgid "Defeat all enemey leaders"
+#~ msgstr "Derrotar a todos los líderes enemigos"

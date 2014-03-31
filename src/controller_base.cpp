@@ -102,6 +102,7 @@ void controller_base::handle_event(const SDL_Event& event)
 			show_menu(get_display().get_theme().context_menu()->items(),event.button.x,event.button.y,true, get_display());
 		}
 		break;
+#if !SDL_VERSION_ATLEAST(2, 0, 0)
 	case SDL_ACTIVEEVENT:
 		if (event.active.state == SDL_APPMOUSEFOCUS && event.active.gain == 0) {
 			if (get_mouse_handler_base().is_dragging()) {
@@ -116,6 +117,12 @@ void controller_base::handle_event(const SDL_Event& event)
 			}
 		}
 		break;
+#endif
+#if SDL_VERSION_ATLEAST(2,0,0)
+	case SDL_MOUSEWHEEL:
+		get_mouse_handler_base().mouse_wheel(event.wheel.x, event.wheel.y, browse_);
+		break;
+#endif
 	default:
 		break;
 	}
@@ -331,12 +338,20 @@ const config& controller_base::get_theme(const config& game_config, std::string 
 {
 	if (theme_name.empty()) theme_name = preferences::theme();
 
-	if (const config &c = game_config.find_child("theme", "name", theme_name))
+	if (const config &c = game_config.find_child("theme", "id", theme_name))
 		return c;
+
+	// Themes created for version 1.11.9 and earlier use name= for
+	// untranslatable ids.
+	// TODO: remove support for this in 1.13.x (1.13.2?).
+	if (const config &c = game_config.find_child("theme", "name", theme_name)) {
+		ERR_DP << "Theme '" << theme_name << "' uses [theme] name= instead of id= to specify its id; this usage is deprecated and will be removed in version 1.13.x.\n";
+		return c;
+	}
 
 	ERR_DP << "Theme '" << theme_name << "' not found. Trying the default theme.\n";
 
-	if (const config &c = game_config.find_child("theme", "name", "Default"))
+	if (const config &c = game_config.find_child("theme", "id", "Default"))
 		return c;
 
 	ERR_DP << "Default theme not found.\n";

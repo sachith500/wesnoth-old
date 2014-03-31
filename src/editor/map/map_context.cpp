@@ -93,7 +93,7 @@ map_context::map_context(const config& game_config, const std::string& filename,
 	, labels_(disp, NULL)
 	, units_()
 	, teams_()
-	, tod_manager_(NULL)
+	, tod_manager_(new tod_manager(game_config.find_child("editor_times", "id", "default")))
 	, state_()
 	, music_tracks_()
 {
@@ -273,8 +273,9 @@ void map_context::load_scenario(const config& game_config)
 	}
 
 	BOOST_FOREACH(const config& item, scenario.child_range("item")) {
+		const map_location loc(item);
 		overlays_.insert(std::pair<map_location,
-				overlay>(map_location(item["x"], item["y"]), overlay(item) ));
+				overlay>(loc, overlay(item) ));
 	}
 
 	BOOST_FOREACH(const config& music, scenario.child_range("music")) {

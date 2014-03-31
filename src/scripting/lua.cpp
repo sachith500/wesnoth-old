@@ -46,6 +46,7 @@
 #include "game_events/pump.hpp"
 #include "game_preferences.hpp"
 #include "gamestatus.hpp"
+#include "game_config_manager.hpp"
 #include "log.hpp"
 #include "lua_jailbreak_exception.hpp"
 #include "map.hpp"
@@ -464,6 +465,7 @@ static int impl_unit_type_get(lua_State *L)
 	return_int_attrib("max_experience", ut.experience_needed());
 	return_int_attrib("cost", ut.cost());
 	return_int_attrib("level", ut.level());
+	return_int_attrib("recall_cost", ut.recall_cost());
 	return_cfgref_attrib("__cfg", ut.get_cfg());
 	return 0;
 }
@@ -559,6 +561,7 @@ static int impl_unit_get(lua_State *L)
 	return_int_attrib("max_hitpoints", u.max_hitpoints());
 	return_int_attrib("experience", u.experience());
 	return_int_attrib("max_experience", u.max_experience());
+	return_int_attrib("recall_cost", u.recall_cost());
 	return_int_attrib("moves", u.movement_left());
 	return_int_attrib("max_moves", u.total_movement());
 	return_int_attrib("max_attacks", u.max_attacks());
@@ -617,6 +620,7 @@ static int impl_unit_set(lua_State *L)
 	modify_int_attrib("moves", u.set_movement(value));
 	modify_int_attrib("hitpoints", u.set_hitpoints(value));
 	modify_int_attrib("experience", u.set_experience(value));
+	modify_int_attrib("recall_cost", u.set_recall_cost(value));
 	modify_int_attrib("attacks_left", u.set_attacks(value));
 	modify_bool_attrib("resting", u.set_resting(value));
 	modify_tstring_attrib("name", u.set_name(value));
@@ -1491,6 +1495,19 @@ static int intf_get_starting_location(lua_State* L)
 }
 
 /**
+ * Gets a table for an era tag.
+ * - Arg 1: userdata (ignored).
+ * - Arg 2: string containing id of the desired era
+ * - Ret 1: config for the era
+ */
+static int intf_get_era(lua_State *L)
+{
+	char const *m = luaL_checkstring(L, 1);
+	luaW_pushconfig(L, resources::config_manager->game_config().find_child("era","id",m));
+	return 1;
+}
+
+/**
  * Gets some game_config data (__index metamethod).
  * - Arg 1: userdata (ignored).
  * - Arg 2: string containing the name of the property.
@@ -1518,7 +1535,18 @@ static int impl_game_config_get(lua_State *L)
 	return_string_attrib("campaign_type", game_state_.classification().campaign_type);
 	if(game_state_.classification().campaign_type=="multiplayer") {
 		return_cfgref_attrib("mp_settings", game_state_.mp_settings().to_config());
-	}
+		return_cfgref_attrib("era", resources::config_manager->game_config().find_child("era","id",game_state_.mp_settings().mp_era));
+		//^ finds the era with name matching mp_era, and creates a lua reference from the config of that era.
+
+                //This code for SigurdFD, not the cleanest implementation but seems to work just fine.
+		config::const_child_itors its = resources::config_manager->game_config().child_range("era");
+		std::string eras_list((*(its.first))["id"]);
+		++its.first;
+		for(; its.first != its.second; ++its.first) {
+			eras_list = eras_list + "," + (*(its.first))["id"];
+		}
+		return_string_attrib("eras", eras_list);
+	}	 
 	return 0;
 }
 
@@ -2627,8 +2655,11 @@ namespace {
 					index = 2;
 			}
 			lua_settop(L, index);
-			if (luaW_pcall(L, 0, 1, false))
-				luaW_toconfig(L, -1, cfg);
+			if (luaW_pcall(L, 0, 1, false)) {
+				if(!luaW_toconfig(L, -1, cfg) && game_config::debug) {
+					chat_message("Lua warning", "function returned to wesnoth.synchronize_choice a table which was partially invalid");
+				}
+			}
 			return cfg;
 		}
 
@@ -3585,6 +3616,7 @@ LuaKernel::LuaKernel(const config &cfg)
 		{ "float_label",              &intf_float_label              },
 		{ "get_dialog_value",         &intf_get_dialog_value         },
 		{ "get_displayed_unit",       &intf_get_displayed_unit       },
+		{ "get_era",                  &intf_get_era                  },
 		{ "get_image_size",           &intf_get_image_size           },
 		{ "get_locations",            &intf_get_locations            },
 		{ "get_map_size",             &intf_get_map_size             },

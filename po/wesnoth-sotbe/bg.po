@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bg\n"
 "Report-Msgid-Bugs-To: http://bugs.wesnoth.org/\n"
-"POT-Creation-Date: 2014-02-08 13:24+0100\n"
+"POT-Creation-Date: 2014-02-22 14:15+0100\n"
 "PO-Revision-Date: 2007-05-15 18:35+0300\n"
 "Last-Translator: Denica <dmincheva2002@gmail.com>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
@@ -162,12 +162,12 @@ msgstr "Смъртта на Капу'е"
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/12_Giving_Some_Back.cfg:60
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/13_The_Dwarvish_Stand.cfg:58
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:60
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:84
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:86
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/15_Civil_War.cfg:56
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/16_The_Coward.cfg:52
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:66
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:55
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:157
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:161
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/19_Epilogue.cfg:19
 #: data/campaigns/Son_Of_The_Black_Eye/utils/utils.cfg:80
 #: data/campaigns/Son_Of_The_Black_Eye/utils/utils.cfg:93
@@ -352,8 +352,12 @@ msgstr "Говори, ездачо."
 
 #. [message]: speaker=Vrag
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/01_End_of_Peace.cfg:207
+#, fuzzy
+#| msgid ""
+#| "There is a huge human army marching on us! They can’t be more then one or "
+#| "two days march from here."
 msgid ""
-"There is a huge human army marching on us! They can’t be more then one or "
+"There is a huge human army marching on us! They can’t be more than one or "
 "two days march from here."
 msgstr ""
 "Към нас приближава огромна човешка армия! Намират се на не повече ден-два "
@@ -1288,9 +1292,7 @@ msgid "We go and we kill all of them. What do you think?"
 msgstr "Отиваме и ги избиваме до крак. Какво ще кажеш?"
 
 #. [message]: speaker=Kapou'e
-#. [message]: speaker=Shan Taum
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/04_The_Siege_of_Barag_Gor.cfg:446
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/16_The_Coward.cfg:240
 msgid "..."
 msgstr "..."
 
@@ -1869,13 +1871,13 @@ msgstr "Ар Дант"
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/12_Giving_Some_Back.cfg:108
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/13_The_Dwarvish_Stand.cfg:83
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/13_The_Dwarvish_Stand.cfg:96
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:121
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:139
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:156
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:173
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:123
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:142
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:160
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:178
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:98
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:88
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:131
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:133
 msgid "Villains"
 msgstr ""
 
@@ -2424,7 +2426,7 @@ msgstr "Побеждаване на Бавната ръка и Харман"
 #. [unit]: type=Orcish Warlord, id=Shan Taum
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/09_Shan_Taum_the_Smug.cfg:64
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/16_The_Coward.cfg:143
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:124
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:126
 msgid "Shan Taum"
 msgstr "Шан Таум"
 
@@ -2659,7 +2661,7 @@ msgstr ""
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/10_Saving_Inarix.cfg:86
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/11_Clash_of_Armies.cfg:62
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/13_The_Dwarvish_Stand.cfg:189
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:133
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:136
 msgid "Thelarion"
 msgstr ""
 
@@ -3489,22 +3491,22 @@ msgid "Back Home"
 msgstr "Отново вкъщи"
 
 #. [side]: type=General, id=Telthys
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:115
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:117
 msgid "Telthys"
 msgstr ""
 
 #. [side]: type=General, id=Fredor
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:150
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:154
 msgid "Fredor"
 msgstr ""
 
 #. [side]: type=General, id=Georan
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:167
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:172
 msgid "Georan"
 msgstr ""
 
 #. [part]
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:183
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:189
 #, fuzzy
 msgid ""
 "Having broken the dwarvish blockade, the horde continued on through the "
@@ -3516,24 +3518,24 @@ msgstr ""
 "се озоваха в родните земи на Капу'е."
 
 #. [event]
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:194
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:200
 msgid "Valan"
 msgstr ""
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:231
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:237
 #, fuzzy
 msgid "Well, boys, we’re home. I told you we would return one day."
 msgstr ""
 "Погледнете, момчета, вкъщи сме си. Казах ви, че все някога ще се върнем."
 
 #. [message]: role=army
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:238
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:244
 msgid "Boy, have they ever built this place up."
 msgstr "Боже, дали изобщо са построили това място."
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:244
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:250
 #, fuzzy
 msgid ""
 "Listen up, orcs. Our main objective is to rescue the shamans. It won’t work "
@@ -3545,12 +3547,12 @@ msgstr ""
 "таен изход."
 
 #. [message]: speaker=Flar'Tar
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:250
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:256
 msgid "What are you thinking, Chief?"
 msgstr "Какво мислиш, господарю?"
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:256
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:262
 #, fuzzy
 msgid ""
 "My men know the land well. Flar’Tar and Al’Brock, both of you take a scout "
@@ -3563,17 +3565,17 @@ msgstr ""
 "троловете си на северозапад. Ако всичко мине по план, ще ги обградим."
 
 #. [message]: speaker=Grüü
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:262
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:268
 msgid "I like this plan, Chief!"
 msgstr "Този план ми харесва, господарю!"
 
 #. [message]: role=army
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:268
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:274
 msgid "You always like his plans, Grüü."
 msgstr "Ти винаги харесваш плановете му, Грю."
 
 #. [message]: speaker=Grüü
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:274
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:280
 #, fuzzy
 msgid ""
 "Of course. Squash elves, squash undead, squash dwarves, squash humans. "
@@ -3583,12 +3585,12 @@ msgstr ""
 "Размажи всички. Много добър план!"
 
 #. [message]: role=army
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:280
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:286
 msgid "Well, he has the right idea, anyway."
 msgstr "Така или иначе, идеята му е добра."
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:287
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:293
 msgid ""
 "Good, everyone move out. I will begin the attack from here. I want everyone "
 "to be in position by first watch at the latest. Is that clear?"
@@ -3597,71 +3599,74 @@ msgstr ""
 "заели позициите си до времето за първия пост, ясно?"
 
 #. [message]: speaker=Flar'Tar
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:293
-msgid "Yeah, sure."
-msgstr "Да, добре."
+#. [message]: speaker=second_unit
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:299
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:667
+#, fuzzy
+msgid "Yes, Chief."
+msgstr "Да, господарю?"
 
 #. [message]: speaker=Al'Brock
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:299
-msgid "Whatever."
-msgstr "Както и да е."
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:305
+msgid "Understood."
+msgstr ""
 
 #. [message]: speaker=Grüü
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:321
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:327
 #, fuzzy
 msgid "Uh, Chief..."
 msgstr "Добре, господарю."
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:327
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:333
 #, fuzzy
 msgid "... Yes, Grüü?"
 msgstr "Смъртта на Грю"
 
 #. [message]: speaker=Grüü
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:333
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:339
 msgid "Can I get some gold with me?"
 msgstr ""
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:339
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:345
 msgid "Fine, take a hundred. Don’t lose it."
 msgstr ""
 
 #. [message]: speaker=Al'Brock
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:406
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:412
 msgid "I am in position, Chief."
 msgstr "На позиция съм, господарю."
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:412
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:418
 msgid "Excellent. Now, where are the others?"
 msgstr "Отлично. Къде са другите?"
 
 #. [message]: speaker=Flar'Tar
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:461
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:462
 msgid "We made it."
 msgstr "Успяхме."
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:467
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:468
 msgid "Good, but where is Grüü?"
 msgstr "Добре, но къде е Грю?"
 
 #. [message]: speaker=Flar'Tar
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:472
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:473
 msgid "Dumb trolls, you can never rely on them."
 msgstr "Тъпи тролове, никога не може да се разчита на тях."
 
 #. [message]: speaker=Grüü
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:536
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:532
 #, fuzzy
 #| msgid "I’m here, chief!"
 msgid "I’m here, Chief!"
 msgstr "Тук съм, господарю!"
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:542
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:538
 #, fuzzy
 msgid ""
 "Blood and stone, Grüü! You were supposed to be in position by first watch. "
@@ -3671,13 +3676,13 @@ msgstr ""
 "утро!"
 
 #. [message]: speaker=Grüü
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:548
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:544
 msgid "Err, sorry, there were some humans in way. We squash, no problem."
 msgstr ""
 "Ъъ, съжалявам, някакви хора ни се пречкаха. Смачкахме ги, няма проблем."
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:554
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:550
 msgid ""
 "Better late then never. Now it’s time to kill! Let nobody escape and "
 "everyone keep an eye out for the shamans."
@@ -3686,49 +3691,49 @@ msgstr ""
 "позволявайте на никого да се измъкне и се оглеждайте за шаманите."
 
 #. [message]: speaker=Flar'Tar
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:559
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:555
 msgid "Sounds simple enough."
 msgstr "Звучи просто."
 
 #. [message]: speaker=second_unit
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:582
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:578
 msgid "Miserable elf, we want some answers!"
 msgstr "Елф нещастен, искаме отговори!"
 
 #. [message]: speaker=Thelarion
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:587
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:583
 msgid "Ugh!"
 msgstr "Ъх!"
 
 #. [message]: speaker=second_unit
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:592
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:588
 msgid "SPEAK!"
 msgstr "ГОВОРИ!"
 
 #. [message]: speaker=Thelarion
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:597
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:593
 #, fuzzy
 msgid "... Well, what do you want to know?"
 msgstr "....ами, какво искате да знаете?"
 
 #. [message]: speaker=second_unit
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:602
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:598
 msgid "You can start by telling us who told you to strike at Borstep."
 msgstr "Можеш да започнеш като ни кажеш кой ви каза да ударите при Борстъп."
 
 #. [message]: speaker=Thelarion
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:607
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:603
 #, fuzzy
 msgid "Uh... we have intelligence."
 msgstr "Ъ... имаме разузнаване."
 
 #. [message]: speaker=second_unit
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:612
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:608
 msgid "Don’t make me hurt you more."
 msgstr "Не ме карай да ти причинявам още болка."
 
 #. [message]: speaker=Thelarion
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:617
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:613
 #, fuzzy
 msgid ""
 "I yield. Shan Taum the Smug told us that that’s where the shamans were, and "
@@ -3738,14 +3743,14 @@ msgstr ""
 "оръжеен склад за орките."
 
 #. [message]: speaker=second_unit
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:622
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:618
 #, fuzzy
 msgid ""
 "Bah, do not think you can break the unity of the horde with your stupid lies!"
 msgstr "Ха, не се опитвай да нарушиш единството на ордата с глупавите си лъжи!"
 
 #. [message]: speaker=Thelarion
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:627
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:623
 msgid ""
 "No really, it’s true. He is jealous of some young upstart called Kapou’e. He "
 "says all the shamans ‘suck up’ to him just because his father had a black "
@@ -3756,7 +3761,7 @@ msgstr ""
 "подобно."
 
 #. [message]: speaker=second_unit
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:632
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:628
 #, fuzzy
 msgid ""
 "Refer to Black-Eye Karun with respect, wose-born. Now, where are the shamans?"
@@ -3764,47 +3769,41 @@ msgstr ""
 "Ще говориш за Кейрън Черноокия с уважение, дървар гаден. А къде са шаманите?"
 
 #. [message]: speaker=Thelarion
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:637
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:633
 #, fuzzy
 msgid "They’re... the humans killed them."
 msgstr "Те... хората ги убиха."
 
 #. [message]: speaker=second_unit
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:642
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:638
 msgid "You lie!"
 msgstr "Лъжеш!"
 
 #. [message]: speaker=Thelarion
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:647
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:643
 msgid "I do not. Their bodies are frozen in the lake just over there."
 msgstr ""
 "Не лъжа. Можете да намерите замръзналите им трупове в онова езеро ето там."
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:659
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:655
 #, fuzzy
 msgid "We had better go look."
 msgstr "Най-добре идете да проверите."
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:666
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:662
 #, fuzzy
 msgid "You had better go look."
 msgstr "Най-добре идете да проверите."
 
-#. [message]: speaker=second_unit
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:671
-#, fuzzy
-msgid "Yes, Chief."
-msgstr "Да, господарю?"
-
 #. [message]: speaker=narrator
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:678
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:674
 msgid "A few minutes later..."
 msgstr "Няколко минути по-късно..."
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:691
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:687
 #, fuzzy
 msgid ""
 "The human-worms and tree-shaggers have gone too far! BLOOD AND STEEL! I want "
@@ -3814,12 +3813,12 @@ msgstr ""
 "всеки човек и елф в околността изклани! Нито капка милост!"
 
 #. [message]: speaker=second_unit
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:697
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:693
 msgid "Chief! It’s true, the shamans have been murdered!"
 msgstr "Господарю! Истина е, убили са шаманите!"
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:703
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:699
 #, fuzzy
 msgid ""
 "<i>What</i>?! The human-worms and tree-shaggers have gone too far! BLOOD AND "
@@ -3830,12 +3829,12 @@ msgstr ""
 "всеки човек и елф в околността изклани! Нито капка милост!"
 
 #. [message]: speaker=second_unit
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:708
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:704
 msgid "What should I do with this one?"
 msgstr "А какво да правя с този тук?"
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:714
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:710
 msgid "Throw him in the lake. If he freezes to death, all the better."
 msgstr "Хвърли го в езерото. Ако пукне от студ, още по-добре."
 
@@ -4200,6 +4199,11 @@ msgstr ""
 "кървавата гражданска война, която се разразява тъкмо когато орките са на път "
 "да бъдат унищожени!"
 
+#. [message]: speaker=Shan Taum
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/16_The_Coward.cfg:240
+msgid "LIES! THESE ARE ALL LIES!"
+msgstr "ЛЪЖИ! ТОВА СА ЛЪЖИ!"
+
 #. [message]: speaker=Kapou'e
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/16_The_Coward.cfg:245
 msgid ""
@@ -4211,8 +4215,14 @@ msgstr ""
 
 #. [message]: speaker=Shan Taum
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/16_The_Coward.cfg:251
-msgid "LIES! THESE ARE ALL LIES!"
-msgstr "ЛЪЖИ! ТОВА СА ЛЪЖИ!"
+#, fuzzy
+#| msgid ""
+#| "How dare you accuse me of being a traitor, you turdlicker! Orga, kill "
+#| "this kid for me. I’ll be in my keep."
+msgid "How dare you accuse me of being a traitor, you turdlicker!"
+msgstr ""
+"Мизерник, как смееш да ме наричаш предател! Ораг, убий това хлапе, аз ще съм "
+"в крепостта."
 
 #. [message]: speaker=Kapou'e
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/16_The_Coward.cfg:256
@@ -4222,9 +4232,11 @@ msgstr "Тъй.... Та какво избираш - обезглавяване �
 
 #. [message]: speaker=Shan Taum
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/16_The_Coward.cfg:263
-msgid ""
-"How dare you accuse me of being a traitor, you turdlicker! Orga, kill this "
-"kid for me. I’ll be in my keep."
+#, fuzzy
+#| msgid ""
+#| "How dare you accuse me of being a traitor, you turdlicker! Orga, kill "
+#| "this kid for me. I’ll be in my keep."
+msgid "Orga, kill this kid for me. I’ll be in my keep."
 msgstr ""
 "Мизерник, как смееш да ме наричаш предател! Ораг, убий това хлапе, аз ще съм "
 "в крепостта."
@@ -4293,7 +4305,7 @@ msgid "Defeat Earl Lanbec’h"
 msgstr "Граф Ланбек"
 
 #. [part]
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:133
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:135
 #, fuzzy
 msgid ""
 "As Kapou’e expected, by the time his forces had been defeated Shan Taum was "
@@ -4306,7 +4318,7 @@ msgstr ""
 "черепа му, Капу'е събра хората си и потегли към Дорсет."
 
 #. [part]
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:139
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:141
 #, fuzzy
 msgid ""
 "Once there he found his generals, Al’Brock and Flar’Tar, had already arrived "
@@ -4322,7 +4334,7 @@ msgstr ""
 "за запазване цялостта на ордата."
 
 #. [part]
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:145
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:147
 #, fuzzy
 msgid ""
 "Their presence proved to be unnecessary. It came as a shock to Kapou’e to "
@@ -4339,7 +4351,7 @@ msgstr ""
 "плашещо. "
 
 #. [part]
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:151
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:153
 msgid ""
 "Days passed, the snows melted and Kapou’e readied his defenses. A few weeks "
 "after Kapou’e’s arrival, riders caught sight of Earl Lanbec’h’s army."
@@ -4349,7 +4361,7 @@ msgstr ""
 "Ланбек."
 
 #. [message]: speaker=Earl Lanbec'h
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:207
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:209
 #, fuzzy
 #| msgid ""
 #| "This is it, men! It is time to make these orcs pay for all that they have "
@@ -4366,50 +4378,45 @@ msgstr ""
 "земя, която ни се полага по право!"
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:212
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:214
 #, fuzzy
 msgid "Forward, men! Our wolves will feed well tonight!"
 msgstr "Напред мъже, тази нощ вълците ни ще си хапнат добре!"
 
 #. [message]: speaker=Grüü
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:218
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:220
 msgid "Come here, human softlings. Grüü has a little present for you..."
 msgstr "Елате тук мекушави човечета, Грю ви е приготвил подарък..."
 
 #. [message]: speaker=narrator
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:316
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:319
 msgid "As a fresh day dawned, more human forces arrived."
 msgstr "С утрото пристигнаха свежи човешки подкрепления."
 
-#. [message]: speaker=narrator
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:328
-msgid "At the dawn of the third day, still more human forces arrived."
-msgstr "В зората на третия ден, дойде още една група подкрепления."
-
 #. [message]: speaker=Bruce
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:343
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:332
 msgid "We have arrived, my lord."
 msgstr "Пристигнахме, господарю."
 
 #. [message]: speaker=Earl Lanbec'h
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:352
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:343
 msgid "Ahhh, perfect, more reinforcements."
 msgstr "Ааа, чудесно, още подкрепления."
 
 #. [side]: type=General, id=Howgarth III
 #. [unit]: type=General, id=Howgarth III
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:372
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:150
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:361
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:154
 msgid "Howgarth III"
 msgstr "Хоугарт III"
 
 #. [message]: speaker=Howgarth III
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:413
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:402
 msgid "Hold it! What in the wide green world is going on here!"
 msgstr "Стой! Какво, дяволите го взели, става там!"
 
 #. [message]: speaker=Earl Lanbec'h
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:419
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:408
 #, fuzzy
 msgid ""
 "Howgarth? You and your interfering alliance always show up at the worst "
@@ -4417,18 +4424,18 @@ msgid ""
 msgstr "*сумтене* Момчета, винаги се появявате в най-неподходящия момент."
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:424
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:413
 #, fuzzy
 msgid "Just who do you think you are, slug?"
 msgstr "Ти за кого се мислиш, човешки червей?"
 
 #. [message]: speaker=Howgarth III
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:430
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:419
 msgid "I am Howgarth of the Northern Alliance, successor to the late Rahul I."
 msgstr "Аз съм Хоугарт от Северния съюз, наследник на Раул І."
 
 #. [message]: speaker=Earl Lanbec'h
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:436
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:425
 msgid ""
 "This is a strictly territorial matter, Howgarth. The Northern Alliance has "
 "no right to intervene in this affair."
@@ -4437,7 +4444,7 @@ msgstr ""
 "в делата ни."
 
 #. [message]: speaker=Howgarth III
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:441
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:430
 msgid ""
 "The hell I don’t, Earl Lanbec’h, the Northern Alliance was witness to a "
 "treaty some twenty seven years ago between your people and the orcs, which "
@@ -4450,7 +4457,7 @@ msgstr ""
 "организатор и свидетел на споразумението, е да следим то да се спазва."
 
 #. [message]: speaker=Earl Lanbec'h
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:447
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:436
 msgid ""
 "Well, good for you. As a matter of fact, this land is clearly defined under "
 "your precious treaty as human territory. So if you are so keen on being all "
@@ -4462,7 +4469,7 @@ msgstr ""
 "армията си, за да ни помогнете да отблъснем тая оркска напаст."
 
 #. [message]: speaker=Howgarth III
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:452
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:441
 #, fuzzy
 msgid ""
 "Cease your lies, Lanbec’h. We all know that you were the one who started "
@@ -4474,7 +4481,7 @@ msgstr ""
 "страни да участват в преговори, където да обсъдим ситуацията."
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:457
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:446
 #, fuzzy
 msgid ""
 "Ha ha, very funny, old fool. You think we are stupid enough to fall for "
@@ -4484,12 +4491,12 @@ msgstr ""
 "та да се хванем? Не сме забравили как постъпихте с баща ми."
 
 #. [message]: speaker=Howgarth III
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:463
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:452
 msgid "What in the world are you talking about?"
 msgstr "Нямам никаква представа за какво говориш."
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:468
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:457
 msgid ""
 "I am Kapou’e, son of the Black-Eye Karun. Twenty-seven years ago you people "
 "assassinated my father after inviting him to join the Northern Alliance."
@@ -4499,7 +4506,7 @@ msgstr ""
 "Северния съюз."
 
 #. [message]: speaker=Howgarth III
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:474
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:463
 msgid ""
 "What? We received word that he declined our invitation and that was the end "
 "of the matter. I know nothing of his assassination. As a matter of fact, I "
@@ -4510,17 +4517,17 @@ msgstr ""
 "присъствах, когато оркският вестоносец донесе на Раул отговора на Кейрън."
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:479
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:468
 msgid "Messenger, what messenger?"
 msgstr "Вестоносец, какъв вестоносец?"
 
 #. [message]: speaker=Howgarth III
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:485
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:474
 msgid "If I remember correctly, it was some orc named Shan Taum."
 msgstr "Ако паметта на ме лъже, беше един орк на има Шан Таум."
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:490
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/17_The_Human_Attack.cfg:479
 #, fuzzy
 msgid "Funny, that name sounds oddly familiar..."
 msgstr "Странно, това име ми звучи някак познато..."
@@ -4541,7 +4548,7 @@ msgid "Death of Howgarth III"
 msgstr "Смъртта на Хоугарт III"
 
 #. [part]
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:166
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:182
 #, fuzzy
 msgid ""
 "Kapou’e agreed to meet Howgarth III. Not trusting the human however, Kapou’e "
@@ -4553,7 +4560,7 @@ msgstr ""
 "Граф Ланбек категорично отказа да присъства на преговорите."
 
 #. [part]
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:172
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:188
 #, fuzzy
 #| msgid ""
 #| "The human attack having stopped for the time being, both parties met in "
@@ -4581,7 +4588,7 @@ msgstr ""
 "върне Дорсет и да разпусне Ордата."
 
 #. [part]
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:178
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:194
 msgid ""
 "Howgarth III agreed and further added that, if Earl Lanbec’h continued in "
 "aggression, then under the dictates of the Northern Alliance, he himself "
@@ -4592,7 +4599,7 @@ msgstr ""
 "предприеме ответни действия спрямо Графа."
 
 #. [part]
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:184
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:200
 #, fuzzy
 msgid ""
 "That having been settled, Kapou’e began to inquire about the death of his "
@@ -4606,7 +4613,7 @@ msgstr ""
 "присъедини към Северния Съюз. Отказът бил донесен лично от Шан Таум."
 
 #. [part]
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:190
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:206
 msgid ""
 "As they were discussing the matter, a group of orcs charged from the "
 "surrounding trees and hills and surrounded the parley."
@@ -4615,7 +4622,7 @@ msgstr ""
 "преговарящите."
 
 #. [message]: speaker=Shan Taum
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:405
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:483
 msgid ""
 "Now now now, what do we have here. Collaborating with the enemy again just "
 "like your disgusting father, are you?"
@@ -4624,7 +4631,7 @@ msgstr ""
 "противния ти баща, така ли?"
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:411
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:489
 #, fuzzy
 msgid ""
 "Collaborating with the humans, pfff. You’re one to talk. What are you doing "
@@ -4632,22 +4639,22 @@ msgid ""
 msgstr "Съюз с хората, пфу. Виж кой го казва. Какво правиш тук, Шан Таум?"
 
 #. [message]: speaker=Shan Taum
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:416
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:494
 msgid "I am here to do to you what I did to your father."
 msgstr "Тук съм,за да постъпя с теб, както постъпих с баща ти."
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:421
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:499
 msgid "So you did kill my father then."
 msgstr "Значи все пак ти си го убил."
 
 #. [message]: speaker=Howgarth III
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:426
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:504
 msgid "What did I tell you, Kapou’e?"
 msgstr "Не ти ли казах, Капу'е?"
 
 #. [message]: speaker=Earl Lanbec'h
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:432
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:510
 #, fuzzy
 #| msgid ""
 #| "Ha ha! Good work Shan Taum. That will teach them. Attack, boys, I want "
@@ -4660,7 +4667,7 @@ msgstr ""
 "върнем Дорсет до залез слънце."
 
 #. [message]: speaker=Howgarth III
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:437
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:515
 #, fuzzy
 #| msgid ""
 #| "Hold, Earl Lanbec’h. I have reached an agreement with these orcs. Since "
@@ -4687,7 +4694,7 @@ msgstr ""
 "споразумението."
 
 #. [message]: speaker=Earl Lanbec'h
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:443
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:521
 msgid ""
 "You and your damned compromises can go to hell. Your beloved Kapou’e will be "
 "joining you shortly."
@@ -4696,12 +4703,12 @@ msgstr ""
 "Капу'е скоро ще се присъедини към вас."
 
 #. [message]: speaker=Howgarth III
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:448
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:526
 msgid "You leave us no choice but to take military action against you."
 msgstr "Не ни оставяш избор освен да предприемем военно нападение над теб."
 
 #. [message]: speaker=Earl Lanbec'h
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:454
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:532
 msgid ""
 "Ha ha! Very funny, Howgarth. Look around you. You are going to be dead as "
 "soon as my orc friend here gives the order. And then your men will "
@@ -4712,13 +4719,13 @@ msgstr ""
 "и убил."
 
 #. [message]: speaker=Howgarth III
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:459
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:537
 #, fuzzy
 msgid "Not today, my friend. (<i>Whistles</i>)"
 msgstr "Не и този път, приятелю. *изсвирване*"
 
 #. [message]: speaker=Howgarth III
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:546
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:645
 #, fuzzy
 msgid ""
 "Kapou’e, it is essential that I make it back to my camp to bring news of our "
@@ -4736,13 +4743,13 @@ msgstr ""
 "ни."
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:551
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:650
 #, fuzzy
 msgid "Agreed. Let’s get to it. BLOOD AND STEEL!"
 msgstr "Дадено. Да се заемаме. КРЪВ И СТОМАНА!"
 
 #. [message]: speaker=Shan Taum
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:575
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:674
 #, fuzzy
 msgid ""
 "Blast! The human has escaped. Orcs, bring me Kapou’e’s head. I must get to "
@@ -4753,12 +4760,12 @@ msgstr ""
 "града."
 
 #. [message]: speaker=Grüü
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:604
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:703
 msgid "Shan Taum big coward. Never want to fight."
 msgstr "Шан Таум е голям страхливец. Никога не иска да се бие."
 
 #. [message]: speaker=second_unit
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:664
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:758
 #, fuzzy
 #| msgid ""
 #| "Yeah, we finally got the coward. What do you want us to do with him chief?"
@@ -4766,7 +4773,7 @@ msgid "Yeah, we finally got the coward."
 msgstr "О, да, пипнахме страхливеца. Какво да го правим, господарю?"
 
 #. [message]: speaker=second_unit
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:670
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:764
 #, fuzzy
 #| msgid ""
 #| "Yeah, we finally got the coward. What do you want us to do with him chief?"
@@ -4775,23 +4782,23 @@ msgid ""
 msgstr "О, да, пипнахме страхливеца. Какво да го правим, господарю?"
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:679
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:773
 msgid "Blood and steel! The traitor was mine!"
 msgstr ""
 
 #. [message]: speaker=Howgarth III
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:685
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:779
 msgid "I’m sorry, Kapou’e. I’ll have my men leave what remains of him to you."
 msgstr ""
 
 #. [message]
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:691
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:785
 #, fuzzy
 msgid "What do you want us to do with him, Chief?"
 msgstr "О, да, пипнахме страхливеца. Какво да го правим, господарю?"
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:698
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:792
 msgid ""
 "Stick his head at the end of a pike and let the buzzards pick it clean. I "
 "wasn’t joking about making a mug from his skull."
@@ -4800,12 +4807,12 @@ msgstr ""
 "шегувах като казах, че ще си направя бокал от черепа му."
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:711
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:805
 msgid "No! Without him the Northern Alliance will continue to fall apart."
 msgstr ""
 
 #. [message]: speaker=Grüü
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:724
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:818
 msgid "YEAH!"
 msgstr "ДААА!"
 
@@ -5036,6 +5043,15 @@ msgstr ""
 #: data/campaigns/Son_Of_The_Black_Eye/utils/utils.cfg:99
 msgid "The Great Horde: upkeep cost of every unit decreased by one."
 msgstr ""
+
+#~ msgid "At the dawn of the third day, still more human forces arrived."
+#~ msgstr "В зората на третия ден, дойде още една група подкрепления."
+
+#~ msgid "Yeah, sure."
+#~ msgstr "Да, добре."
+
+#~ msgid "Whatever."
+#~ msgstr "Както и да е."
 
 #, fuzzy
 #~ msgid ""

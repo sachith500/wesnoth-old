@@ -72,16 +72,21 @@ namespace game_config
 			default_victory_music,
 			default_defeat_music;
 
+	namespace colors {
+	std::string moved_orb_color,
+			unmoved_orb_color,
+			partial_orb_color,
+			enemy_orb_color,
+			ally_orb_color;
+	}
+
+	bool show_ally_orb, show_enemy_orb, show_moved_orb, show_partial_orb, show_unmoved_orb;
+
 	namespace images {
 	std::string game_title,
             game_title_background,
 			// orbs and hp/xp bar
             orb,
-            moved_orb_color,
-            unmoved_orb_color,
-            partmoved_orb_color,
-            enemy_orb_color,
-            ally_orb_color,
 			energy,
 			// flags
 			flag,
@@ -152,7 +157,8 @@ namespace game_config
 		user_leave = "leave.wav",
 		game_user_arrive = "join.wav",
 		game_user_leave = "leave.wav",
-		party_full_bell = "bell.wav";
+		party_full_bell = "bell.wav",
+		mp_game_begins = "join.wav";
 
 		const std::string button_press = "button.wav",
 		checkbox_release = "checkbox.wav",
@@ -162,16 +168,10 @@ namespace game_config
 		menu_select = "select.wav";
 	}
 
-
-
-#ifdef __AMIGAOS4__
-	std::string path = "PROGDIR:";
-#else
 #ifdef WESNOTH_PATH
 	std::string path = WESNOTH_PATH;
 #else
 	std::string path = "";
-#endif
 #endif
 
 #ifdef DEFAULT_PREFS_PATH
@@ -200,17 +200,27 @@ namespace game_config
 		default_victory_music = v["default_victory_music"].str();
 		default_defeat_music = v["default_defeat_music"].str();
 
+		if(const config &i = v.child("colors")){
+			using namespace game_config::colors;
+            moved_orb_color = i["moved_orb_color"].str();
+            unmoved_orb_color = i["unmoved_orb_color"].str();
+            partial_orb_color = i["partial_orb_color"].str();
+            enemy_orb_color = i["enemy_orb_color"].str();
+            ally_orb_color = i["ally_orb_color"].str();
+		} // colors
+
+		show_ally_orb = v["show_ally_orb"].to_bool(true);
+		show_enemy_orb = v["show_enemy_orb"].to_bool(false);
+		show_moved_orb = v["show_moved_orb"].to_bool(true);
+		show_partial_orb  = v["show_partly_orb"].to_bool(true);
+		show_unmoved_orb = v["show_unmoved_orb"].to_bool(true);
+
 		if(const config &i = v.child("images")){
 			using namespace game_config::images;
 			game_title = i["game_title"].str();
             game_title_background = i["game_title_background"].str();
 
             orb = i["orb"].str();
-            moved_orb_color = i["moved_orb_color"].str();
-            unmoved_orb_color = i["unmoved_orb_color"].str();
-            partmoved_orb_color = i["partmoved_orb_color"].str();
-            enemy_orb_color = i["enemy_orb_color"].str();
-            ally_orb_color = i["ally_orb_color"].str();
 			energy = i["energy"].str();
 
 			flag = i["flag"].str();

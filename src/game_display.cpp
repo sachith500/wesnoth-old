@@ -921,19 +921,24 @@ void game_display::send_notification(const std::string& /*owner*/, const std::st
 	while (i != i_end && i->owner != owner) ++i;
 
 	if (i != i_end) {
-		i->message += "\n";
-		i->message += message;
+		i->message = message + "\n" + i->message;
+		int endl_pos = -1;
+		for (int ctr = 0; ctr < 5; ctr++)
+			endl_pos = i->message.find('\n', endl_pos+1);
+
+		i->message = i->message.substr(0,endl_pos);
+
 		send_dbus_notification(connection, i->id, owner, i->message);
 		return;
+	} else {
+		uint32_t id = send_dbus_notification(connection, 0, owner, message);
+		if (!id) return;
+		wnotify visual;
+		visual.id = id;
+		visual.owner = owner;
+		visual.message = message;
+		notifications.push_back(visual);
 	}
-
-	uint32_t id = send_dbus_notification(connection, 0, owner, message);
-	if (!id) return;
-	wnotify visual;
-	visual.id = id;
-	visual.owner = owner;
-	visual.message = message;
-	notifications.push_back(visual);
 #endif
 
 #ifdef HAVE_GROWL
@@ -1057,7 +1062,7 @@ void game_display::add_chat_message(const time_t& time, const std::string& speak
 		// We've had a joker who send an invalid utf-8 message to crash clients
 		// so now catch the exception and ignore the message.
 		msg = font::word_wrap_text(msg,font::SIZE_SMALL,map_outside_area().w*3/4);
-	} catch (utils::invalid_utf8_exception&) {
+	} catch (utf8::invalid_utf8_exception&) {
 		ERR_NG << "Invalid utf-8 found, chat message is ignored.\n";
 		return;
 	}

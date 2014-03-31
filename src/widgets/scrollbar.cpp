@@ -343,11 +343,14 @@ void scrollbar::handle_event(const SDL_Event& event)
 		SDL_MouseButtonEvent const &e = event.button;
 		bool on_grip = point_in_rect(e.x, e.y, grip);
 		bool on_groove = point_in_rect(e.x, e.y, groove);
+#if !SDL_VERSION_ATLEAST(2,0,0)
 		if (on_groove && e.button == SDL_BUTTON_WHEELDOWN) {
 			move_position(scroll_rate_);
 		} else if (on_groove && e.button == SDL_BUTTON_WHEELUP) {
 			move_position(-scroll_rate_);
-		} else if (on_grip && e.button == SDL_BUTTON_LEFT) {
+		} else
+#endif
+		if (on_grip && e.button == SDL_BUTTON_LEFT) {
 			mousey_on_grip_ = e.y - grip.y;
 			new_state = DRAGGED;
 		} else if (on_groove && e.button == SDL_BUTTON_LEFT && groove.h != grip.h) {
@@ -375,6 +378,21 @@ void scrollbar::handle_event(const SDL_Event& event)
 		}
 		break;
 	}
+#if SDL_VERSION_ATLEAST(2,0,0)
+	case SDL_MOUSEWHEEL:
+	{
+		const SDL_MouseWheelEvent& e = event.wheel;
+		int x, y;
+		SDL_GetMouseState(&x, &y);
+		bool on_groove = point_in_rect(x, y, groove);
+		if (on_groove && e.y < 0) {
+			move_position(scroll_rate_);
+		} else if (on_groove && e.y > 0) {
+			move_position(-scroll_rate_);
+		}
+		break;
+	}
+#endif
 	default:
 		break;
 	}

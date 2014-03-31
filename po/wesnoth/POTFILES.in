@@ -108,7 +108,6 @@ src/game_events/handlers.cpp
 src/game_events/menu_item.cpp
 src/game_events/pump.cpp
 src/game_events/wmi_container.cpp
-src/game_instance.cpp
 src/gamestatus.cpp
 src/generators/cavegen.cpp
 src/generators/map_create.cpp
@@ -127,6 +126,7 @@ src/gui/dialogs/lobby/lobby_data.cpp
 src/gui/dialogs/lobby/lobby_info.cpp
 src/gui/dialogs/lobby_player_info.cpp
 src/gui/dialogs/mp_host_game_prompt.cpp
+src/gui/dialogs/theme_list.cpp
 src/halo.cpp
 src/hash.cpp
 src/hotkey/command_executor.cpp

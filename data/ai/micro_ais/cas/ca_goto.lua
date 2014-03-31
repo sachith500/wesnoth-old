@@ -157,7 +157,7 @@ function ca_goto:execution(ai, cfg, self)
                 -- Add a small penalty for occupied hexes
                 -- (this mean occupied by an allied unit, as enemies make the hex unreachable)
                 local unit_in_way = wesnoth.get_unit(l[1], l[2])
-                if unit_in_way and ((unit_in_way.x ~= u.x) or (unit_in_way.y ~= u.y)) then
+                if unit_in_way and (unit_in_way ~= u) then
                     rating = rating - 0.01
                 end
 
@@ -202,10 +202,11 @@ function ca_goto:execution(ai, cfg, self)
     end
 
     if closest_hex then
-        ai.move_full(best_unit, closest_hex[1], closest_hex[2])
+        AH.checked_move_full(ai, best_unit, closest_hex[1], closest_hex[2])
     else
-        ai.stopunit_moves(best_unit)
+        AH.checked_stopunit_moves(ai, best_unit)
     end
+    if (not best_unit) or (not best_unit.valid) then return end
 
     -- If release_unit_at_goal= or release_all_units_at_goal= key is set:
     -- Check if the unit made it to one of the goal hexes

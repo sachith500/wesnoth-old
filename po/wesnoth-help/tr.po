@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wesnoth\n"
 "Report-Msgid-Bugs-To: http://bugs.wesnoth.org/\n"
-"POT-Creation-Date: 2014-02-05 19:37+0100\n"
+"POT-Creation-Date: 2014-03-02 10:23+0100\n"
 "PO-Revision-Date: 2009-04-12 14:56+0300\n"
 "Last-Translator: Nilgün Belma Bugüner <nilgun@belgeler.gen.tr>\n"
 "Language-Team: Turkish <ceviri@belgeler.gen.tr>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 
 #. [time]: id=underground
-#: data/campaigns/Heir_To_The_Throne/utils/httt_utils.cfg:533
+#: data/campaigns/Heir_To_The_Throne/utils/httt_utils.cfg:531
 #: data/core/macros/schedules.cfg:99
 msgid "Underground"
 msgstr "Yeraltı"
@@ -928,7 +928,7 @@ msgstr "Silah Özellikleri"
 
 #. #-#-#-#-#  wesnoth-help.wml.pot (PACKAGE VERSION)  #-#-#-#-#
 #. [section]: id=factions_section
-#: data/core/help.cfg:56 src/help.cpp:1289 src/help.cpp:1291
+#: data/core/help.cfg:56 src/help.cpp:1291 src/help.cpp:1293
 #, fuzzy
 msgid "Factions"
 msgstr "Birlik Sınıfı"
@@ -1312,7 +1312,7 @@ msgstr " hareket etmiş ama devam edebilecek veya saldırabilecekse sarıdır,"
 #. [topic]: id=orbs
 #: data/core/help.cfg:192
 msgid ""
-" red if it can no longer move or attack, or the user ended the unit’s turn."
+" black if it can no longer move or attack, or the user ended the unit’s turn."
 msgstr ""
 
 #. [topic]: id=orbs
@@ -1324,7 +1324,7 @@ msgstr " Müttefik olup senin idarende olmayan bir birimde küre mavidir."
 #. [topic]: id=orbs
 #: data/core/help.cfg:194
 #, fuzzy
-msgid " Enemy units have no orb on top of their energy bar."
+msgid " Enemy units have a red orb on top of their energy bar."
 msgstr " Düşman birimlerinin enerji sütunlarının üstünde küre yoktur."
 
 #. [topic]: id=hitpoints
@@ -2858,7 +2858,7 @@ msgstr "Genel Komutlar"
 #. [topic]: id=debug_commands
 #. [topic]: id=general_commands
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:573 data/core/help.cfg:613 data/core/help.cfg:645
+#: data/core/help.cfg:573 data/core/help.cfg:616 data/core/help.cfg:654
 msgid ""
 "These commands can either be issued via the command line by prefixing them "
 "with ':' (as shown here) or via the chat by prefixing them with '/' (press "
@@ -2917,6 +2917,14 @@ msgstr ""
 #: data/core/help.cfg:585
 msgid ""
 "\n"
+"Display the controller status of a side.\n"
+"\n"
+msgstr ""
+
+#. [topic]: id=general_commands
+#: data/core/help.cfg:588
+msgid ""
+"\n"
 "Toggle the display of the current frames per second.\n"
 "\n"
 msgstr ""
@@ -2926,7 +2934,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=general_commands
-#: data/core/help.cfg:588
+#: data/core/help.cfg:591
 msgid ""
 "\n"
 "Switch a log domain to a different log level.\n"
@@ -2937,7 +2945,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=general_commands
-#: data/core/help.cfg:591
+#: data/core/help.cfg:594
 msgid ""
 "\n"
 "Redraws the screen and reloads any image files that have been changed.\n"
@@ -2948,7 +2956,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=general_commands
-#: data/core/help.cfg:594
+#: data/core/help.cfg:597
 msgid ""
 "\n"
 "Bring up theme selection menu.\n"
@@ -2959,7 +2967,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=general_commands
-#: data/core/help.cfg:597
+#: data/core/help.cfg:600
 msgid ""
 "\n"
 "Quit the scenario (without prompting).\n"
@@ -2970,7 +2978,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=general_commands
-#: data/core/help.cfg:600
+#: data/core/help.cfg:603
 msgid ""
 "\n"
 "Save the game (without prompting).\n"
@@ -2981,7 +2989,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=general_commands
-#: data/core/help.cfg:603
+#: data/core/help.cfg:606
 msgid ""
 "\n"
 "Save the game and quit the scenario (without prompting)."
@@ -2990,12 +2998,12 @@ msgstr ""
 "Oyunu kayıt et ve senaryodan çık (sormaksızın)."
 
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:612
+#: data/core/help.cfg:615
 msgid "Multiplayer commands"
 msgstr "Çokoyuncu komutları"
 
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:615
+#: data/core/help.cfg:618
 #, fuzzy
 msgid ""
 "\n"
@@ -3010,7 +3018,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:618
+#: data/core/help.cfg:621
 #, fuzzy
 msgid ""
 "\n"
@@ -3030,7 +3038,25 @@ msgstr ""
 "\n"
 
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:621
+#: data/core/help.cfg:624
+msgid ""
+"\n"
+"Launch a dialog to assist the host in changing the human controllers of "
+"sides.\n"
+"\n"
+msgstr ""
+
+#. [topic]: id=mp_commands
+#: data/core/help.cfg:627
+msgid ""
+"\n"
+"Toggle the idle state for a side. The host may make a side idle after a "
+"network disconnection.\n"
+"\n"
+msgstr ""
+
+#. [topic]: id=mp_commands
+#: data/core/help.cfg:630
 #, fuzzy
 msgid ""
 "\n"
@@ -3046,7 +3072,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:624
+#: data/core/help.cfg:633
 #, fuzzy
 msgid ""
 "\n"
@@ -3058,7 +3084,7 @@ msgstr ""
 "Özel ileti gönderir. Oyununuzda oynamayan oyunculara ileti gönderemezsiniz."
 
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:627
+#: data/core/help.cfg:636
 msgid ""
 "\n"
 "Mute a specific observer. If no username is supplied the muted usernames are "
@@ -3071,7 +3097,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:630
+#: data/core/help.cfg:639
 #, fuzzy
 msgid ""
 "\n"
@@ -3082,7 +3108,7 @@ msgstr ""
 "Tüm izleyicileri sessizleştirmeyi açar/kapar."
 
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:633
+#: data/core/help.cfg:642
 #, fuzzy
 msgid ""
 "\n"
@@ -3096,7 +3122,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:636
+#: data/core/help.cfg:645
 #, fuzzy
 msgid ""
 "\n"
@@ -3109,12 +3135,12 @@ msgstr ""
 "\n"
 
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:644
+#: data/core/help.cfg:653
 msgid "Debug mode commands"
 msgstr "Hata Ayıklama Kipi Komutları"
 
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:647
+#: data/core/help.cfg:656
 msgid ""
 "\n"
 "Brings up a menu for choosing a scenario to immediately advance to in a "
@@ -3127,7 +3153,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:650
+#: data/core/help.cfg:659
 msgid ""
 "\n"
 "Create a unit of the specified type on the selected hex.\n"
@@ -3138,7 +3164,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:653
+#: data/core/help.cfg:662
 msgid ""
 "\n"
 "Toggle fog/shroud for the current side.\n"
@@ -3149,7 +3175,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:656
+#: data/core/help.cfg:665
 msgid ""
 "\n"
 "Adds the specified amount to the current side’s gold.\n"
@@ -3160,7 +3186,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:659
+#: data/core/help.cfg:668
 msgid ""
 "\n"
 "Immediately advances to the next scenario in a campaign.\n"
@@ -3171,7 +3197,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:662
+#: data/core/help.cfg:671
 msgid ""
 "\n"
 "Manually set a gamestate variable to value.\n"
@@ -3182,7 +3208,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:665
+#: data/core/help.cfg:674
 msgid ""
 "\n"
 "Show a gamestate variable.\n"
@@ -3193,7 +3219,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:668
+#: data/core/help.cfg:677
 msgid ""
 "\n"
 "Manually fire the specified event.\n"
@@ -3204,7 +3230,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:671
+#: data/core/help.cfg:680
 #, fuzzy
 msgid ""
 "\n"
@@ -3217,7 +3243,7 @@ msgstr ""
 "hitpoins=100'</bold>"
 
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:674
+#: data/core/help.cfg:683
 msgid ""
 "\n"
 "Makes the selected unit level up N times. Example: :unit advances=2"
@@ -5359,201 +5385,201 @@ msgstr ""
 msgid "Help"
 msgstr "Yardım"
 
-#: src/help.cpp:1152
+#: src/help.cpp:1154
 msgid "<header>text='Units having this special attack'</header>"
 msgstr "<header>text='Bu özel saldırıya sahip birimler'</header>"
 
-#: src/help.cpp:1218
+#: src/help.cpp:1220
 msgid "<header>text='Units having this ability'</header>"
 msgstr "<header>text='Bu yeteneğe sahip birimler'</header>"
 
-#: src/help.cpp:1251
+#: src/help.cpp:1253
 #, fuzzy
 msgid "Leaders:"
 msgstr "Lider: "
 
-#: src/help.cpp:1260
+#: src/help.cpp:1262
 #, fuzzy
 msgid "Recruits:"
 msgstr "Askere alımlar: "
 
-#: src/help.cpp:1274
+#: src/help.cpp:1276
 msgid "Era:"
 msgstr "Çağ:"
 
-#: src/help.cpp:1282
+#: src/help.cpp:1284
 #, fuzzy
 msgid "Factions:"
 msgstr "Birlik Sınıfı"
 
-#: src/help.cpp:1292
+#: src/help.cpp:1294
 msgid "Factions are only used in multiplayer"
 msgstr ""
 
-#: src/help.cpp:1325
+#: src/help.cpp:1327
 #, fuzzy
 #| msgid "Terrain"
 msgid "Base Terrain: "
 msgstr "Arazi"
 
-#: src/help.cpp:1403
+#: src/help.cpp:1405
 msgid "level"
 msgstr "seviye"
 
-#: src/help.cpp:1436
+#: src/help.cpp:1438
 msgid "Advances from: "
 msgstr "Şundan terfi eder: "
 
-#: src/help.cpp:1438
+#: src/help.cpp:1440
 msgid "Advances to: "
 msgstr "Şuna terfi eder: "
 
-#: src/help.cpp:1463
+#: src/help.cpp:1465
 msgid "Base unit: "
 msgstr ""
 
-#: src/help.cpp:1468
+#: src/help.cpp:1470
 msgid "Base units: "
 msgstr ""
 
-#: src/help.cpp:1486
+#: src/help.cpp:1488
 #, fuzzy
 msgid "Variations: "
 msgstr "Birlik Sınıfı"
 
-#: src/help.cpp:1510 src/help.cpp:1887 src/help.cpp:2031
+#: src/help.cpp:1512 src/help.cpp:1889 src/help.cpp:2033
 msgid "race^Miscellaneous"
 msgstr "Çeşitli"
 
-#: src/help.cpp:1512
+#: src/help.cpp:1514
 msgid "Race: "
 msgstr "Irk: "
 
-#: src/help.cpp:1519
+#: src/help.cpp:1521
 msgid "Abilities: "
 msgstr "Yetenekler: "
 
-#: src/help.cpp:1535
+#: src/help.cpp:1537
 msgid "Ability Upgrades: "
 msgstr "Yetenek Güncellemeleri: "
 
-#: src/help.cpp:1550
+#: src/help.cpp:1552
 msgid "HP: "
 msgstr "YP: "
 
-#: src/help.cpp:1551
+#: src/help.cpp:1553
 msgid "Moves: "
 msgstr "Hareket: "
 
-#: src/help.cpp:1553
+#: src/help.cpp:1555
 msgid "Vision: "
 msgstr ""
 
-#: src/help.cpp:1555
+#: src/help.cpp:1557
 msgid "Jamming: "
 msgstr ""
 
-#: src/help.cpp:1556
+#: src/help.cpp:1558
 msgid "Cost: "
 msgstr "Bedel: "
 
-#: src/help.cpp:1557
+#: src/help.cpp:1559
 msgid "Alignment: "
 msgstr "Hizalama: "
 
-#: src/help.cpp:1561
+#: src/help.cpp:1563
 msgid "Required XP: "
 msgstr "Gerekli TP: "
 
-#: src/help.cpp:1570
+#: src/help.cpp:1572
 msgid "unit help^Attacks"
 msgstr "Saldırılar"
 
-#: src/help.cpp:1577
+#: src/help.cpp:1579
 msgid "unit help^Name"
 msgstr "İsim"
 
-#: src/help.cpp:1578
+#: src/help.cpp:1580
 msgid "Type"
 msgstr "Tür"
 
-#: src/help.cpp:1579
+#: src/help.cpp:1581
 msgid "Strikes"
 msgstr "Vuruşlar"
 
-#: src/help.cpp:1580
+#: src/help.cpp:1582
 msgid "Range"
 msgstr "Menzil"
 
-#: src/help.cpp:1581
+#: src/help.cpp:1583
 msgid "Special"
 msgstr "Özel"
 
-#: src/help.cpp:1630
+#: src/help.cpp:1632
 msgid "Resistances"
 msgstr "Dirençler"
 
-#: src/help.cpp:1634
+#: src/help.cpp:1636
 msgid "Attack Type"
 msgstr "Saldırı Türü"
 
-#: src/help.cpp:1635
+#: src/help.cpp:1637
 msgid "Resistance"
 msgstr "Direnç"
 
-#: src/help.cpp:1665
+#: src/help.cpp:1667
 msgid "Terrain Modifiers"
 msgstr "Arazi Ayarı"
 
-#: src/help.cpp:1669
+#: src/help.cpp:1671
 msgid "Terrain"
 msgstr "Arazi"
 
-#: src/help.cpp:1670
+#: src/help.cpp:1672
 msgid "Defense"
 msgstr "Savunma"
 
-#: src/help.cpp:1671
+#: src/help.cpp:1673
 msgid "Movement Cost"
 msgstr "Hareket Bedeli"
 
-#: src/help.cpp:1675
+#: src/help.cpp:1677
 msgid "Vision Cost"
 msgstr ""
 
-#: src/help.cpp:1678
+#: src/help.cpp:1680
 msgid "Jamming Cost"
 msgstr ""
 
-#: src/help.cpp:2037
+#: src/help.cpp:2039
 msgid "<header>text='Units of this race'</header>"
 msgstr "<header>text='Bu ırkın birimleri'</header>"
 
-#: src/help.cpp:2948
+#: src/help.cpp:2951
 msgid " < Back"
 msgstr " < Geri"
 
-#: src/help.cpp:2949
+#: src/help.cpp:2952
 msgid "Forward >"
 msgstr "İleri >"
 
-#: src/help.cpp:3057
+#: src/help.cpp:3060
 msgid "Reference to unknown topic: "
 msgstr "Bilinmeyen bir konuya bağlantı: "
 
-#: src/help.cpp:3313
+#: src/help.cpp:3316
 msgid "corrupted original file"
 msgstr "özgün dosya bozuk"
 
-#: src/help.cpp:3424
+#: src/help.cpp:3427
 msgid "Close"
 msgstr "Kapat"
 
-#: src/help.cpp:3427
+#: src/help.cpp:3430
 msgid "The Battle for Wesnoth Help"
 msgstr "Wesnoth Savaşı Yardımı"
 
-#: src/help.cpp:3483
+#: src/help.cpp:3486
 msgid "Parse error when parsing help text: "
 msgstr "Yardım metni çözümlenirken ayrıştırma hatası: "
 

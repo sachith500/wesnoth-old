@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: en@shaw\n"
 "Report-Msgid-Bugs-To: http://bugs.wesnoth.org/\n"
-"POT-Creation-Date: 2014-02-05 19:37+0100\n"
+"POT-Creation-Date: 2014-03-02 10:23+0100\n"
 "PO-Revision-Date: 2009-10-11 21:15-0400\n"
 "Last-Translator: Arc Riley <arcriley@ubuntu.com>\n"
 "Language-Team: Shavian English <ubuntu-l10n-en-shaw@lists.launchpad.net>\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. [time]: id=underground
-#: data/campaigns/Heir_To_The_Throne/utils/httt_utils.cfg:533
+#: data/campaigns/Heir_To_The_Throne/utils/httt_utils.cfg:531
 #: data/core/macros/schedules.cfg:99
 msgid "Underground"
 msgstr "𐑳𐑯𐑛𐑼𐑜𐑮𐑬𐑯𐑛"
@@ -930,7 +930,7 @@ msgstr "𐑢𐑧𐑐𐑩𐑯 𐑕𐑐𐑧𐑖𐑩𐑤𐑟"
 
 #. #-#-#-#-#  wesnoth-help.wml.pot (PACKAGE VERSION)  #-#-#-#-#
 #. [section]: id=factions_section
-#: data/core/help.cfg:56 src/help.cpp:1289 src/help.cpp:1291
+#: data/core/help.cfg:56 src/help.cpp:1291 src/help.cpp:1293
 msgid "Factions"
 msgstr "𐑓𐑨𐑒𐑖𐑩𐑯𐑟"
 
@@ -1303,7 +1303,7 @@ msgstr "𐑘𐑧𐑤𐑴 𐑦𐑓 𐑦𐑑 𐑣𐑨𐑟 𐑥𐑵𐑝𐑛, 𐑚�
 #. [topic]: id=orbs
 #: data/core/help.cfg:192
 msgid ""
-" red if it can no longer move or attack, or the user ended the unit’s turn."
+" black if it can no longer move or attack, or the user ended the unit’s turn."
 msgstr ""
 
 #. [topic]: id=orbs
@@ -1315,7 +1315,7 @@ msgstr "𐑞 𐑹𐑚 𐑦𐑟 𐑚𐑤𐑵 𐑦𐑓 𐑞 𐑿𐑯𐑦𐑑 𐑦�
 #. [topic]: id=orbs
 #: data/core/help.cfg:194
 #, fuzzy
-msgid " Enemy units have no orb on top of their energy bar."
+msgid " Enemy units have a red orb on top of their energy bar."
 msgstr "𐑧𐑯𐑩𐑥𐑦 𐑿𐑯𐑦𐑑𐑕 𐑣𐑨𐑝 𐑯𐑴 𐑹𐑚 𐑪𐑯 𐑑𐑪𐑐 𐑝 𐑞𐑺 𐑧𐑯𐑼𐑡𐑦 𐑚𐑸."
 
 #. [topic]: id=hitpoints
@@ -2795,7 +2795,7 @@ msgstr "𐑡𐑧𐑯𐑼𐑩𐑤 𐑒𐑩𐑥𐑭𐑯𐑛𐑟"
 #. [topic]: id=debug_commands
 #. [topic]: id=general_commands
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:573 data/core/help.cfg:613 data/core/help.cfg:645
+#: data/core/help.cfg:573 data/core/help.cfg:616 data/core/help.cfg:654
 msgid ""
 "These commands can either be issued via the command line by prefixing them "
 "with ':' (as shown here) or via the chat by prefixing them with '/' (press "
@@ -2852,6 +2852,14 @@ msgstr ""
 #: data/core/help.cfg:585
 msgid ""
 "\n"
+"Display the controller status of a side.\n"
+"\n"
+msgstr ""
+
+#. [topic]: id=general_commands
+#: data/core/help.cfg:588
+msgid ""
+"\n"
 "Toggle the display of the current frames per second.\n"
 "\n"
 msgstr ""
@@ -2860,7 +2868,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=general_commands
-#: data/core/help.cfg:588
+#: data/core/help.cfg:591
 msgid ""
 "\n"
 "Switch a log domain to a different log level.\n"
@@ -2871,7 +2879,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=general_commands
-#: data/core/help.cfg:591
+#: data/core/help.cfg:594
 msgid ""
 "\n"
 "Redraws the screen and reloads any image files that have been changed.\n"
@@ -2882,7 +2890,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=general_commands
-#: data/core/help.cfg:594
+#: data/core/help.cfg:597
 msgid ""
 "\n"
 "Bring up theme selection menu.\n"
@@ -2893,7 +2901,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=general_commands
-#: data/core/help.cfg:597
+#: data/core/help.cfg:600
 msgid ""
 "\n"
 "Quit the scenario (without prompting).\n"
@@ -2904,7 +2912,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=general_commands
-#: data/core/help.cfg:600
+#: data/core/help.cfg:603
 msgid ""
 "\n"
 "Save the game (without prompting).\n"
@@ -2915,7 +2923,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=general_commands
-#: data/core/help.cfg:603
+#: data/core/help.cfg:606
 msgid ""
 "\n"
 "Save the game and quit the scenario (without prompting)."
@@ -2924,12 +2932,12 @@ msgstr ""
 "𐑕𐑱𐑝 𐑞 𐑜𐑱𐑥 𐑯 𐑒𐑢𐑦𐑑 𐑞 𐑕𐑦𐑯𐑺𐑰𐑴 (𐑢𐑦𐑞𐑬𐑑 𐑐𐑮𐑪𐑥𐑐𐑑𐑦𐑙)."
 
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:612
+#: data/core/help.cfg:615
 msgid "Multiplayer commands"
 msgstr "𐑥𐑩𐑤𐑑𐑰𐑐𐑤𐑱𐑻 𐑒𐑩𐑥𐑭𐑯𐑛𐑟"
 
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:615
+#: data/core/help.cfg:618
 msgid ""
 "\n"
 "Ban a user in a multiplayer game by the IP address used by that username and "
@@ -2944,7 +2952,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:618
+#: data/core/help.cfg:621
 #, fuzzy
 msgid ""
 "\n"
@@ -2964,7 +2972,25 @@ msgstr ""
 "\n"
 
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:621
+#: data/core/help.cfg:624
+msgid ""
+"\n"
+"Launch a dialog to assist the host in changing the human controllers of "
+"sides.\n"
+"\n"
+msgstr ""
+
+#. [topic]: id=mp_commands
+#: data/core/help.cfg:627
+msgid ""
+"\n"
+"Toggle the idle state for a side. The host may make a side idle after a "
+"network disconnection.\n"
+"\n"
+msgstr ""
+
+#. [topic]: id=mp_commands
+#: data/core/help.cfg:630
 msgid ""
 "\n"
 "Kick a user in multiplayer. They will be able to rejoin the game. If you "
@@ -2978,7 +3004,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:624
+#: data/core/help.cfg:633
 #, fuzzy
 msgid ""
 "\n"
@@ -2991,7 +3017,7 @@ msgstr ""
 "𐑩 𐑮𐑳𐑯𐑦𐑙 𐑜𐑱𐑥 𐑿 𐑸 𐑦𐑯."
 
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:627
+#: data/core/help.cfg:636
 msgid ""
 "\n"
 "Mute a specific observer. If no username is supplied the muted usernames are "
@@ -3003,7 +3029,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:630
+#: data/core/help.cfg:639
 msgid ""
 "\n"
 "Toggle muting/silencing of all observers on/off.\n"
@@ -3014,7 +3040,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:633
+#: data/core/help.cfg:642
 msgid ""
 "\n"
 "Unban a user in a multiplayer game by the IP address used by that username. "
@@ -3027,7 +3053,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=mp_commands
-#: data/core/help.cfg:636
+#: data/core/help.cfg:645
 msgid ""
 "\n"
 "Unmute a specific observer. If no username is supplied the list of muted "
@@ -3038,12 +3064,12 @@ msgstr ""
 "𐑒𐑤𐑽𐑛."
 
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:644
+#: data/core/help.cfg:653
 msgid "Debug mode commands"
 msgstr "𐑛𐑰𐑚𐑳𐑜 𐑥𐑴𐑛 𐑒𐑩𐑥𐑭𐑯𐑛𐑟"
 
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:647
+#: data/core/help.cfg:656
 msgid ""
 "\n"
 "Brings up a menu for choosing a scenario to immediately advance to in a "
@@ -3055,7 +3081,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:650
+#: data/core/help.cfg:659
 msgid ""
 "\n"
 "Create a unit of the specified type on the selected hex.\n"
@@ -3066,7 +3092,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:653
+#: data/core/help.cfg:662
 msgid ""
 "\n"
 "Toggle fog/shroud for the current side.\n"
@@ -3077,7 +3103,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:656
+#: data/core/help.cfg:665
 msgid ""
 "\n"
 "Adds the specified amount to the current side’s gold.\n"
@@ -3088,7 +3114,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:659
+#: data/core/help.cfg:668
 msgid ""
 "\n"
 "Immediately advances to the next scenario in a campaign.\n"
@@ -3099,7 +3125,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:662
+#: data/core/help.cfg:671
 msgid ""
 "\n"
 "Manually set a gamestate variable to value.\n"
@@ -3110,7 +3136,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:665
+#: data/core/help.cfg:674
 msgid ""
 "\n"
 "Show a gamestate variable.\n"
@@ -3121,7 +3147,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:668
+#: data/core/help.cfg:677
 msgid ""
 "\n"
 "Manually fire the specified event.\n"
@@ -3132,7 +3158,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:671
+#: data/core/help.cfg:680
 msgid ""
 "\n"
 "Modifies the specified property of the selected unit. Example: :unit "
@@ -3144,7 +3170,7 @@ msgstr ""
 "\n"
 
 #. [topic]: id=debug_commands
-#: data/core/help.cfg:674
+#: data/core/help.cfg:683
 msgid ""
 "\n"
 "Makes the selected unit level up N times. Example: :unit advances=2"
@@ -5268,199 +5294,199 @@ msgstr ""
 msgid "Help"
 msgstr "𐑣𐑧𐑤𐑐"
 
-#: src/help.cpp:1152
+#: src/help.cpp:1154
 msgid "<header>text='Units having this special attack'</header>"
 msgstr "<header>text='𐑿𐑯𐑦𐑑𐑕 𐑣𐑨𐑝𐑦𐑙 𐑞𐑦𐑕 𐑕𐑐𐑧𐑖𐑩𐑤 𐑩𐑑𐑨𐑒'</header>"
 
-#: src/help.cpp:1218
+#: src/help.cpp:1220
 msgid "<header>text='Units having this ability'</header>"
 msgstr "<header>text='𐑿𐑯𐑦𐑑𐑕 𐑣𐑨𐑝𐑦𐑙 𐑞𐑦𐑕 𐑩𐑚𐑦𐑤𐑦𐑑𐑦'</header>"
 
-#: src/help.cpp:1251
+#: src/help.cpp:1253
 msgid "Leaders:"
 msgstr "𐑤𐑰𐑛𐑼𐑟:"
 
-#: src/help.cpp:1260
+#: src/help.cpp:1262
 msgid "Recruits:"
 msgstr "𐑮𐑩𐑒𐑮𐑵𐑑𐑕:"
 
-#: src/help.cpp:1274
+#: src/help.cpp:1276
 msgid "Era:"
 msgstr "𐑽𐑩:"
 
-#: src/help.cpp:1282
+#: src/help.cpp:1284
 msgid "Factions:"
 msgstr "𐑓𐑨𐑒𐑖𐑩𐑯𐑟:"
 
-#: src/help.cpp:1292
+#: src/help.cpp:1294
 msgid "Factions are only used in multiplayer"
 msgstr "𐑓𐑨𐑒𐑖𐑩𐑯𐑟 𐑸 𐑴𐑯𐑤𐑦 𐑫𐑖𐑔𐑴𐑵𐑿𐑕𐑑 𐑦𐑯 𐑥𐑩𐑤𐑑𐑰𐑐𐑤𐑱𐑻"
 
-#: src/help.cpp:1325
+#: src/help.cpp:1327
 #, fuzzy
 #| msgid "Terrain"
 msgid "Base Terrain: "
 msgstr "𐑑𐑻𐑱𐑯"
 
-#: src/help.cpp:1403
+#: src/help.cpp:1405
 msgid "level"
 msgstr "𐑤𐑧𐑝𐑩𐑤"
 
-#: src/help.cpp:1436
+#: src/help.cpp:1438
 msgid "Advances from: "
 msgstr "𐑩𐑛𐑝𐑭𐑯𐑕𐑩𐑟 𐑓𐑮𐑪𐑥: "
 
-#: src/help.cpp:1438
+#: src/help.cpp:1440
 msgid "Advances to: "
 msgstr "𐑩𐑛𐑝𐑭𐑯𐑕𐑩𐑟 𐑑: "
 
-#: src/help.cpp:1463
+#: src/help.cpp:1465
 msgid "Base unit: "
 msgstr ""
 
-#: src/help.cpp:1468
+#: src/help.cpp:1470
 msgid "Base units: "
 msgstr ""
 
-#: src/help.cpp:1486
+#: src/help.cpp:1488
 #, fuzzy
 #| msgid "Factions:"
 msgid "Variations: "
 msgstr "𐑓𐑨𐑒𐑖𐑩𐑯𐑟:"
 
-#: src/help.cpp:1510 src/help.cpp:1887 src/help.cpp:2031
+#: src/help.cpp:1512 src/help.cpp:1889 src/help.cpp:2033
 msgid "race^Miscellaneous"
 msgstr "𐑥𐑦𐑕𐑩𐑤𐑱𐑯𐑰𐑩𐑕"
 
-#: src/help.cpp:1512
+#: src/help.cpp:1514
 msgid "Race: "
 msgstr "𐑮𐑱𐑕: "
 
-#: src/help.cpp:1519
+#: src/help.cpp:1521
 msgid "Abilities: "
 msgstr "𐑩𐑚𐑦𐑤𐑦𐑑𐑦𐑟: "
 
-#: src/help.cpp:1535
+#: src/help.cpp:1537
 msgid "Ability Upgrades: "
 msgstr "𐑩𐑚𐑦𐑤𐑦𐑑𐑦 𐑩𐑐𐑜𐑮𐑱𐑛𐑟: "
 
-#: src/help.cpp:1550
+#: src/help.cpp:1552
 msgid "HP: "
 msgstr "HP: "
 
-#: src/help.cpp:1551
+#: src/help.cpp:1553
 msgid "Moves: "
 msgstr "𐑥𐑵𐑝𐑟: "
 
-#: src/help.cpp:1553
+#: src/help.cpp:1555
 msgid "Vision: "
 msgstr ""
 
-#: src/help.cpp:1555
+#: src/help.cpp:1557
 msgid "Jamming: "
 msgstr ""
 
-#: src/help.cpp:1556
+#: src/help.cpp:1558
 msgid "Cost: "
 msgstr "𐑒𐑪𐑕𐑑: "
 
-#: src/help.cpp:1557
+#: src/help.cpp:1559
 msgid "Alignment: "
 msgstr "𐑩𐑤𐑲𐑯𐑥𐑩𐑯𐑑: "
 
-#: src/help.cpp:1561
+#: src/help.cpp:1563
 msgid "Required XP: "
 msgstr "𐑮𐑦𐑒𐑢𐑲𐑼𐑛 XP: "
 
-#: src/help.cpp:1570
+#: src/help.cpp:1572
 msgid "unit help^Attacks"
 msgstr "𐑩𐑑𐑨𐑒𐑕"
 
-#: src/help.cpp:1577
+#: src/help.cpp:1579
 msgid "unit help^Name"
 msgstr "𐑯𐑱𐑥"
 
-#: src/help.cpp:1578
+#: src/help.cpp:1580
 msgid "Type"
 msgstr "𐑑𐑲𐑐"
 
-#: src/help.cpp:1579
+#: src/help.cpp:1581
 msgid "Strikes"
 msgstr "𐑕𐑑𐑮𐑲𐑒𐑕"
 
-#: src/help.cpp:1580
+#: src/help.cpp:1582
 msgid "Range"
 msgstr "𐑮𐑱𐑯𐑡"
 
-#: src/help.cpp:1581
+#: src/help.cpp:1583
 msgid "Special"
 msgstr "𐑕𐑐𐑧𐑖𐑩𐑤"
 
-#: src/help.cpp:1630
+#: src/help.cpp:1632
 msgid "Resistances"
 msgstr "𐑮𐑦𐑟𐑦𐑕𐑑𐑩𐑯𐑕𐑩𐑟"
 
-#: src/help.cpp:1634
+#: src/help.cpp:1636
 msgid "Attack Type"
 msgstr "𐑩𐑑𐑨𐑒 𐑑𐑲𐑐"
 
-#: src/help.cpp:1635
+#: src/help.cpp:1637
 msgid "Resistance"
 msgstr "𐑮𐑦𐑟𐑦𐑕𐑑𐑩𐑯𐑕"
 
-#: src/help.cpp:1665
+#: src/help.cpp:1667
 msgid "Terrain Modifiers"
 msgstr "𐑑𐑻𐑱𐑯 𐑥𐑪𐑛𐑦𐑓𐑲𐑼𐑟"
 
-#: src/help.cpp:1669
+#: src/help.cpp:1671
 msgid "Terrain"
 msgstr "𐑑𐑻𐑱𐑯"
 
-#: src/help.cpp:1670
+#: src/help.cpp:1672
 msgid "Defense"
 msgstr "𐑛𐑦𐑓𐑧𐑯𐑕"
 
-#: src/help.cpp:1671
+#: src/help.cpp:1673
 msgid "Movement Cost"
 msgstr "𐑥𐑵𐑝𐑥𐑩𐑯𐑑 𐑒𐑪𐑕𐑑"
 
-#: src/help.cpp:1675
+#: src/help.cpp:1677
 msgid "Vision Cost"
 msgstr ""
 
-#: src/help.cpp:1678
+#: src/help.cpp:1680
 msgid "Jamming Cost"
 msgstr ""
 
-#: src/help.cpp:2037
+#: src/help.cpp:2039
 msgid "<header>text='Units of this race'</header>"
 msgstr "<header>text='𐑿𐑯𐑦𐑑𐑕 𐑝 𐑞𐑦𐑕 𐑮𐑱𐑕'</header>"
 
-#: src/help.cpp:2948
+#: src/help.cpp:2951
 msgid " < Back"
 msgstr "< 𐑚𐑨𐑒"
 
-#: src/help.cpp:2949
+#: src/help.cpp:2952
 msgid "Forward >"
 msgstr "𐑓𐑹𐑢𐑼𐑛 >"
 
-#: src/help.cpp:3057
+#: src/help.cpp:3060
 msgid "Reference to unknown topic: "
 msgstr "𐑮𐑧𐑓𐑼𐑩𐑯𐑕 𐑑 𐑳𐑯𐑯𐑴𐑯 𐑑𐑪𐑐𐑦𐑒: "
 
-#: src/help.cpp:3313
+#: src/help.cpp:3316
 msgid "corrupted original file"
 msgstr "𐑒𐑼𐑳𐑐𐑑𐑩𐑛 𐑩𐑮𐑦𐑡𐑩𐑯𐑩𐑤 𐑓𐑲𐑤"
 
-#: src/help.cpp:3424
+#: src/help.cpp:3427
 msgid "Close"
 msgstr "𐑒𐑤𐑴𐑟"
 
-#: src/help.cpp:3427
+#: src/help.cpp:3430
 msgid "The Battle for Wesnoth Help"
 msgstr "𐑞 𐑚𐑨𐑑𐑩𐑤 𐑓𐑹 ·𐑢𐑧𐑕𐑯𐑷𐑔 𐑣𐑧𐑤𐑐"
 
-#: src/help.cpp:3483
+#: src/help.cpp:3486
 msgid "Parse error when parsing help text: "
 msgstr "𐑐𐑸𐑕 𐑻𐑹 𐑢𐑧𐑯 𐑐𐑸𐑕𐑦𐑙 𐑣𐑧𐑤𐑐 𐑑𐑧𐑒𐑕𐑑: "
 

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Battle for Wesnoth\n"
 "Report-Msgid-Bugs-To: http://bugs.wesnoth.org/\n"
-"POT-Creation-Date: 2014-02-05 19:37+0100\n"
+"POT-Creation-Date: 2014-03-02 10:23+0100\n"
 "PO-Revision-Date: 2013-04-15 02:40+0700\n"
 "Last-Translator: Phạm Thành Nam <phamthanhnam.ptn@gmail.com>\n"
 "Language-Team: Vietnamese <>\n"
@@ -2151,11 +2151,10 @@ msgstr "Tìm hiểu xem điều gì đang xảy ra ở khúc cạn"
 
 #. [objective]: condition=win
 #: data/campaigns/Delfadors_Memoirs/scenarios/12_Terror_at_the_Ford_of_Parthyn.cfg:58
-#: data/campaigns/Delfadors_Memoirs/scenarios/12_Terror_at_the_Ford_of_Parthyn.cfg:666
-#: data/campaigns/Delfadors_Memoirs/scenarios/13_The_Return_of_Trouble.cfg:187
-#: data/campaigns/Delfadors_Memoirs/scenarios/19_Showdown_in_the_Northern_Swamp.cfg:150
-msgid "Defeat all enemies"
-msgstr "Đánh bại tất cả các kẻ thù"
+#: data/campaigns/Delfadors_Memoirs/scenarios/14_Shadows.cfg:122
+#: data/campaigns/Delfadors_Memoirs/scenarios/15_Save_the_King.cfg:184
+msgid "Defeat all enemy leaders"
+msgstr "Đánh bại tất cả các chỉ huy của kẻ thù"
 
 #. [side]: type=Orcish Warlord, id=Upgar
 #: data/campaigns/Delfadors_Memoirs/scenarios/12_Terror_at_the_Ford_of_Parthyn.cfg:108
@@ -2429,6 +2428,13 @@ msgid ""
 msgstr ""
 "Tôi không biết. Không ai thấy mặt chúng mà sống sót. Tất cả những gì tôi "
 "nghe được là tiếng la hét của các đồng đội khi họ bị tàn sát."
+
+#. [objective]: condition=win
+#: data/campaigns/Delfadors_Memoirs/scenarios/12_Terror_at_the_Ford_of_Parthyn.cfg:666
+#: data/campaigns/Delfadors_Memoirs/scenarios/13_The_Return_of_Trouble.cfg:187
+#: data/campaigns/Delfadors_Memoirs/scenarios/19_Showdown_in_the_Northern_Swamp.cfg:150
+msgid "Defeat all enemies"
+msgstr "Đánh bại tất cả các kẻ thù"
 
 #. [unit]: type=Heavy Infantryman, id=Donc
 #: data/campaigns/Delfadors_Memoirs/scenarios/12_Terror_at_the_Ford_of_Parthyn.cfg:702
@@ -2996,12 +3002,6 @@ msgstr "Roth-Malal"
 #: data/campaigns/Delfadors_Memoirs/scenarios/14_Shadows.cfg:82
 msgid "Barth-Malal"
 msgstr "Barth-Malal"
-
-#. [objective]: condition=win
-#: data/campaigns/Delfadors_Memoirs/scenarios/14_Shadows.cfg:122
-#: data/campaigns/Delfadors_Memoirs/scenarios/15_Save_the_King.cfg:184
-msgid "Defeat all enemy leaders"
-msgstr "Đánh bại tất cả các chỉ huy của kẻ thù"
 
 #. [message]: id=Kalenz
 #: data/campaigns/Delfadors_Memoirs/scenarios/14_Shadows.cfg:152
@@ -5218,6 +5218,11 @@ msgstr "Droni"
 #: data/campaigns/Delfadors_Memoirs/utils/sides.cfg:294
 msgid "Artor"
 msgstr "Artor"
+
+#, fuzzy
+#~| msgid "Defeat all enemy leaders"
+#~ msgid "Defeat all enemey leaders"
+#~ msgstr "Đánh bại tất cả các chỉ huy của kẻ thù"
 
 #~ msgid "Defeat Zorlan"
 #~ msgstr "Đánh bại Zorlan"

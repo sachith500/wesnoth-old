@@ -30,6 +30,7 @@
 #include "playcampaign.hpp"
 #include "preferences_display.hpp"
 #include "replay.hpp"
+#include "sdl/exception.hpp"
 #include "serialization/binary_or_text.hpp"
 #include "serialization/parser.hpp"
 #include "serialization/validator.hpp"
@@ -51,11 +52,6 @@
 #include "vld.h"
 #endif
 
-// Minimum stack cookie to prevent stack overflow on AmigaOS4
-#ifdef __amigaos4__
-const char __attribute__((used)) stackcookie[] = "\0$STACK: 16000000";
-#endif
-
 static lg::log_domain log_config("config");
 #define LOG_CONFIG LOG_STREAM(info, log_config)
 
@@ -70,9 +66,6 @@ static lg::log_domain log_preprocessor("preprocessor");
 static void safe_exit(int res) {
 
 	LOG_GENERAL << "exiting with code " << res << "\n";
-#ifdef OS2 /* required to correctly shutdown SDL on OS/2 */
-        SDL_Quit();
-#endif
 	exit(res);
 }
 
@@ -366,8 +359,12 @@ static int process_command_args(const commandline_options& cmdline_opts) {
 		srand(*cmdline_opts.rng_seed);
 	}
 	if(cmdline_opts.screenshot) {
+#if SDL_VERSION_ATLEAST(2, 0, 0)
+		SDL_setenv("SDL_VIDEODRIVER", "dummy", 1);
+#else
 		static char opt[] = "SDL_VIDEODRIVER=dummy";
 		SDL_putenv(opt);
+#endif
 	}
 	if(cmdline_opts.strict_validation) {
 		strict_validation_enabled = true;
@@ -466,6 +463,10 @@ static int do_gameloop(int argc, char** argv)
 	const cursor::manager cursor_manager;
 	cursor::set(cursor::WAIT);
 
+#if (defined(_X11) && !defined(__APPLE__)) || defined(_WIN32)
+	SDL_EventState(SDL_SYSWMEVENT, SDL_ENABLE);
+#endif
+
 	loadscreen::global_loadscreen_manager loadscreen_manager(game->disp().video());
 
 	loadscreen::start_stage("init gui");
@@ -491,10 +492,6 @@ static int do_gameloop(int argc, char** argv)
 
 	loadscreen::start_stage("refresh addons");
 	refresh_addon_version_info_cache();
-
-#if (defined(_X11) && !defined(__APPLE__)) || defined(_WIN32)
-	SDL_EventState(SDL_SYSWMEVENT, SDL_ENABLE);
-#endif
 
 	config tips_of_day;
 
@@ -724,6 +721,9 @@ int main(int argc, char** argv)
 	} catch(game_logic::formula_error& e) {
 		std::cerr << e.what()
 			<< "\n\nGame will be aborted.\n";
+		return 1;
+	} catch(const sdl::texception& e) {
+		std::cerr << e.what();
 		return 1;
 	} catch(game::error &) {
 		// A message has already been displayed.

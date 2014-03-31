@@ -168,10 +168,17 @@ static bool fullscreen(CVideo& video)
 	const SDL_Rect& rect = screen_area();
 
 	SDL_Event event;
+#if SDL_VERSION_ATLEAST(2, 0, 0)
+	event.type = SDL_WINDOWEVENT;
+	event.window.event = SDL_WINDOWEVENT_RESIZED;
+	event.window.data1 = rect.w;
+	event.window.data2 = rect.h;
+#else
 	event.type = SDL_VIDEORESIZE;
 	event.resize.type = SDL_VIDEORESIZE;
 	event.resize.w = rect.w;
 	event.resize.h = rect.h;
+#endif
 
 	SDL_PushEvent(&event);
 
@@ -411,6 +418,14 @@ void ttitle_screen::update_tip(twindow& window, const bool previous)
 	}
 
 	tips.select_page(page);
+	/**
+	 * @todo Look for a proper fix.
+	 *
+	 * This dirtying is required to avoid the blurring to be rendered wrong.
+	 * Not entirely sure why, but since we plan to move to SDL2 that change
+	 * will probably fix this issue automatically.
+	 */
+	window.set_is_dirty(true);
 }
 
 void ttitle_screen::show_debug_clock_window(CVideo& video)

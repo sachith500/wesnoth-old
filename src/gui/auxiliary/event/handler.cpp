@@ -199,6 +199,15 @@ private:
 	void mouse_button_down(const tpoint& position, const Uint8 button);
 
 	/**
+	 * Fires a mouse wheel event.
+	 *
+	 * @param position               The position of the mouse.
+	 * @param scrollx                The amount of horizontal scrolling.
+	 * @param scrolly                The amount of vertical scrolling.
+	 */
+	void mouse_wheel(const tpoint& position, int scrollx, int scrolly);
+
+	/**
 	 * Gets the dispatcher that wants to receive the keyboard input.
 	 *
 	 * @returns                   The dispatcher.
@@ -322,6 +331,12 @@ void thandler::handle_event(const SDL_Event& event)
 							event.button.button);
 			break;
 
+#if SDL_VERSION_ATLEAST(2,0,0)
+		case SDL_MOUSEWHEEL:
+			mouse_wheel(get_mouse_position(), event.wheel.x, event.wheel.y);
+			break;
+#endif
+
 		case SHOW_HELPTIP_EVENT:
 			mouse(SHOW_HELPTIP, get_mouse_position());
 			break;
@@ -366,6 +381,25 @@ void thandler::handle_event(const SDL_Event& event)
 			key_down(event.key);
 			break;
 
+#if SDL_VERSION_ATLEAST(2, 0, 0)
+		case SDL_WINDOWEVENT:
+			switch(event.window.event) {
+				case SDL_WINDOWEVENT_EXPOSED:
+					draw(true);
+					break;
+
+			case SDL_WINDOWEVENT_RESIZED:
+				video_resize(tpoint(event.window.data1, event.window.data2));
+				break;
+
+			case SDL_WINDOWEVENT_ENTER:
+			case SDL_WINDOWEVENT_FOCUS_GAINED:
+				activate();
+				break;
+			}
+
+			break;
+#else
 		case SDL_VIDEOEXPOSE:
 			draw(true);
 			break;
@@ -374,15 +408,16 @@ void thandler::handle_event(const SDL_Event& event)
 			video_resize(tpoint(event.resize.w, event.resize.h));
 			break;
 
+		case SDL_ACTIVEEVENT:
+			activate();
+			break;
+#endif
+
 #if(defined(_X11) && !defined(__APPLE__)) || defined(_WIN32)
 		case SDL_SYSWMEVENT:
 			/* DO NOTHING */
 			break;
 #endif
-
-		case SDL_ACTIVEEVENT:
-			activate();
-			break;
 
 		// Silently ignored events.
 		case SDL_KEYUP:
@@ -555,6 +590,7 @@ void thandler::mouse_button_up(const tpoint& position, const Uint8 button)
 			mouse(SDL_RIGHT_BUTTON_UP, position);
 			break;
 
+#if !SDL_VERSION_ATLEAST(2,0,0)
 		case SDL_BUTTON_WHEELLEFT:
 			mouse(SDL_WHEEL_LEFT, get_mouse_position());
 			break;
@@ -567,6 +603,7 @@ void thandler::mouse_button_up(const tpoint& position, const Uint8 button)
 		case SDL_BUTTON_WHEELDOWN:
 			mouse(SDL_WHEEL_DOWN, get_mouse_position());
 			break;
+#endif
 
 		default:
 			WRN_GUI_E << "Unhandled 'mouse button up' event for button "
@@ -602,6 +639,23 @@ void thandler::mouse_button_down(const tpoint& position, const Uint8 button)
 			break;
 	}
 }
+
+#if SDL_VERSION_ATLEAST(2,0,0)
+void thandler::mouse_wheel(const tpoint& position, int x, int y)
+{
+	if (x > 0) {
+		mouse(SDL_WHEEL_RIGHT, position);
+	} else if (x < 0) {
+		mouse(SDL_WHEEL_LEFT, position);
+	}
+
+	if (y < 0) {
+		mouse(SDL_WHEEL_DOWN, position);
+	} else if (y > 0){
+		mouse(SDL_WHEEL_UP, position);
+	}
+}
+#endif
 
 tdispatcher* thandler::keyboard_dispatcher()
 {
@@ -656,7 +710,14 @@ void thandler::key_down(const SDL_KeyboardEvent& event)
 		done = hotkey_pressed(hk);
 	}
 	if(!done) {
+#if SDL_VERSION_ATLEAST(2, 0, 0)
+		key_down(
+				  event.keysym.sym
+				, static_cast<const SDL_Keymod>(event.keysym.mod)
+				, static_cast<const Uint16>(event.keysym.scancode));
+#else
 		key_down(event.keysym.sym, event.keysym.mod, event.keysym.unicode);
+#endif
 	}
 }
 

@@ -19,7 +19,7 @@
 
 #include <boost/foreach.hpp>
 
-const unsigned short default_campaignd_port = 15006;
+const unsigned short default_campaignd_port = 15007;
 
 namespace {
 	const std::string addon_type_strings[] = {
@@ -61,7 +61,7 @@ bool addon_name_legal(const std::string& name)
 bool addon_filename_legal(const std::string& name)
 {
 	if(name.empty() || name == "." ||
-	   name.find_first_of("/:\\~") != std::string::npos ||
+	   name.find_first_of("/:\\~ \r\n\v\t") != std::string::npos ||
 	   name.find("..") != std::string::npos) {
 		return false;
 	} else {

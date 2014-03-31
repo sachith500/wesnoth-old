@@ -328,12 +328,6 @@ bool game_controller::init_language()
 	}
 	::set_language(locale);
 
-	if(!cmdline_opts_.nogui) {
-		std::string wm_title_string = _("The Battle for Wesnoth");
-		wm_title_string += " - " + game_config::revision;
-		SDL_WM_SetCaption(wm_title_string.c_str(), NULL);
-	}
-
 	return true;
 }
 
@@ -349,11 +343,19 @@ bool game_controller::init_video()
 		return true;
 	}
 
+	std::string wm_title_string = _("The Battle for Wesnoth");
+	wm_title_string += " - " + game_config::revision;
+#if !SDL_VERSION_ATLEAST(2, 0, 0)
+	SDL_WM_SetCaption(wm_title_string.c_str(), NULL);
+#endif
+
 #if !(defined(__APPLE__))
 	surface icon(image::get_image("game-icon.png", image::UNSCALED));
 	if(icon != NULL) {
 		///must be called after SDL_Init() and before setting video mode
+#if !SDL_VERSION_ATLEAST(2, 0, 0)
 		SDL_WM_SetIcon(icon,NULL);
+#endif
 	}
 #endif
 
@@ -393,7 +395,14 @@ bool game_controller::init_video()
 		          << resolution.second << "x" << bpp << " is not supported\n";
 		return false;
 	}
-
+#if SDL_VERSION_ATLEAST(2, 0, 0)
+	CVideo::set_window_title(wm_title_string);
+#if !(defined(__APPLE__))
+	if(icon != NULL) {
+		CVideo::set_window_icon(icon);
+	}
+#endif
+#endif
 	return true;
 }
 
@@ -529,8 +538,9 @@ bool game_controller::load_game()
 			if (side["controller"] == "network")
 				side["controller"] = "human";
 			if (side["controller"] == "network_ai")
-				side["controller"] = "human_ai";
+				side["controller"] = "ai";
 		}
+		gui2::show_message(disp().video(), _("Warning") , _("This is a multiplayer scenario. Some parts of it may not work properly in single-player. It is recommended to load this scenario through the Multiplayer -> Load Game dialog instead."));
 	}
 
 	if (load.cancel_orders()) {
@@ -919,7 +929,11 @@ bool game_controller::change_language()
 	if (!cmdline_opts_.nogui) {
 		std::string wm_title_string = _("The Battle for Wesnoth");
 		wm_title_string += " - " + game_config::revision;
+#if SDL_VERSION_ATLEAST(2, 0, 0)
+		CVideo::set_window_title(wm_title_string);
+#else
 		SDL_WM_SetCaption(wm_title_string.c_str(), NULL);
+#endif
 	}
 
 	return true;

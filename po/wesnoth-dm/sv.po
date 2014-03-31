@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wescamp-i 18n\n"
 "Report-Msgid-Bugs-To: http://bugs.wesnoth.org/\n"
-"POT-Creation-Date: 2014-02-05 19:37+0100\n"
+"POT-Creation-Date: 2014-03-02 10:23+0100\n"
 "PO-Revision-Date: 2007-07-25 18:00+0200\n"
 "Last-Translator: Stefan Bergström (tephlon) <stefan DOT bergstrom AT gmail "
 "DOT com>\n"
@@ -2174,11 +2174,10 @@ msgstr ""
 
 #. [objective]: condition=win
 #: data/campaigns/Delfadors_Memoirs/scenarios/12_Terror_at_the_Ford_of_Parthyn.cfg:58
-#: data/campaigns/Delfadors_Memoirs/scenarios/12_Terror_at_the_Ford_of_Parthyn.cfg:666
-#: data/campaigns/Delfadors_Memoirs/scenarios/13_The_Return_of_Trouble.cfg:187
-#: data/campaigns/Delfadors_Memoirs/scenarios/19_Showdown_in_the_Northern_Swamp.cfg:150
+#: data/campaigns/Delfadors_Memoirs/scenarios/14_Shadows.cfg:122
+#: data/campaigns/Delfadors_Memoirs/scenarios/15_Save_the_King.cfg:184
 #, fuzzy
-msgid "Defeat all enemies"
+msgid "Defeat all enemy leaders"
 msgstr "Besegra fiendens ledare"
 
 #. [side]: type=Orcish Warlord, id=Upgar
@@ -2422,6 +2421,14 @@ msgid ""
 "I do not know. No one has seen their faces and lived. All I could hear is my "
 "comrades’ screams as they were being slaughtered."
 msgstr ""
+
+#. [objective]: condition=win
+#: data/campaigns/Delfadors_Memoirs/scenarios/12_Terror_at_the_Ford_of_Parthyn.cfg:666
+#: data/campaigns/Delfadors_Memoirs/scenarios/13_The_Return_of_Trouble.cfg:187
+#: data/campaigns/Delfadors_Memoirs/scenarios/19_Showdown_in_the_Northern_Swamp.cfg:150
+#, fuzzy
+msgid "Defeat all enemies"
+msgstr "Besegra fiendens ledare"
 
 #. [unit]: type=Heavy Infantryman, id=Donc
 #: data/campaigns/Delfadors_Memoirs/scenarios/12_Terror_at_the_Ford_of_Parthyn.cfg:702
@@ -2900,13 +2907,6 @@ msgstr "Besegra Ihiah-Malal"
 #, fuzzy
 msgid "Barth-Malal"
 msgstr "Besegra Ihiah-Malal"
-
-#. [objective]: condition=win
-#: data/campaigns/Delfadors_Memoirs/scenarios/14_Shadows.cfg:122
-#: data/campaigns/Delfadors_Memoirs/scenarios/15_Save_the_King.cfg:184
-#, fuzzy
-msgid "Defeat all enemy leaders"
-msgstr "Besegra fiendens ledare"
 
 #. [message]: id=Kalenz
 #: data/campaigns/Delfadors_Memoirs/scenarios/14_Shadows.cfg:152
@@ -4780,6 +4780,10 @@ msgstr ""
 #: data/campaigns/Delfadors_Memoirs/utils/sides.cfg:294
 msgid "Artor"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Defeat all enemey leaders"
+#~ msgstr "Besegra fiendens ledare"
 
 #, fuzzy
 #~ msgid "Defeat Zorlan"

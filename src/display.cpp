@@ -208,6 +208,8 @@ display::display(unit_map* units, CVideo& video, const gamemap* map, const std::
 {
 	singleton_ = this;
 
+	blindfold_ctr_ = 0;
+
 	read(level.child_or_empty("display"));
 
 	if(non_interactive()
@@ -574,6 +576,19 @@ void display::change_units(unit_map* umap)
 void display::change_teams(const std::vector<team>* teams)
 {
 	teams_ = teams;
+}
+
+void display::blindfold(bool value)
+{
+	if(value == true)
+		++blindfold_ctr_;
+	else
+		--blindfold_ctr_;
+}
+
+bool display::is_blindfolded() const
+{
+	return blindfold_ctr_ > 0;
 }
 
 
@@ -1031,17 +1046,27 @@ std::vector<surface> display::get_fog_shroud_images(const map_location& loc, ima
 		}
 
 		if(start == 6) {
+			// Completely surrounded by fog or shroud. This might have
+			// a special graphic.
+			const std::string name = *image_prefix[v] + "-all.png";
+			if ( image::exists(name) ) {
+				names.push_back(name);
+				// Proceed to the next visibility (fog -> shroud -> clear).
+				continue;
+			}
+			// No special graphic found. We'll just combine some other images
+			// and hope it works out.
 			start = 0;
 		}
 
 		// Find all the directions overlap occurs from
-		for(int i = (start+1)%6, n = 0; i != start && n != 6; ++n) {
+		for (int i = (start+1)%6, cap1 = 0;  i != start && cap1 != 6;  ++cap1) {
 			if(tiles[i] == v) {
 				std::ostringstream stream;
 				std::string name;
 				stream << *image_prefix[v];
 
-				for(int n = 0; v == tiles[i] && n != 6; i = (i+1)%6, ++n) {
+				for (int cap2 = 0;  v == tiles[i] && cap2 != 6;  i = (i+1)%6, ++cap2) {
 					stream << get_direction(i);
 
 					if(!image::exists(stream.str() + ".png")) {
@@ -1130,7 +1155,7 @@ std::vector<surface> display::get_terrain_images(const map_location &loc,
 
 	if(terrains != NULL) {
 		// Cache the offmap name.
-		// Since it is themeabel it can change,
+		// Since it is themeable it can change,
 		// so don't make it static.
 		const std::string off_map_name = "terrain/" + theme_.border().tile_image;
 		for(std::vector<animated<image::locator> >::const_iterator it =
@@ -1453,6 +1478,12 @@ static void draw_label(CVideo& video, surface target, const theme::label& label)
 void display::draw_all_panels()
 {
 	const surface& screen(screen_.getSurface());
+
+	/*
+	 * The minimap is also a panel, force it to update its contents.
+	 * This is required when the size of the minimap has been modified.
+	 */
+	recalculate_minimap();
 
 	const std::vector<theme::panel>& panels = theme_.panels();
 	for(std::vector<theme::panel>::const_iterator p = panels.begin(); p != panels.end(); ++p) {
@@ -1826,7 +1857,7 @@ void display::draw_minimap()
 	}
 
 	if(minimap_ == NULL || minimap_->w > area.w || minimap_->h > area.h) {
-		minimap_ = image::getMinimap(area.w, area.h, get_map(), viewpoint_, selectedHex_.valid() ? &reach_map_ : NULL);
+		minimap_ = image::getMinimap(area.w, area.h, get_map(), viewpoint_, (selectedHex_.valid() && !is_blindfolded()) ? &reach_map_ : NULL);
 		if(minimap_ == NULL) {
 			return;
 		}
@@ -1874,7 +1905,7 @@ void display::draw_minimap()
 
 void display::draw_minimap_units()
 {
-	if (!preferences::minimap_draw_units()) return;
+	if (!preferences::minimap_draw_units() || is_blindfolded()) return;
 
 	double xscaling = 1.0 * minimap_location_.w / get_map().w();
 	double yscaling = 1.0 * minimap_location_.h / get_map().h();
@@ -1893,20 +1924,20 @@ void display::draw_minimap_units()
 		if (preferences::minimap_movement_coding()) {
 
 			if ((*teams_)[currentTeam_].is_enemy(side)) {
-				col = int_to_color(game_config::color_info(game_config::images::enemy_orb_color).rep());
+				col = int_to_color(game_config::color_info(preferences::enemy_color()).rep());
 			} else {
 
 				if (currentTeam_ +1 == static_cast<unsigned>(side)) {
 
 					if (u->movement_left() == u->total_movement())
-						col = int_to_color(game_config::color_info(game_config::images::unmoved_orb_color).rep());
+						col = int_to_color(game_config::color_info(preferences::unmoved_color()).rep());
 					else if (u->movement_left() == 0)
-						col = int_to_color(game_config::color_info(game_config::images::moved_orb_color).rep());
+						col = int_to_color(game_config::color_info(preferences::moved_color()).rep());
 					else
-						col = int_to_color(game_config::color_info(game_config::images::partmoved_orb_color).rep());
+						col = int_to_color(game_config::color_info(preferences::partial_color()).rep());
 
 				} else
-					col = int_to_color(game_config::color_info(game_config::images::ally_orb_color).rep());
+					col = int_to_color(game_config::color_info(preferences::allied_color()).rep());
 			}
 		}
 
@@ -2795,7 +2826,10 @@ void display::refresh_report(std::string const &report_name, const config * new_
 			// Draw a text element.
 			font::ttext text;
 			if (item->font_rgb_set()) {
-				text.set_foreground_color(item->font_rgb());
+				// font_rgb() has no alpha channel and uses a 0x00RRGGBB
+				// layout instead of 0xRRGGBBAA which is what ttext expects,
+				// so shift the value to the left and add fully-opaque alpha.
+				text.set_foreground_color((item->font_rgb() << 8) + 0xFF);
 			}
 			bool eol = false;
 			if (t[t.size() - 1] == '\n') {

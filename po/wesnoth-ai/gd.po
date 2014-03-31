@@ -6,11 +6,11 @@
 # GunChleoc <fios@foramnagaidhlig.net>, 2014.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Wesnoth AI\n"
 "Report-Msgid-Bugs-To: http://bugs.wesnoth.org/\n"
-"POT-Creation-Date: 2014-01-04 20:07+0100\n"
-"PO-Revision-Date: 2014-01-31 13:38+0100\n"
-"Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
+"POT-Creation-Date: 2014-02-22 14:15+0100\n"
+"PO-Revision-Date: 2014-03-16 07:24-0000\n"
+"Last-Translator: GunChleoc <fiosAIGforamnagaidhligDOTnet>\n"
 "Language-Team: Fòram na Gàidhlig http://www.foramnagaidhlig.net\n"
 "Language: gd\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 || n==11) ? 0 : (n==2 || n==12) ? 1 : "
 "(n > 2 && n < 20) ? 2 : 3;\n"
-"X-Generator: Virtaal 0.7.1\n"
+"X-Generator: Poedit 1.6.4\n"
 
 #. [ai]: id=ai_default_rca
 #: data/ai/ais/ai_default_rca.cfg:5
@@ -350,7 +350,7 @@ msgstr "Cuileanan"
 #: data/ai/micro_ais/scenarios/swarm.cfg:65
 #: data/ai/micro_ais/scenarios/wolves.cfg:92
 msgid "End Scenario"
-msgstr "Cnàmh-sgeul deis"
+msgstr "Cnàmh-sgeul deiseil"
 
 #. [command]
 #. [then]
@@ -800,7 +800,7 @@ msgstr ""
 #. [message]: speaker=unit
 #: data/ai/micro_ais/scenarios/goto.cfg:566
 msgid "I told you so!"
-msgstr ""
+msgstr "Nach tuirt mi riut?"
 
 #. [message]: speaker=leader5
 #: data/ai/micro_ais/scenarios/goto.cfg:576
@@ -822,8 +822,8 @@ msgstr ""
 #. [message]: speaker=unit
 #: data/ai/micro_ais/scenarios/goto.cfg:603
 msgid ""
-"$unit.type $unit.name from Lieutenant Gadoc's squadron reporting for duty, "
-"sir."
+"$unit.language_name $unit.name from Lieutenant Gadoc's squadron reporting "
+"for duty, sir."
 msgstr ""
 
 #. [message]: speaker=fort_commander
@@ -839,8 +839,8 @@ msgstr ""
 #. [message]: speaker=fort_commander
 #: data/ai/micro_ais/scenarios/goto.cfg:631
 msgid ""
-"Very good, $unit.type. Now go help your comrade get rid of that saurian "
-"infestation in the swamps."
+"Very good, $unit.language_name. Now go help your comrade get rid of that "
+"saurian infestation in the swamps."
 msgstr ""
 
 #. [message]: speaker=fort_commander
@@ -1560,27 +1560,27 @@ msgstr ""
 #: data/ai/micro_ais/scenarios/messenger_escort.cfg:70
 #: data/ai/micro_ais/scenarios/scenario_micro_ai.cfg:71
 msgid "Messenger"
-msgstr ""
+msgstr "Teachdaire"
 
 #. [event]
 #: data/ai/micro_ais/scenarios/messenger_escort.cfg:120
 msgid "Messanger Waypoint 1"
-msgstr ""
+msgstr "Puing-shlighe teachdaire 1"
 
 #. [event]
 #: data/ai/micro_ais/scenarios/messenger_escort.cfg:122
 msgid "Messenger Waypoint 2"
-msgstr ""
+msgstr "Puing-shlighe teachdaire 2"
 
 #. [event]
 #: data/ai/micro_ais/scenarios/messenger_escort.cfg:124
 msgid "Messenger Waypoint 3"
-msgstr ""
+msgstr "Puing-shlighe teachdaire 3"
 
 #. [event]
 #: data/ai/micro_ais/scenarios/messenger_escort.cfg:127
 msgid "AI moves Messenger here"
-msgstr ""
+msgstr "Gluaisidh an IF an teachdaire an-seo"
 
 #. [event]: id=Vanak profile profile}
 #: data/ai/micro_ais/scenarios/messenger_escort.cfg:136
@@ -1613,12 +1613,12 @@ msgstr ""
 #. [objective]: condition=win
 #: data/ai/micro_ais/scenarios/messenger_escort.cfg:150
 msgid "Defeat the messenger"
-msgstr ""
+msgstr "Cuir ruaig air an teachdaire"
 
 #. [objective]: condition=lose
 #: data/ai/micro_ais/scenarios/messenger_escort.cfg:154
 msgid "Messenger gets to the signpost"
-msgstr ""
+msgstr "Ruigidh an teachdaire a’ phuing-shlighe"
 
 #. [objective]: condition=lose
 #: data/ai/micro_ais/scenarios/messenger_escort.cfg:158
@@ -1640,7 +1640,7 @@ msgstr ""
 #: data/ai/micro_ais/scenarios/patrols.cfg:5
 #: data/ai/micro_ais/scenarios/scenario_micro_ai.cfg:74
 msgid "Patrols"
-msgstr ""
+msgstr "Cuairteachain"
 
 #. [side]: id=Gertburt, type=Outlaw
 #: data/ai/micro_ais/scenarios/patrols.cfg:18
@@ -1670,37 +1670,37 @@ msgstr ""
 #. [event]
 #: data/ai/micro_ais/scenarios/patrols.cfg:181
 msgid "Konrad Waypoint 1"
-msgstr ""
+msgstr "Puing-shlighe Chonaill 1"
 
 #. [event]
 #: data/ai/micro_ais/scenarios/patrols.cfg:183
 msgid "Konrad Waypoint 2"
-msgstr ""
+msgstr "Puing-shlighe Chonaill 2"
 
 #. [event]
 #: data/ai/micro_ais/scenarios/patrols.cfg:185
 msgid "Konrad Final Waypoint"
-msgstr ""
+msgstr "Puing-shlighe Chonaill mu dheireadh"
 
 #. [event]
 #: data/ai/micro_ais/scenarios/patrols.cfg:188
 msgid "Patrol Waypoint 1"
-msgstr ""
+msgstr "Puing-shlighe chuairteachan 1"
 
 #. [event]
 #: data/ai/micro_ais/scenarios/patrols.cfg:190
 msgid "Patrol Waypoint 2"
-msgstr ""
+msgstr "Puing-shlighe chuairteachan 2"
 
 #. [event]
 #: data/ai/micro_ais/scenarios/patrols.cfg:192
 msgid "Patrol Waypoint 3"
-msgstr ""
+msgstr "Puing-shlighe chuairteachan 3"
 
 #. [event]
 #: data/ai/micro_ais/scenarios/patrols.cfg:194
 msgid "Patrol Waypoint 4"
-msgstr ""
+msgstr "Puing-shlighe chuairteachan 4"
 
 #. [event]
 #: data/ai/micro_ais/scenarios/patrols.cfg:197
@@ -2313,12 +2313,12 @@ msgid "Uralt"
 msgstr ""
 
 #. [event]
-#: data/ai/micro_ais/scenarios/simple_attack.cfg:118
+#: data/ai/micro_ais/scenarios/simple_attack.cfg:122
 msgid "General Grospur, what do we do?  These undead will surely wipe us out."
 msgstr ""
 
 #. [event]
-#: data/ai/micro_ais/scenarios/simple_attack.cfg:119
+#: data/ai/micro_ais/scenarios/simple_attack.cfg:123
 msgid ""
 "Don't be such a chicken, Sergeant!  I have placed units with lots of "
 "experience around the perimeter. The undead will not dare to attack them. "
@@ -2333,34 +2333,34 @@ msgid ""
 msgstr ""
 
 #. [objectives]
-#: data/ai/micro_ais/scenarios/simple_attack.cfg:124
+#: data/ai/micro_ais/scenarios/simple_attack.cfg:128
 msgid "Watch the undead take care of business"
 msgstr ""
 
 #. [objective]: condition=win
-#: data/ai/micro_ais/scenarios/simple_attack.cfg:126
+#: data/ai/micro_ais/scenarios/simple_attack.cfg:130
 msgid "Don't even try. You can't reach the Lich."
 msgstr ""
 
 #. [objective]: condition=lose
-#: data/ai/micro_ais/scenarios/simple_attack.cfg:130
+#: data/ai/micro_ais/scenarios/simple_attack.cfg:134
 msgid "Death of the last of Grospur's units"
 msgstr ""
 
 #. [note]
-#: data/ai/micro_ais/scenarios/simple_attack.cfg:134
+#: data/ai/micro_ais/scenarios/simple_attack.cfg:138
 msgid "When your leader dies, side leadership passes on to another unit"
 msgstr ""
 
 #. [event]
-#: data/ai/micro_ais/scenarios/simple_attack.cfg:159
+#: data/ai/micro_ais/scenarios/simple_attack.cfg:163
 msgid ""
 "What the ... ?!?  They are not supposed to attack me. That just doesn't "
 "happen in Wesnoth!"
 msgstr ""
 
 #. [event]
-#: data/ai/micro_ais/scenarios/simple_attack.cfg:160
+#: data/ai/micro_ais/scenarios/simple_attack.cfg:164
 msgid ""
 "Hahahahaha !! I have given special instruction to my Soulless to attack all "
 "you almost-advanced units first. Also watch how those same Soulless will "
@@ -2377,12 +2377,12 @@ msgid ""
 msgstr ""
 
 #. [then]
-#: data/ai/micro_ais/scenarios/simple_attack.cfg:176
+#: data/ai/micro_ais/scenarios/simple_attack.cfg:180
 msgid "Rise, minions!"
 msgstr ""
 
 #. [else]
-#: data/ai/micro_ais/scenarios/simple_attack.cfg:219
+#: data/ai/micro_ais/scenarios/simple_attack.cfg:223
 msgid "And that's how the undead AI executes total annihilation ..."
 msgstr ""
 
@@ -2577,61 +2577,61 @@ msgstr ""
 #. [test]: id=ai_arena_small
 #: data/ai/scenarios/scenario-AI_Arena_small.cfg:6
 msgid "AI Arena - small"
-msgstr ""
+msgstr "Raon-catha nan IF – beag"
 
 #. [test]: id=ai_arena_small
 #: data/ai/scenarios/scenario-AI_Arena_small.cfg:7
 msgid "Small ai arena"
-msgstr ""
+msgstr "Raon-catha beag nan IF"
 
 #. [set_menu_item]: id=repeat_test
 #: data/ai/scenarios/scenario-AI_Arena_small.cfg:64
 msgid "Repeat last test"
-msgstr ""
+msgstr "Dèan an deuchainn mu dheireadh a-rithist"
 
 #. [set_menu_item]: id=select_another_ai
 #: data/ai/scenarios/scenario-AI_Arena_small.cfg:80
 msgid "Select another ai"
-msgstr ""
+msgstr "Tagh IF eile"
 
 #. [set_menu_item]: id=select_test
 #: data/ai/scenarios/scenario-AI_Arena_small.cfg:90
 msgid "Select another test"
-msgstr ""
+msgstr "Tagh deuchainn eile"
 
 #. [side]: id=leader1, type=Lich
 #. [side]: type=Nightgaunt
 #: data/ai/scenarios/scenario-AI_Arena_small.cfg:103
 #: data/ai/scenarios/scenario-test_move_to_targets.cfg:31
 msgid "AI Developer"
-msgstr ""
+msgstr "Leasaichear IF"
 
 #. [side]: id=leader1, type=Lich
 #. [side]: type=Nightgaunt
 #: data/ai/scenarios/scenario-AI_Arena_small.cfg:108
 #: data/ai/scenarios/scenario-test_move_to_targets.cfg:36
 msgid "team_name^AI Developer"
-msgstr ""
+msgstr "Leasaichear IF"
 
 #. [side]: id=chall-ai, type=White Mage
 #: data/ai/scenarios/scenario-AI_Arena_small.cfg:119
 msgid "Challenger AI"
-msgstr ""
+msgstr "Neach-dùbhlain IF"
 
 #. [side]: id=chall-ai, type=White Mage
 #: data/ai/scenarios/scenario-AI_Arena_small.cfg:124
 msgid "North"
-msgstr ""
+msgstr "Tuath"
 
 #. [side]: id=champ-ai, type=Dark Adept
 #: data/ai/scenarios/scenario-AI_Arena_small.cfg:131
 msgid "Champion AI"
-msgstr ""
+msgstr "Gaisgeach IF"
 
 #. [side]: id=champ-ai, type=Dark Adept
 #: data/ai/scenarios/scenario-AI_Arena_small.cfg:136
 msgid "South"
-msgstr ""
+msgstr "Deas"
 
 #. [message]: speaker=narrator
 #: data/ai/scenarios/scenario-AI_Arena_small.cfg:175
@@ -2694,13 +2694,13 @@ msgstr ""
 #: data/ai/scenarios/scenario-lua-ai.cfg:44
 #: data/ai/scenarios/scenario-no_engine.cfg:44
 msgid "Patrol waypoint 1"
-msgstr ""
+msgstr "Puing-shlighe chuairteachan 1"
 
 #. [label]
 #: data/ai/scenarios/scenario-lua-ai.cfg:49
 #: data/ai/scenarios/scenario-no_engine.cfg:49
 msgid "Patrol waypoint 2"
-msgstr ""
+msgstr "Puing-shlighe chuairteachan 2"
 
 #. [label]
 #: data/ai/scenarios/scenario-lua-ai.cfg:54
@@ -2712,19 +2712,19 @@ msgstr ""
 #: data/ai/scenarios/scenario-lua-ai.cfg:59
 #: data/ai/scenarios/scenario-no_engine.cfg:59
 msgid "first"
-msgstr ""
+msgstr "A' chiad dhiubh"
 
 #. [label]
 #: data/ai/scenarios/scenario-lua-ai.cfg:64
 #: data/ai/scenarios/scenario-no_engine.cfg:64
 msgid "second"
-msgstr ""
+msgstr "An dàrna dhiubh"
 
 #. [label]
 #: data/ai/scenarios/scenario-lua-ai.cfg:69
 #: data/ai/scenarios/scenario-no_engine.cfg:69
 msgid "third"
-msgstr ""
+msgstr "An treas dhiubh"
 
 #. [label]
 #: data/ai/scenarios/scenario-lua-ai.cfg:74
